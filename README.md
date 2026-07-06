@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- ✨ Header banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=24&height=200&section=header&text=hey%2C%20i'm%20hannah!%20🫧&fontSize=60&fontAlignY=35&animation=twinkling&desc=she%20builds%20AI%20✦%20she%20designs%20✦%20she%20refuses%20to%20pick%20one%20lane&descAlignY=55&descSize=18" width="100%"/>
+<img src="assets/banner.svg" width="100%" alt="hannah how — AI ✦ DESIGN ✦ BUILDER"/>
 
 <!-- ⌨️ Typing animation -->
 <a href="https://github.com/c0smo-55">
