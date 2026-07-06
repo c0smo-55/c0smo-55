@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="recharts">
+  <rect width="48" height="48" rx="11" fill="#242938"/>
+  <rect x="13" y="24" width="5.5" height="11" rx="1.5" fill="#ff8fab"/>
+  <rect x="21.5" y="17" width="5.5" height="18" rx="1.5" fill="#b197fc"/>
+  <rect x="30" y="12" width="5.5" height="23" rx="1.5" fill="#7dd3fc"/>
+  <line x1="11" y1="37" x2="37" y2="37" stroke="#8892b0" stroke-width="2" stroke-linecap="round"/>
+</svg>
