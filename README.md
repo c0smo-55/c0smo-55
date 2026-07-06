@@ -46,21 +46,21 @@ and I believe being creative in one area makes you sharper in every other.
 
 **languages & core**
 
-<img src="https://skillicons.dev/icons?i=python,js,html,css,git,github&theme=dark"/>
+<img src="https://skillicons.dev/icons?i=python,js,ts,html,css,git,github&theme=dark"/>
 
-<img src="https://img.shields.io/badge/Python-FF8FAB?style=flat-square&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7B9D4?style=flat-square&logo=javascript&logoColor=white"/> <img src="https://img.shields.io/badge/HTML5-FF8FAB?style=flat-square&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-F7B9D4?style=flat-square"/> <img src="https://img.shields.io/badge/SQL-FF8FAB?style=flat-square"/> <img src="https://img.shields.io/badge/Git-F7B9D4?style=flat-square&logo=git&logoColor=white"/>
+<img src="https://img.shields.io/badge/Python-FF8FAB?style=flat-square&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7B9D4?style=flat-square&logo=javascript&logoColor=white"/> <img src="https://img.shields.io/badge/TypeScript-FF8FAB?style=flat-square&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/HTML5-F7B9D4?style=flat-square&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-FF8FAB?style=flat-square"/> <img src="https://img.shields.io/badge/SQL-F7B9D4?style=flat-square"/> <img src="https://img.shields.io/badge/Git-FF8FAB?style=flat-square&logo=git&logoColor=white"/>
 
 **ai & data**
 
 <img src="https://skillicons.dev/icons?i=tensorflow,sklearn,anaconda&theme=dark"/>
 
-<img src="https://img.shields.io/badge/Time_Series_Forecasting-FF8FAB?style=flat-square&logoColor=white"/> <img src="https://img.shields.io/badge/Clustering-F7B9D4?style=flat-square"/> <img src="https://img.shields.io/badge/Pandas-FF8FAB?style=flat-square&logo=pandas&logoColor=white"/> <img src="https://img.shields.io/badge/NumPy-F7B9D4?style=flat-square&logo=numpy&logoColor=white"/> <img src="https://img.shields.io/badge/Keras-FF8FAB?style=flat-square&logo=keras&logoColor=white"/>
+<img src="https://img.shields.io/badge/Time_Series_Forecasting-FF8FAB?style=flat-square&logoColor=white"/> <img src="https://img.shields.io/badge/Clustering-F7B9D4?style=flat-square"/> <img src="https://img.shields.io/badge/Deep_Learning-FF8FAB?style=flat-square"/> <img src="https://img.shields.io/badge/CNNs_+_LSTMs-F7B9D4?style=flat-square"/> <img src="https://img.shields.io/badge/NLP-F7B9D4?style=flat-square"/> <img src="https://img.shields.io/badge/Pandas-FF8FAB?style=flat-square&logo=pandas&logoColor=white"/> <img src="https://img.shields.io/badge/NumPy-F7B9D4?style=flat-square&logo=numpy&logoColor=white"/> <img src="https://img.shields.io/badge/Keras-FF8FAB?style=flat-square&logo=keras&logoColor=white"/> <img src="https://img.shields.io/badge/Matplotlib-F7B9D4?style=flat-square"/> <img src="https://img.shields.io/badge/statsmodels-FF8FAB?style=flat-square"/> <img src="https://img.shields.io/badge/Jupyter-F7B9D4?style=flat-square&logo=jupyter&logoColor=white"/>
 
 **full-stack**
 
-<img src="https://skillicons.dev/icons?i=react,nodejs,express,mysql,postman,figma&theme=dark"/>
+<img src="https://skillicons.dev/icons?i=react,nextjs,tailwind,nodejs,express,mysql,postman,figma&theme=dark"/>
 
-<img src="https://img.shields.io/badge/JWT_Auth-FF8FAB?style=flat-square&logo=jsonwebtokens&logoColor=white"/> <img src="https://img.shields.io/badge/MVC_Architecture-F7B9D4?style=flat-square"/> <img src="https://img.shields.io/badge/REST_APIs-FF8FAB?style=flat-square"/>
+<img src="https://img.shields.io/badge/Next.js-FF8FAB?style=flat-square&logo=nextdotjs&logoColor=white"/> <img src="https://img.shields.io/badge/Tailwind_CSS-F7B9D4?style=flat-square&logo=tailwindcss&logoColor=white"/> <img src="https://img.shields.io/badge/JWT_Auth-FF8FAB?style=flat-square&logo=jsonwebtokens&logoColor=white"/> <img src="https://img.shields.io/badge/MVC_Architecture-F7B9D4?style=flat-square"/> <img src="https://img.shields.io/badge/REST_APIs-FF8FAB?style=flat-square"/> <img src="https://img.shields.io/badge/Recharts-F7B9D4?style=flat-square"/>
 
 **ai tooling & automation**
 
