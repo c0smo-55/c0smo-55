@@ -48,6 +48,8 @@ and I believe being creative in one area makes you sharper in every other.
 
 <img src="https://skillicons.dev/icons?i=python,js,html,css,git,github&theme=dark"/>
 
+<img src="https://img.shields.io/badge/Python-FF8FAB?style=flat-square&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7B9D4?style=flat-square&logo=javascript&logoColor=white"/> <img src="https://img.shields.io/badge/HTML5-FF8FAB?style=flat-square&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-F7B9D4?style=flat-square"/> <img src="https://img.shields.io/badge/SQL-FF8FAB?style=flat-square"/> <img src="https://img.shields.io/badge/Git-F7B9D4?style=flat-square&logo=git&logoColor=white"/>
+
 **ai & data**
 
 <img src="https://skillicons.dev/icons?i=tensorflow,sklearn,anaconda&theme=dark"/>
