@@ -1,0 +1,308 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 240" width="1000" height="240" role="img" aria-label="a cute animated garden">
+  <defs>
+    <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8fd9a0"/>
+      <stop offset="100%" stop-color="#5cb377"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#ffe08a" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffe08a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ☀️ sun with slowly rotating rays -->
+  <g transform="translate(62,52)">
+    <circle r="46" fill="url(#sunGlow)"/>
+    <g stroke="#ffd670" stroke-width="3" stroke-linecap="round" opacity="0.85">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="60s" repeatCount="indefinite"/>
+      <line x1="0" y1="-30" x2="0" y2="-38"/>
+      <line x1="21" y1="-21" x2="27" y2="-27"/>
+      <line x1="30" y1="0" x2="38" y2="0"/>
+      <line x1="21" y1="21" x2="27" y2="27"/>
+      <line x1="0" y1="30" x2="0" y2="38"/>
+      <line x1="-21" y1="21" x2="-27" y2="27"/>
+      <line x1="-30" y1="0" x2="-38" y2="0"/>
+      <line x1="-21" y1="-21" x2="-27" y2="-27"/>
+    </g>
+    <circle r="22" fill="#ffd670"/>
+    <circle cx="-7" cy="-3" r="2.4" fill="#e8a33d"/>
+    <circle cx="7" cy="-3" r="2.4" fill="#e8a33d"/>
+    <path d="M-7 5 Q 0 11 7 5" stroke="#e8a33d" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- ☁️ drifting pastel clouds -->
+  <g fill="#cdb9f7" opacity="0.55">
+    <animateTransform attributeName="transform" type="translate" values="0 0; 45 3; 0 0" dur="34s" repeatCount="indefinite"/>
+    <ellipse cx="300" cy="46" rx="34" ry="13"/>
+    <ellipse cx="326" cy="40" rx="24" ry="11"/>
+    <ellipse cx="278" cy="40" rx="20" ry="10"/>
+  </g>
+  <g fill="#f7b9d4" opacity="0.5">
+    <animateTransform attributeName="transform" type="translate" values="0 0; -55 4; 0 0" dur="42s" repeatCount="indefinite"/>
+    <ellipse cx="720" cy="60" rx="38" ry="14"/>
+    <ellipse cx="750" cy="53" rx="26" ry="12"/>
+    <ellipse cx="694" cy="53" rx="22" ry="11"/>
+  </g>
+
+  <!-- ✨ twinkling sparkles -->
+  <g fill="#ffd6ff">
+    <path d="M0 -7 L1.8 -1.8 L7 0 L1.8 1.8 L0 7 L-1.8 1.8 L-7 0 L-1.8 -1.8 Z" transform="translate(180,70)">
+      <animate attributeName="opacity" values="0;1;0" dur="2.6s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0 -6 L1.5 -1.5 L6 0 L1.5 1.5 L0 6 L-1.5 1.5 L-6 0 L-1.5 -1.5 Z" transform="translate(480,50)">
+      <animate attributeName="opacity" values="0;1;0" dur="3.4s" begin="0.9s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0 -6 L1.5 -1.5 L6 0 L1.5 1.5 L0 6 L-1.5 1.5 L-6 0 L-1.5 -1.5 Z" transform="translate(600,95)">
+      <animate attributeName="opacity" values="0;1;0" dur="2.2s" begin="1.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0 -7 L1.8 -1.8 L7 0 L1.8 1.8 L0 7 L-1.8 1.8 L-7 0 L-1.8 -1.8 Z" transform="translate(880,45)">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" begin="0.4s" repeatCount="indefinite"/>
+    </path>
+    <path d="M0 -5 L1.3 -1.3 L5 0 L1.3 1.3 L0 5 L-1.3 1.3 L-5 0 L-1.3 -1.3 Z" transform="translate(150,130)">
+      <animate attributeName="opacity" values="0;0.9;0" dur="2.8s" begin="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- 🌱 ground -->
+  <path d="M0 200 Q 500 176 1000 200 L 1000 240 L 0 240 Z" fill="url(#grass)"/>
+
+  <!-- grass tufts -->
+  <g stroke="#4a9d5f" stroke-width="2" stroke-linecap="round" fill="none">
+    <g transform="translate(60,199)">
+      <path d="M0 0 Q -3 -8 -6 -11 M0 0 Q 0 -10 0 -13 M0 0 Q 3 -8 6 -11">
+        <animateTransform attributeName="transform" type="rotate" values="-4;4;-4" dur="3.2s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    <g transform="translate(320,189)">
+      <path d="M0 0 Q -3 -8 -6 -11 M0 0 Q 0 -10 0 -13 M0 0 Q 3 -8 6 -11">
+        <animateTransform attributeName="transform" type="rotate" values="4;-4;4" dur="2.8s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    <g transform="translate(590,184)">
+      <path d="M0 0 Q -3 -8 -6 -11 M0 0 Q 0 -10 0 -13 M0 0 Q 3 -8 6 -11">
+        <animateTransform attributeName="transform" type="rotate" values="-5;5;-5" dur="3.6s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    <g transform="translate(860,194)">
+      <path d="M0 0 Q -3 -8 -6 -11 M0 0 Q 0 -10 0 -13 M0 0 Q 3 -8 6 -11">
+        <animateTransform attributeName="transform" type="rotate" values="4;-5;4" dur="3s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+
+  <!-- 🌷 tulip (pink) -->
+  <g transform="translate(120,199)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="-3 0 0; 3 0 0; -3 0 0" dur="4.2s" repeatCount="indefinite"/>
+      <path d="M0 0 C 2 -12 -2 -22 0 -32" stroke="#4a9d5f" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M0 -12 Q -13 -17 -16 -28 Q -5 -25 0 -15 Z" fill="#5cb377"/>
+      <path d="M0 -16 Q 12 -21 15 -31 Q 4 -28 0 -18 Z" fill="#5cb377"/>
+      <path d="M-10 -44 Q -10 -60 -4 -60 Q 0 -53 4 -60 Q 10 -60 10 -44 Q 10 -32 0 -30 Q -10 -32 -10 -44 Z" fill="#ff8fab"/>
+      <path d="M-10 -44 Q -10 -60 -4 -60 Q -1 -54 -2 -44 Q -3 -33 0 -30 Q -10 -32 -10 -44 Z" fill="#f07a9b"/>
+    </g>
+  </g>
+
+  <!-- 🌼 daisy (lavender petals) -->
+  <g transform="translate(250,192)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="4 0 0; -4 0 0; 4 0 0" dur="3.6s" repeatCount="indefinite"/>
+      <path d="M0 0 C -2 -14 2 -26 0 -38" stroke="#4a9d5f" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M0 -14 Q -12 -19 -14 -29 Q -4 -26 0 -17 Z" fill="#5cb377"/>
+      <g transform="translate(0,-48)" fill="#b197fc">
+        <ellipse rx="4.5" ry="11" transform="rotate(0) translate(0,-9)"/>
+        <ellipse rx="4.5" ry="11" transform="rotate(45) translate(0,-9)"/>
+        <ellipse rx="4.5" ry="11" transform="rotate(90) translate(0,-9)"/>
+        <ellipse rx="4.5" ry="11" transform="rotate(135) translate(0,-9)"/>
+        <ellipse rx="4.5" ry="11" transform="rotate(180) translate(0,-9)"/>
+        <ellipse rx="4.5" ry="11" transform="rotate(225) translate(0,-9)"/>
+        <ellipse rx="4.5" ry="11" transform="rotate(270) translate(0,-9)"/>
+        <ellipse rx="4.5" ry="11" transform="rotate(315) translate(0,-9)"/>
+        <circle r="6.5" fill="#ffd670"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- 🍄 mushroom -->
+  <g transform="translate(395,187)">
+    <rect x="-5" y="-16" width="10" height="16" rx="4" fill="#fff3e0"/>
+    <path d="M-16 -14 Q -16 -34 0 -34 Q 16 -34 16 -14 Z" fill="#ff8fab"/>
+    <circle cx="-7" cy="-22" r="2.6" fill="#ffe3ee"/>
+    <circle cx="4" cy="-27" r="2.2" fill="#ffe3ee"/>
+    <circle cx="9" cy="-19" r="2" fill="#ffe3ee"/>
+  </g>
+
+  <!-- 🌸 puff flower (peach) -->
+  <g transform="translate(480,183)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="-4 0 0; 4 0 0; -4 0 0" dur="4.6s" repeatCount="indefinite"/>
+      <path d="M0 0 C 2 -16 -2 -30 0 -42" stroke="#4a9d5f" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M0 -18 Q 12 -23 15 -33 Q 4 -30 0 -21 Z" fill="#5cb377"/>
+      <g transform="translate(0,-52)" fill="#ffc09f">
+        <circle cx="0" cy="-8" r="7"/>
+        <circle cx="8" cy="-3" r="7"/>
+        <circle cx="5" cy="6" r="7"/>
+        <circle cx="-5" cy="6" r="7"/>
+        <circle cx="-8" cy="-3" r="7"/>
+        <circle r="6" fill="#ffd670"/>
+        <circle cx="-2" cy="-1" r="1" fill="#e8a33d"/>
+        <circle cx="2" cy="-1" r="1" fill="#e8a33d"/>
+        <path d="M-2.5 2 Q 0 4.5 2.5 2" stroke="#e8a33d" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- 🌷 tulip (lavender) -->
+  <g transform="translate(640,185)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="3 0 0; -3 0 0; 3 0 0" dur="3.9s" repeatCount="indefinite"/>
+      <path d="M0 0 C -2 -12 2 -22 0 -30" stroke="#4a9d5f" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M0 -11 Q -12 -16 -15 -26 Q -4 -23 0 -14 Z" fill="#5cb377"/>
+      <path d="M-9 -41 Q -9 -55 -3.5 -55 Q 0 -49 3.5 -55 Q 9 -55 9 -41 Q 9 -30 0 -28 Q -9 -30 -9 -41 Z" fill="#b197fc"/>
+      <path d="M-9 -41 Q -9 -55 -3.5 -55 Q -0.5 -50 -1.5 -41 Q -2.5 -31 0 -28 Q -9 -30 -9 -41 Z" fill="#9d80ec"/>
+    </g>
+  </g>
+
+  <!-- 🌼 daisy (pink petals) -->
+  <g transform="translate(790,190)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="-4 0 0; 4 0 0; -4 0 0" dur="4.4s" repeatCount="indefinite"/>
+      <path d="M0 0 C 2 -13 -2 -24 0 -35" stroke="#4a9d5f" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M0 -13 Q 12 -18 14 -28 Q 4 -25 0 -16 Z" fill="#5cb377"/>
+      <g transform="translate(0,-45)" fill="#ff8fab">
+        <ellipse rx="4.5" ry="10" transform="rotate(0) translate(0,-8)"/>
+        <ellipse rx="4.5" ry="10" transform="rotate(45) translate(0,-8)"/>
+        <ellipse rx="4.5" ry="10" transform="rotate(90) translate(0,-8)"/>
+        <ellipse rx="4.5" ry="10" transform="rotate(135) translate(0,-8)"/>
+        <ellipse rx="4.5" ry="10" transform="rotate(180) translate(0,-8)"/>
+        <ellipse rx="4.5" ry="10" transform="rotate(225) translate(0,-8)"/>
+        <ellipse rx="4.5" ry="10" transform="rotate(270) translate(0,-8)"/>
+        <ellipse rx="4.5" ry="10" transform="rotate(315) translate(0,-8)"/>
+        <circle r="6" fill="#ffd670"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- 🌷 small tulip (peach) -->
+  <g transform="translate(925,197)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="3 0 0; -4 0 0; 3 0 0" dur="3.4s" repeatCount="indefinite"/>
+      <path d="M0 0 C 1 -9 -1 -16 0 -24" stroke="#4a9d5f" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <path d="M0 -9 Q -10 -13 -12 -21 Q -3 -19 0 -11 Z" fill="#5cb377"/>
+      <path d="M-7 -33 Q -7 -45 -3 -45 Q 0 -40 3 -45 Q 7 -45 7 -33 Q 7 -24 0 -22 Q -7 -24 -7 -33 Z" fill="#ffc09f"/>
+    </g>
+  </g>
+
+  <!-- ⚡ pikachu, gently bouncing -->
+  <g transform="translate(555,198)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -5; 0 0" dur="2.4s" repeatCount="indefinite"/>
+      <!-- tail -->
+      <path d="M12 -14 L18 -20 L15 -22 L23 -32 L25 -30 L19 -22 L22 -20 L14 -11 Z" fill="#ffd93b" stroke="#e8b52d" stroke-width="0.8"/>
+      <!-- ears -->
+      <ellipse cx="-10" cy="-42" rx="4" ry="12" transform="rotate(-20 -10 -42)" fill="#ffd93b"/>
+      <ellipse cx="-13" cy="-51" rx="3.2" ry="5" transform="rotate(-20 -13 -51)" fill="#4a4a4a"/>
+      <ellipse cx="10" cy="-42" rx="4" ry="12" transform="rotate(20 10 -42)" fill="#ffd93b"/>
+      <ellipse cx="13" cy="-51" rx="3.2" ry="5" transform="rotate(20 13 -51)" fill="#4a4a4a"/>
+      <!-- body -->
+      <ellipse cx="0" cy="-16" rx="14" ry="16" fill="#ffd93b"/>
+      <ellipse cx="-7" cy="-1" rx="4" ry="2.5" fill="#f2c22e"/>
+      <ellipse cx="7" cy="-1" rx="4" ry="2.5" fill="#f2c22e"/>
+      <!-- face -->
+      <circle cx="-5" cy="-21" r="2.2" fill="#3b3b3b"/>
+      <circle cx="-4.3" cy="-21.7" r="0.8" fill="#ffffff"/>
+      <circle cx="5" cy="-21" r="2.2" fill="#3b3b3b"/>
+      <circle cx="5.7" cy="-21.7" r="0.8" fill="#ffffff"/>
+      <circle cx="-9.5" cy="-14.5" r="3" fill="#ff6b6b"/>
+      <circle cx="9.5" cy="-14.5" r="3" fill="#ff6b6b"/>
+      <path d="M-2 -16 Q 0 -13.5 2 -16" stroke="#3b3b3b" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- 🌿 oddish, wiggling its leaves -->
+  <g transform="translate(705,196)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" dur="1.8s" repeatCount="indefinite"/>
+      <g transform="translate(0,-19)">
+        <g fill="#4cbf78">
+          <animateTransform attributeName="transform" type="rotate" values="-6;6;-6" dur="2.6s" repeatCount="indefinite"/>
+          <ellipse rx="4" ry="10" transform="rotate(-55) translate(0,-9)"/>
+          <ellipse rx="4" ry="11" transform="rotate(-27) translate(0,-10)"/>
+          <ellipse rx="4" ry="12" transform="translate(0,-11)"/>
+          <ellipse rx="4" ry="11" transform="rotate(27) translate(0,-10)"/>
+          <ellipse rx="4" ry="10" transform="rotate(55) translate(0,-9)"/>
+        </g>
+      </g>
+      <circle cy="-10" r="11" fill="#82b1e0"/>
+      <circle cx="-4" cy="-11" r="1.9" fill="#e05263"/>
+      <circle cx="-3.4" cy="-11.6" r="0.7" fill="#ffffff"/>
+      <circle cx="4" cy="-11" r="1.9" fill="#e05263"/>
+      <circle cx="4.6" cy="-11.6" r="0.7" fill="#ffffff"/>
+      <path d="M-2.5 -6.5 Q 0 -4.5 2.5 -6.5" stroke="#3b5a80" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+      <ellipse cx="-5" cy="0.5" rx="3.5" ry="1.8" fill="#6d9fd1"/>
+      <ellipse cx="5" cy="0.5" rx="3.5" ry="1.8" fill="#6d9fd1"/>
+    </g>
+  </g>
+
+  <!-- 🎤 jigglypuff, floating with the clouds -->
+  <g transform="translate(852,118)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -9; 0 0" dur="5s" repeatCount="indefinite"/>
+      <path d="M-10 -9 L-15 -17 L-6 -12 Z" fill="#ffb7d5"/>
+      <path d="M-11.5 -13.5 L-13.5 -15.5 L-9.5 -13 Z" fill="#f28ab5"/>
+      <path d="M10 -9 L15 -17 L6 -12 Z" fill="#ffb7d5"/>
+      <path d="M11.5 -13.5 L13.5 -15.5 L9.5 -13 Z" fill="#f28ab5"/>
+      <circle r="13" fill="#ffb7d5"/>
+      <path d="M-1 -12 Q -9 -19 0 -21 Q 7 -22 4 -16 Q 2 -13 -1 -12 Z" fill="#ffb7d5" stroke="#f28ab5" stroke-width="1"/>
+      <circle cx="-5" cy="-2" r="3.4" fill="#3f8fb5"/>
+      <circle cx="-4" cy="-3.2" r="1.3" fill="#ffffff"/>
+      <circle cx="5" cy="-2" r="3.4" fill="#3f8fb5"/>
+      <circle cx="6" cy="-3.2" r="1.3" fill="#ffffff"/>
+      <path d="M-2 4 Q 0 6 2 4" stroke="#c9628f" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      <ellipse cx="-12" cy="3" rx="3" ry="2" fill="#ffb7d5"/>
+      <ellipse cx="12" cy="3" rx="3" ry="2" fill="#ffb7d5"/>
+    </g>
+  </g>
+
+  <!-- 🦋 butterfly one (pink) -->
+  <g>
+    <animateMotion dur="22s" repeatCount="indefinite" path="M120,95 C 260,55 380,130 520,85 C 660,45 800,115 930,70 C 850,120 600,60 450,110 C 300,150 180,80 120,95"/>
+    <g>
+      <path d="M0 0 Q -15 -15 -17 -3 Q -15 6 -2 2 Z" fill="#ff8fab">
+        <animateTransform attributeName="transform" type="rotate" values="0 0 0; 38 0 0; 0 0 0" dur="0.5s" repeatCount="indefinite"/>
+      </path>
+      <path d="M0 0 Q 15 -15 17 -3 Q 15 6 2 2 Z" fill="#f07a9b">
+        <animateTransform attributeName="transform" type="rotate" values="0 0 0; -38 0 0; 0 0 0" dur="0.5s" repeatCount="indefinite"/>
+      </path>
+      <ellipse rx="1.8" ry="5.5" fill="#5b4b8a"/>
+      <path d="M-1 -5 Q -4 -9 -6 -10 M1 -5 Q 4 -9 6 -10" stroke="#5b4b8a" stroke-width="1" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- 🦋 butterfly two (lavender) -->
+  <g>
+    <animateMotion dur="27s" begin="4s" repeatCount="indefinite" path="M900,120 C 760,70 620,140 470,95 C 320,55 200,125 90,85 C 240,140 480,70 640,120 C 780,155 870,90 900,120"/>
+    <g transform="scale(0.85)">
+      <path d="M0 0 Q -15 -15 -17 -3 Q -15 6 -2 2 Z" fill="#b197fc">
+        <animateTransform attributeName="transform" type="rotate" values="0 0 0; 36 0 0; 0 0 0" dur="0.45s" repeatCount="indefinite"/>
+      </path>
+      <path d="M0 0 Q 15 -15 17 -3 Q 15 6 2 2 Z" fill="#9d80ec">
+        <animateTransform attributeName="transform" type="rotate" values="0 0 0; -36 0 0; 0 0 0" dur="0.45s" repeatCount="indefinite"/>
+      </path>
+      <ellipse rx="1.8" ry="5.5" fill="#5b4b8a"/>
+      <path d="M-1 -5 Q -4 -9 -6 -10 M1 -5 Q 4 -9 6 -10" stroke="#5b4b8a" stroke-width="1" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- 🐌 slow wandering snail -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="40 214; 950 214; 40 214" keyTimes="0;0.5;1" dur="150s" repeatCount="indefinite"/>
+    <ellipse cx="0" cy="-3" rx="16" ry="4.5" fill="#ffc09f"/>
+    <circle cx="14" cy="-9" r="4.5" fill="#ffc09f"/>
+    <path d="M12 -13 Q 10 -18 9 -19 M16 -13 Q 17 -18 18 -19" stroke="#e8a33d" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    <circle cx="9" cy="-19" r="1.4" fill="#e8a33d"/>
+    <circle cx="18" cy="-19" r="1.4" fill="#e8a33d"/>
+    <circle cx="15.5" cy="-9.5" r="0.9" fill="#5b4b8a"/>
+    <circle cx="-3" cy="-12" r="9.5" fill="#b197fc"/>
+    <path d="M-3 -12 m 6 0 a 6 6 0 1 1 -6 -6 a 3.5 3.5 0 1 1 0 3.5" stroke="#9d80ec" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
