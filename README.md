@@ -1,46 +1,46 @@
 <div align="center">
 
-<!-- ✨ Header banner -->
+<!-- banner -->
 <img src="assets/banner.svg" width="100%" alt="hannah how — AI ✦ DESIGN ✦ BUILDER"/>
 
-<!-- ⌨️ Typing animation -->
+<!-- typing animation -->
 <a href="https://github.com/c0smo-55">
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=2500&pause=800&color=B197FC&center=true&vCenter=true&width=600&lines=AI+%2B+full-stack+%2B+design+%E2%9C%A6+all+of+it;training+models+by+day+%F0%9F%A4%96;polishing+pixels+by+night+%E2%9C%A8;always+learning%2C+always+growing+%F0%9F%8C%B1;probably+baking+something+rn+%F0%9F%A7%81" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2600&pause=900&color=FF8FAB&center=true&vCenter=true&width=600&lines=AI+models+%2B+full-stack+%2B+design;interfaces+that+don't+look+like+everyone+else's;always+learning%2C+always+growing;probably+baking+something+right+now" alt="typing intro" />
 </a>
 
 <br/>
 
-<!-- 🔗 Socials -->
-<a href="https://www.linkedin.com/in/hannah-how"><img src="https://img.shields.io/badge/LinkedIn-hannah--how-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+<!-- socials -->
+<a href="https://www.linkedin.com/in/hannah-how"><img src="https://img.shields.io/badge/LinkedIn-hannah--how-FF8FAB?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
 &nbsp;
-<a href="https://www.instagram.com/hannahhow555"><img src="https://img.shields.io/badge/Instagram-hannahhow555-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/></a>
+<a href="https://www.instagram.com/hannahhow555"><img src="https://img.shields.io/badge/Instagram-hannahhow555-F07A9B?style=for-the-badge&logo=instagram&logoColor=white"/></a>
 &nbsp;
-<img src="https://img.shields.io/badge/Discord-c0smo__55-5865F2?style=for-the-badge&logo=discord&logoColor=white"/>
+<img src="https://img.shields.io/badge/Discord-c0smo__55-B197FC?style=for-the-badge&logo=discord&logoColor=white"/>
 
 <br/><br/>
 
-<img src="https://komarev.com/ghpvc/?username=c0smo-55&style=for-the-badge&color=b197fc&label=profile+visits" alt="profile views"/>
+<img src="https://komarev.com/ghpvc/?username=c0smo-55&style=for-the-badge&color=ff8fab&label=profile+visits" alt="profile views"/>
 
 </div>
 
----
+<div align="center"><img src="assets/divider.svg" width="92%" alt=""/></div>
 
-## 🫧 about me
+## ✦ about me
 
 ```yaml
 name: Hannah How
-school: Singapore Polytechnic · Applied AI & Analytics 🎓
-energy: bubbly, curious, chronically multi-passionate
+school: Singapore Polytechnic — Applied AI & Analytics
+vibe: bubbly, curious, chronically multi-passionate
 philosophy: "most students pick one lane. i refused."
-currently: putting cutting-edge AI tools into real projects
-open_to: [internships, collaborations, good conversations ☕]
+open_to: [internships, collaborations, good conversations]
 ```
 
-I build **AI models**, **full-stack apps**, and **interfaces that don't look like everyone else's**. I'm a big believer that being creative in one area makes you sharper in every other — so I do *all* the areas. 🌈
+I build **AI models**, **full-stack apps** and **interfaces that don't look like everyone else's** —
+and I believe being creative in one area makes you sharper in every other.
 
----
+<div align="center"><img src="assets/divider.svg" width="92%" alt=""/></div>
 
-## 🛠️ skills & technologies
+## ✦ skills & technologies
 
 <div align="center">
 
@@ -48,104 +48,115 @@ I build **AI models**, **full-stack apps**, and **interfaces that don't look lik
 
 <img src="https://skillicons.dev/icons?i=python,js,html,css,git,github&theme=dark"/>
 
-**AI & data** 🤖
+**ai & data**
 
-<img src="https://skillicons.dev/icons?i=py,tensorflow,sklearn,anaconda&theme=dark"/>
+<img src="https://skillicons.dev/icons?i=tensorflow,sklearn,anaconda&theme=dark"/>
 
-<img src="https://img.shields.io/badge/Time_Series_Forecasting-📈-b197fc?style=flat-square"/> <img src="https://img.shields.io/badge/Clustering_Pipelines-🧩-b197fc?style=flat-square"/> <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white"/> <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white"/>
+<img src="https://img.shields.io/badge/Time_Series_Forecasting-FF8FAB?style=flat-square&logoColor=white"/> <img src="https://img.shields.io/badge/Clustering-F7B9D4?style=flat-square"/> <img src="https://img.shields.io/badge/Pandas-FF8FAB?style=flat-square&logo=pandas&logoColor=white"/> <img src="https://img.shields.io/badge/NumPy-F7B9D4?style=flat-square&logo=numpy&logoColor=white"/> <img src="https://img.shields.io/badge/Keras-FF8FAB?style=flat-square&logo=keras&logoColor=white"/>
 
-**full-stack** 🌐
+**full-stack**
 
 <img src="https://skillicons.dev/icons?i=react,nodejs,express,mysql,postman,figma&theme=dark"/>
 
-<img src="https://img.shields.io/badge/JWT_Auth-🔐-63d68c?style=flat-square"/> <img src="https://img.shields.io/badge/MVC_Architecture-🏛️-63d68c?style=flat-square"/> <img src="https://img.shields.io/badge/REST_APIs-⚡-63d68c?style=flat-square"/>
+<img src="https://img.shields.io/badge/JWT_Auth-FF8FAB?style=flat-square&logo=jsonwebtokens&logoColor=white"/> <img src="https://img.shields.io/badge/MVC_Architecture-F7B9D4?style=flat-square"/> <img src="https://img.shields.io/badge/REST_APIs-FF8FAB?style=flat-square"/>
 
-**AI tooling & automation** ✦
+**ai tooling & automation**
 
-<img src="https://img.shields.io/badge/Claude_Code-D97757?style=flat-square&logo=claude&logoColor=white"/> <img src="https://img.shields.io/badge/Kimi_Code-000000?style=flat-square"/> <img src="https://img.shields.io/badge/Make.com-6D00CC?style=flat-square&logo=make&logoColor=white"/> <img src="https://img.shields.io/badge/Higgsfield_AI-🎬-ff8fab?style=flat-square"/> <img src="https://img.shields.io/badge/OpenClaw-🦞-ff8fab?style=flat-square"/>
+<img src="https://img.shields.io/badge/Claude_Code-F07A9B?style=flat-square&logo=claude&logoColor=white"/> <img src="https://img.shields.io/badge/Kimi_Code-B197FC?style=flat-square"/> <img src="https://img.shields.io/badge/Make.com-F07A9B?style=flat-square&logo=make&logoColor=white"/> <img src="https://img.shields.io/badge/Higgsfield-B197FC?style=flat-square"/> <img src="https://img.shields.io/badge/OpenClaw-F07A9B?style=flat-square"/>
 
 </div>
 
----
+<div align="center"><img src="assets/divider.svg" width="92%" alt=""/></div>
 
-## ✨ the fun interactive bit — click me!
+## ✦ things i've built
+
+<div align="center">
+
+<a href="https://github.com/c0smo-55/pawkeeper-app"><img src="assets/projects/pawkeeper-app.svg" width="49%" alt="pawkeeper-app"/></a>
+<a href="https://github.com/c0smo-55/fullstack-wellness-garden-app"><img src="assets/projects/fullstack-wellness-garden-app.svg" width="49%" alt="wellness-garden-app"/></a>
+
+<a href="https://github.com/c0smo-55/multilingual-sentiment-bilstm"><img src="assets/projects/multilingual-sentiment-bilstm.svg" width="49%" alt="multilingual-sentiment-bilstm"/></a>
+<a href="https://github.com/c0smo-55/emnist-cnn-letter-classifier"><img src="assets/projects/emnist-cnn-letter-classifier.svg" width="49%" alt="emnist-cnn-letter-classifier"/></a>
+
+<a href="https://github.com/c0smo-55/linkedin-job-analysis"><img src="assets/projects/linkedin-job-analysis.svg" width="49%" alt="linkedin-job-analysis"/></a>
+<a href="https://github.com/c0smo-55/aiml-customer-energy-analysis"><img src="assets/projects/aiml-customer-energy-analysis.svg" width="49%" alt="customer-energy-analysis"/></a>
+
+</div>
+
+<div align="center"><img src="assets/divider.svg" width="92%" alt=""/></div>
+
+## ✦ a little more about me — click to open
 
 <details>
-<summary>🏗️ <b>what i build</b></summary>
+<summary><b>what i obsess over</b></summary>
 <br/>
 
-- 📈 **Time series forecasting** — predicting the future, one datapoint at a time
-- 🧩 **Clustering pipelines** — finding patterns humans miss
-- 🌐 **Full-stack web apps** — Express + JWT auth + MVC, done properly
-- ⚙️ **Automation workflows** in Make.com — if I do it twice, I automate it
-- 💅 **Frontend polish** in React — because functional *and* pretty isn't optional
+- UI/UX — if users have to think about it, I redesign it
+- Apple-style minimalism — every pixel earns its place
+- Glassmorphism — blur, depth, frosted-glass magic
+- Motion-based storytelling — interfaces that feel alive
 
 </details>
 
 <details>
-<summary>🎨 <b>what i obsess over</b></summary>
+<summary><b>what i'm exploring</b></summary>
 <br/>
 
-- 🍎 **Apple-style minimalism** — every pixel earns its place
-- 🪟 **Glassmorphism** — blur, depth, and that frosted-glass magic
-- 🎬 **Motion-based storytelling** — interfaces that *feel* alive
-- ✨ **UI/UX** in general — if users have to think about it, I redesign it
+- Agentic coding with Claude Code & Kimi Code
+- AI image & video with Higgsfield
+- Taught OpenClaw to autonomously draft & send outreach emails to the right people while I sleep
+- Staying on the edge and shipping these tools into real projects
 
 </details>
 
 <details>
-<summary>🔭 <b>what i'm exploring</b></summary>
+<summary><b>outside of tech</b></summary>
 <br/>
 
-- 🤖 **Agentic coding** with Claude Code & Kimi Code
-- 🎥 **AI image & video** with Higgsfield
-- 🦞 Taught **OpenClaw** to autonomously draft & send outreach emails to the right people *while I sleep* 😴📬
-- 🌊 Staying on the edge and shipping these tools into **real projects**
+- Photography — chasing light
+- Art & baking — hands-on creativity
+- Aquascaping — tiny underwater worlds, carefully designed
+- Content creation — telling stories in every medium
 
 </details>
 
 <details>
-<summary>🌷 <b>outside of tech</b></summary>
-<br/>
-
-- 📸 **Photography** — chasing light
-- 🎨 **Art** — hands-on creativity
-- 🧁 **Baking** — my most delicious debugging sessions
-- 🐠 **Aquascaping** — tiny underwater worlds, carefully designed
-- 🎬 **Content creation** — telling stories in every medium
-
-> creativity compounds. every hobby makes the code better. 🌱
-
-</details>
-
-<details>
-<summary>📣 <b>leadership</b></summary>
+<summary><b>leadership</b></summary>
 <br/>
 
 **Publicity — SP School of Computing**
 
-🏫 Open House · 🛡️ MINDEF Sentinel · 🤝 Industry Connect · 🏕️ FOC · 🎉 FOP
+Open House · MINDEF Sentinel · Industry Connect · FOC · FOP
 
 </details>
 
----
+<div align="center"><img src="assets/divider.svg" width="92%" alt=""/></div>
 
-## 📊 my github, in numbers
+## ✦ github, in numbers
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=c0smo-55&show_icons=true&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=b197fc&icon_color=ff8fab"/>
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=c0smo-55&layout=compact&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=b197fc"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=c0smo-55&show_icons=true&hide_border=true&bg_color=00000000&title_color=ff8fab&icon_color=f7b9d4&text_color=cfc4e6&ring_color=ff8fab"/>
+  <img height="165" alt="github stats" src="https://github-readme-stats.vercel.app/api?username=c0smo-55&show_icons=true&hide_border=true&bg_color=00000000&title_color=f07a9b&icon_color=ff8fab&text_color=6b5b73&ring_color=f07a9b"/>
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=c0smo-55&layout=compact&hide_border=true&bg_color=00000000&title_color=ff8fab&text_color=cfc4e6"/>
+  <img height="165" alt="top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=c0smo-55&layout=compact&hide_border=true&bg_color=00000000&title_color=f07a9b&text_color=6b5b73"/>
+</picture>
 
 <br/><br/>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=c0smo-55&theme=tokyonight&hide_border=true&background=00000000&ring=b197fc&fire=ff8fab&currStreakLabel=b197fc"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=c0smo-55&hide_border=true&background=00000000&ring=ff8fab&fire=f07a9b&currStreakLabel=ff8fab&currStreakNum=ffffff&sideNums=ffffff&sideLabels=f7b9d4&dates=cfc4e6"/>
+  <img alt="contribution streak" src="https://streak-stats.demolab.com?user=c0smo-55&hide_border=true&background=00000000&ring=f07a9b&fire=f07a9b&currStreakLabel=f07a9b&currStreakNum=4a3a44&sideNums=4a3a44&sideLabels=f07a9b&dates=8d7583"/>
+</picture>
 
 </div>
 
----
+<div align="center"><img src="assets/divider.svg" width="92%" alt=""/></div>
 
-## 🐍 sssnake break
+## ✦ snake break
 
 *watch it munch through my commits~*
 
@@ -157,23 +168,23 @@ I build **AI models**, **full-stack apps**, and **interfaces that don't look lik
 </picture>
 </div>
 
----
+<div align="center"><img src="assets/divider.svg" width="92%" alt=""/></div>
 
 <div align="center">
 
-### 💌 let's talk!
+## ✦ let's talk
 
 open to **internships**, **collaborations** and **good conversations** —
-my inbox is friendlier than my commit history 😉
+my inbox is friendlier than my commit history
 
-<a href="https://www.linkedin.com/in/hannah-how"><img src="https://img.shields.io/badge/say_hi_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+<a href="https://www.linkedin.com/in/hannah-how"><img src="https://img.shields.io/badge/say_hi_on-LinkedIn-FF8FAB?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
 
 <br/><br/>
 
-🌷 *psst… my garden is alive — and there are pokémon in it* 🌷
+🌷 *psst… my garden is alive — look closely* 🌷
 
 <img src="assets/garden.svg" width="100%" alt="a cute animated garden with swaying flowers, butterflies, a snail, pikachu, oddish and jigglypuff"/>
 
-*✨ made with too much matcha and just the right amount of chaos ✨*
+*made with too much matcha and just the right amount of chaos*
 
 </div>
