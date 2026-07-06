@@ -5,7 +5,7 @@
 
 <!-- typing animation -->
 <a href="https://github.com/c0smo-55">
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2600&pause=900&color=FF8FAB&center=true&vCenter=true&width=600&lines=AI+models+%2B+full-stack+%2B+design;interfaces+that+don't+look+like+everyone+else's;always+learning%2C+always+growing;probably+baking+something+right+now" alt="typing intro" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2600&pause=900&color=FF8FAB&center=true&vCenter=true&width=780&lines=AI+models+%2B+full-stack+%2B+design;interfaces+that+don%27t+look+like+everyone+else%27s;always+learning%2C+always+growing;probably+baking+something+right+now" alt="typing intro" />
 </a>
 
 <br/>
