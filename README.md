@@ -138,14 +138,8 @@ Open House · MINDEF Sentinel · Industry Connect · FOC · FOP
 
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=c0smo-55&show_icons=true&hide_border=true&bg_color=00000000&title_color=ff8fab&icon_color=f7b9d4&text_color=cfc4e6&ring_color=ff8fab"/>
-  <img height="165" alt="github stats" src="https://github-readme-stats.vercel.app/api?username=c0smo-55&show_icons=true&hide_border=true&bg_color=00000000&title_color=f07a9b&icon_color=ff8fab&text_color=6b5b73&ring_color=f07a9b"/>
-</picture>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=c0smo-55&layout=compact&hide_border=true&bg_color=00000000&title_color=ff8fab&text_color=cfc4e6"/>
-  <img height="165" alt="top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=c0smo-55&layout=compact&hide_border=true&bg_color=00000000&title_color=f07a9b&text_color=6b5b73"/>
-</picture>
+<a href="https://github.com/c0smo-55"><img src="https://raw.githubusercontent.com/c0smo-55/c0smo-55/output/stats-card.svg" width="49%" alt="github stats"/></a>
+<a href="https://github.com/c0smo-55?tab=repositories"><img src="https://raw.githubusercontent.com/c0smo-55/c0smo-55/output/top-langs.svg" width="49%" alt="most used languages"/></a>
 
 <br/><br/>
 

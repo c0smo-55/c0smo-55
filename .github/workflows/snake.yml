@@ -19,6 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
       - name: generate snake svg
         uses: Platane/snk/svg-only@v3
         with:
@@ -26,6 +29,11 @@ jobs:
           outputs: |
             dist/github-contribution-grid-snake.svg?palette=github-light&color_snake=#ff8fab
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=#ff8fab
+
+      - name: build custom stat cards
+        run: python3 scripts/build_stats.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: push snake to output branch
         uses: crazy-max/ghaction-github-pages@v4
