@@ -23,6 +23,9 @@ design, UI, motion, or SVG work here:
 | `pick-ui-library` | Choosing a frontend library |
 | `prototype` | Exploring several UI directions behind a picker |
 
+Upstream is MIT licensed; the notice is vendored alongside the skills at
+`.agents/skills/LICENSE`.
+
 ### Local modification
 
 `prototype`, `pick-ui-library`, and `review-animations` ship upstream with
