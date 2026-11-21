@@ -1,0 +1,41 @@
+{
+  "fps": 30,
+  "bpm": 120,
+  "_doc": "Edit decision list. Times in seconds. 'in' = start in the original clip, 'dur' = length on the timeline, 'speed' = playback speed. trans = transition INTO this item.",
+  "items": [
+    {"type": "scene", "scene": "Opening", "dur": 8},
+
+    {"type": "shot", "clip": 1, "in": 0.2, "dur": 3.0, "vol": 0.25, "zoom": "in",
+     "fx": {"date": {"text": "07 · 11 · 2026", "place": "Main Street · Dining & Coffee"}},
+     "trans": {"type": "fade", "dur": 0.8}},
+    {"type": "shot", "clip": 2, "in": 0.0, "dur": 3.0, "vol": 0.25, "zoom": "out",
+     "trans": {"type": "slide", "dir": "from-right", "dur": 0.5}},
+    {"type": "shot", "clip": 1, "in": 6.0, "dur": 2.0, "speed": 1.5, "vol": 0.2, "zoom": "in"},
+
+    {"type": "scene", "scene": "Chapter", "props": {"number": 1, "title": "Welcome to the Party"}, "dur": 4.0,
+     "trans": {"type": "fade", "dur": 0.6}},
+
+    {"type": "shot", "clip": 3, "in": 0.0, "dur": 2.5, "vol": 0.2, "zoom": "punch", "fx": {"sparkles": true},
+     "trans": {"type": "clockWipe", "dur": 0.6}},
+    {"type": "shot", "clip": 5, "in": 0.0, "dur": 2.0, "vol": 0.2, "zoom": "in"},
+    {"type": "shot", "clip": 3, "in": 8.0, "dur": 2.0, "vol": 0.2, "zoom": "out",
+     "fx": {"kinetic": {"text": "SWEET", "sub": "seventeen", "at": 0.2}}},
+    {"type": "shot", "clip": 5, "in": 4.0, "dur": 2.0, "vol": 0.2, "zoom": "in"},
+    {"type": "shot", "clip": 7, "in": 0.0, "dur": 1.5, "vol": 0.2, "zoom": "punch"},
+    {"type": "shot", "clip": 4, "in": 0.0, "dur": 4.5, "vol": 0.25, "zoom": "in",
+     "fx": {"lower": {"title": "Jesslyn", "sub": "The Birthday Girl", "at": 0.6}},
+     "trans": {"type": "fade", "dur": 0.5}},
+    {"type": "shot", "clip": 5, "in": 22.0, "dur": 4.5, "vol": 0.35, "zoom": "in",
+     "trans": {"type": "wipe", "dir": "from-left", "dur": 0.5}},
+    {"type": "shot", "clip": 6, "in": 2.5, "dur": 2.3, "vol": 0.35, "zoom": "punch"},
+    {"type": "shot", "clip": 6, "in": 8.5, "dur": 2.5, "vol": 0.35, "zoom": "in",
+     "fx": {"kinetic": {"text": "THE GIRLS", "sub": "are here", "at": 0.3}}},
+    {"type": "shot", "clip": 8, "in": 8.5, "dur": 5.0, "vol": 0.4, "zoom": "in"},
+    {"type": "shot", "clip": 10, "in": 2.0, "dur": 4.0, "vol": 0.4, "zoom": "out",
+     "trans": {"type": "slide", "dir": "from-bottom", "dur": 0.5}},
+    {"type": "shot", "clip": 8, "in": 19.0, "dur": 2.5, "speed": 1.6, "vol": 0.3, "zoom": "in"},
+    {"type": "shot", "clip": 9, "in": 0.0, "dur": 5.0, "vol": 0.4, "fx": {"polaroid": {"at": 2.0, "caption": "Besties"}}},
+    {"type": "shot", "clip": 8, "in": 36.0, "dur": 4.0, "vol": 0.45, "zoom": "in", "fx": {"glow": true},
+     "trans": {"type": "fade", "dur": 0.6}}
+  ]
+}
