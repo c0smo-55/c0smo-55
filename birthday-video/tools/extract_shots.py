@@ -38,14 +38,23 @@ def extract(s):
     name = shot_name(s)
     mp4 = OUT / f"{name}.mp4"
     src = SRC / f"{s['clip']}.MOV"
-    length = s["dur"] * s.get("speed", 1) + 0.6
+    speed = s.get("speed", 1)
+    length = s["dur"] * speed + 0.6
     if not mp4.exists():
         a = aac_index(src)
         cmd = ["ffmpeg", "-y", "-loglevel", "error", "-threads", "2", "-ss", str(s["in"]), "-t", f"{length:.3f}",
                "-i", str(src), "-map", "0:v:0"] + (["-map", f"0:{a}"] if a else []) + [
-               "-vf", TM, "-r", "30", "-c:v", "libx264", "-preset", "fast", "-crf", "16", "-g", "15",
+               "-vf", TM + (f",minterpolate=fps=60:mi_mode=mci:mc_mode=aobmc:vsbmc=1,setpts=PTS/{speed}" if speed < 1 else ""),
+               "-af", f"atempo={max(0.5, speed)}" if speed < 1 else "anull", "-r", "30", "-c:v", "libx264", "-preset", "fast", "-crf", "16", "-g", "15",
                "-c:a", "aac", "-b:a", "192k", "-ac", "2", "-movflags", "+faststart", str(mp4)]
         subprocess.run(cmd, check=True)
+    fz = s.get("fx", {}).get("freeze")
+    if fz:
+        jpg = OUT / f"{name}_f{fz['at']:.2f}.jpg"
+        t = fz["at"] * (speed if speed >= 1 else 1)
+        if not jpg.exists():
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{t:.3f}", "-i", str(mp4),
+                            "-frames:v", "1", "-q:v", "2", str(jpg)], check=True)
     pol = s.get("fx", {}).get("polaroid")
     if pol:
         jpg = OUT / f"{name}_freeze.jpg"

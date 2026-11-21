@@ -1,41 +1,755 @@
 {
-  "fps": 30,
-  "bpm": 120,
-  "_doc": "Edit decision list. Times in seconds. 'in' = start in the original clip, 'dur' = length on the timeline, 'speed' = playback speed. trans = transition INTO this item.",
-  "items": [
-    {"type": "scene", "scene": "Opening", "dur": 8},
-
-    {"type": "shot", "clip": 1, "in": 0.2, "dur": 3.0, "vol": 0.25, "zoom": "in",
-     "fx": {"date": {"text": "07 · 11 · 2026", "place": "Main Street · Dining & Coffee"}},
-     "trans": {"type": "fade", "dur": 0.8}},
-    {"type": "shot", "clip": 2, "in": 0.0, "dur": 3.0, "vol": 0.25, "zoom": "out",
-     "trans": {"type": "slide", "dir": "from-right", "dur": 0.5}},
-    {"type": "shot", "clip": 1, "in": 6.0, "dur": 2.0, "speed": 1.5, "vol": 0.2, "zoom": "in"},
-
-    {"type": "scene", "scene": "Chapter", "props": {"number": 1, "title": "Welcome to the Party"}, "dur": 4.0,
-     "trans": {"type": "fade", "dur": 0.6}},
-
-    {"type": "shot", "clip": 3, "in": 0.0, "dur": 2.5, "vol": 0.2, "zoom": "punch", "fx": {"sparkles": true},
-     "trans": {"type": "clockWipe", "dur": 0.6}},
-    {"type": "shot", "clip": 5, "in": 0.0, "dur": 2.0, "vol": 0.2, "zoom": "in"},
-    {"type": "shot", "clip": 3, "in": 8.0, "dur": 2.0, "vol": 0.2, "zoom": "out",
-     "fx": {"kinetic": {"text": "SWEET", "sub": "seventeen", "at": 0.2}}},
-    {"type": "shot", "clip": 5, "in": 4.0, "dur": 2.0, "vol": 0.2, "zoom": "in"},
-    {"type": "shot", "clip": 7, "in": 0.0, "dur": 1.5, "vol": 0.2, "zoom": "punch"},
-    {"type": "shot", "clip": 4, "in": 0.0, "dur": 4.5, "vol": 0.25, "zoom": "in",
-     "fx": {"lower": {"title": "Jesslyn", "sub": "The Birthday Girl", "at": 0.6}},
-     "trans": {"type": "fade", "dur": 0.5}},
-    {"type": "shot", "clip": 5, "in": 22.0, "dur": 4.5, "vol": 0.35, "zoom": "in",
-     "trans": {"type": "wipe", "dir": "from-left", "dur": 0.5}},
-    {"type": "shot", "clip": 6, "in": 2.5, "dur": 2.3, "vol": 0.35, "zoom": "punch"},
-    {"type": "shot", "clip": 6, "in": 8.5, "dur": 2.5, "vol": 0.35, "zoom": "in",
-     "fx": {"kinetic": {"text": "THE GIRLS", "sub": "are here", "at": 0.3}}},
-    {"type": "shot", "clip": 8, "in": 8.5, "dur": 5.0, "vol": 0.4, "zoom": "in"},
-    {"type": "shot", "clip": 10, "in": 2.0, "dur": 4.0, "vol": 0.4, "zoom": "out",
-     "trans": {"type": "slide", "dir": "from-bottom", "dur": 0.5}},
-    {"type": "shot", "clip": 8, "in": 19.0, "dur": 2.5, "speed": 1.6, "vol": 0.3, "zoom": "in"},
-    {"type": "shot", "clip": 9, "in": 0.0, "dur": 5.0, "vol": 0.4, "fx": {"polaroid": {"at": 2.0, "caption": "Besties"}}},
-    {"type": "shot", "clip": 8, "in": 36.0, "dur": 4.0, "vol": 0.45, "zoom": "in", "fx": {"glow": true},
-     "trans": {"type": "fade", "dur": 0.6}}
-  ]
+ "fps": 30,
+ "bpm": 120,
+ "_doc": "Edit decision list. Times in seconds. 'in' = start in the original clip, 'dur' = length on the timeline, 'speed' = playback speed. trans = transition INTO this item.",
+ "items": [
+  {
+   "type": "scene",
+   "scene": "Opening",
+   "dur": 8
+  },
+  {
+   "type": "shot",
+   "clip": 1,
+   "in": 0.2,
+   "dur": 3.0,
+   "vol": 0.25,
+   "zoom": "in",
+   "fx": {
+    "date": {
+     "text": "07 · 11 · 2026",
+     "place": "Main Street · Dining & Coffee"
+    }
+   },
+   "trans": {
+    "type": "fade",
+    "dur": 0.8
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 2,
+   "in": 0.0,
+   "dur": 3.0,
+   "vol": 0.25,
+   "zoom": "out",
+   "trans": {
+    "type": "slide",
+    "dir": "from-right",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 1,
+   "in": 6.0,
+   "dur": 2.0,
+   "speed": 1.5,
+   "vol": 0.2,
+   "zoom": "in"
+  },
+  {
+   "type": "scene",
+   "scene": "Chapter",
+   "props": {
+    "number": 1,
+    "title": "Welcome to the Party"
+   },
+   "dur": 4.0,
+   "trans": {
+    "type": "fade",
+    "dur": 0.6
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 3,
+   "in": 0.0,
+   "dur": 2.5,
+   "vol": 0.2,
+   "zoom": "punch",
+   "fx": {
+    "sparkles": true
+   },
+   "trans": {
+    "type": "clockWipe",
+    "dur": 0.6
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 5,
+   "in": 0.0,
+   "dur": 2.0,
+   "vol": 0.2,
+   "zoom": "in"
+  },
+  {
+   "type": "shot",
+   "clip": 3,
+   "in": 8.0,
+   "dur": 2.0,
+   "vol": 0.2,
+   "zoom": "out",
+   "fx": {
+    "kinetic": {
+     "text": "SWEET",
+     "sub": "seventeen",
+     "at": 0.2
+    }
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 5,
+   "in": 4.0,
+   "dur": 2.0,
+   "vol": 0.2,
+   "zoom": "in"
+  },
+  {
+   "type": "shot",
+   "clip": 7,
+   "in": 0.0,
+   "dur": 1.5,
+   "vol": 0.2,
+   "zoom": "punch"
+  },
+  {
+   "type": "shot",
+   "clip": 4,
+   "in": 0.0,
+   "dur": 4.5,
+   "vol": 0.25,
+   "zoom": "in",
+   "fx": {
+    "lower": {
+     "title": "Jesslyn",
+     "sub": "The Birthday Girl",
+     "at": 0.6
+    }
+   },
+   "trans": {
+    "type": "fade",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 5,
+   "in": 22.0,
+   "dur": 4.5,
+   "vol": 0.35,
+   "zoom": "in",
+   "trans": {
+    "type": "wipe",
+    "dir": "from-left",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 6,
+   "in": 2.0,
+   "dur": 3.6,
+   "vol": 0.35,
+   "fx": {
+    "freeze": {
+     "at": 1.5,
+     "hold": 1.3,
+     "label": "The Birthday Girl",
+     "emoji": "👑",
+     "x": 1150,
+     "y": 320,
+     "r": 200,
+     "side": "left"
+    }
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 6,
+   "in": 8.5,
+   "dur": 2.5,
+   "vol": 0.35,
+   "zoom": "in",
+   "fx": {
+    "kinetic": {
+     "text": "THE GIRLS",
+     "sub": "are here",
+     "at": 0.3
+    }
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 8,
+   "in": 8.5,
+   "dur": 5.0,
+   "vol": 0.4,
+   "zoom": "in",
+   "fx": {
+    "emoji": [
+     {
+      "at": 3.0,
+      "emojis": [
+       "🤗",
+       "💙",
+       "🦋"
+      ],
+      "x": 1150,
+      "y": 600
+     }
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 10,
+   "in": 2.0,
+   "dur": 4.0,
+   "vol": 0.4,
+   "zoom": "out",
+   "trans": {
+    "type": "slide",
+    "dir": "from-bottom",
+    "dur": 0.5
+   },
+   "fx": {
+    "emoji": [
+     {
+      "at": 0.6,
+      "emojis": [
+       "😂",
+       "💙",
+       "✨"
+      ],
+      "x": 900,
+      "y": 650
+     }
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 8,
+   "in": 19.0,
+   "dur": 2.5,
+   "speed": 1.6,
+   "vol": 0.3,
+   "zoom": "in"
+  },
+  {
+   "type": "shot",
+   "clip": 9,
+   "in": 0.0,
+   "dur": 5.0,
+   "vol": 0.4,
+   "fx": {
+    "polaroid": {
+     "at": 2.0,
+     "caption": "Besties"
+    }
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 8,
+   "in": 36.0,
+   "dur": 4.0,
+   "vol": 0.45,
+   "zoom": "in",
+   "fx": {
+    "glow": true,
+    "punch": {
+     "text": "Bestie hugs",
+     "emoji": "🫶",
+     "at": 1.2,
+     "dur": 2.4
+    }
+   },
+   "trans": {
+    "type": "fade",
+    "dur": 0.6
+   }
+  },
+  {
+   "type": "scene",
+   "scene": "Chapter",
+   "props": {
+    "number": 2,
+    "title": "Speeches & Wishes"
+   },
+   "dur": 4.0,
+   "trans": {
+    "type": "fade",
+    "dur": 0.6
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 11,
+   "in": 3.5,
+   "dur": 3.0,
+   "vol": 0.6,
+   "fx": {
+    "freeze": {
+     "at": 1.5,
+     "hold": 1.3,
+     "label": "The MC",
+     "emoji": "🎤",
+     "x": 1020,
+     "y": 450,
+     "r": 170,
+     "side": "left"
+    }
+   },
+   "trans": {
+    "type": "clockWipe",
+    "dur": 0.6
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 11,
+   "in": 13.0,
+   "dur": 3.0,
+   "vol": 0.5,
+   "zoom": "in"
+  },
+  {
+   "type": "shot",
+   "clip": 11,
+   "in": 44.0,
+   "dur": 3.0,
+   "vol": 0.9,
+   "zoom": "punch",
+   "fx": {
+    "emoji": [
+     {
+      "at": 0.8,
+      "emojis": [
+       "😂",
+       "🤣",
+       "💙"
+      ],
+      "x": 960,
+      "y": 650
+     }
+    ],
+    "shake": [
+     1.2
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 11,
+   "in": 81.0,
+   "dur": 3.5,
+   "vol": 0.7,
+   "zoom": "in",
+   "fx": {
+    "punch": {
+     "text": "Speech time",
+     "emoji": "🎙️",
+     "at": 0.3,
+     "dur": 2.5
+    }
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 11,
+   "in": 112.5,
+   "dur": 7.0,
+   "vol": 1.0,
+   "zoom": "in"
+  },
+  {
+   "type": "shot",
+   "clip": 11,
+   "in": 131.0,
+   "dur": 3.5,
+   "vol": 1.0,
+   "zoom": "punch",
+   "fx": {
+    "shake": [
+     0.3
+    ],
+    "emoji": [
+     {
+      "at": 0.2,
+      "emojis": [
+       "👏",
+       "💙",
+       "🎉"
+      ],
+      "x": 960,
+      "y": 700
+     }
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 12,
+   "in": 1.0,
+   "dur": 2.5,
+   "vol": 1.0,
+   "zoom": "punch",
+   "fx": {
+    "punch": {
+     "text": "Wishes time",
+     "emoji": "💌",
+     "at": 0.2,
+     "dur": 2.2
+    }
+   },
+   "trans": {
+    "type": "wipe",
+    "dir": "from-right",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 12,
+   "in": 53.0,
+   "dur": 5.0,
+   "vol": 1.0,
+   "fx": {
+    "freeze": {
+     "at": 2.0,
+     "hold": 1.2,
+     "label": "Wish #1",
+     "emoji": "💌",
+     "x": 945,
+     "y": 435,
+     "r": 200,
+     "side": "right"
+    }
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 12,
+   "in": 88.0,
+   "dur": 5.0,
+   "vol": 1.0,
+   "zoom": "punch",
+   "fx": {
+    "emoji": [
+     {
+      "at": 2.0,
+      "emojis": [
+       "😂",
+       "💙"
+      ],
+      "x": 700,
+      "y": 600
+     }
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 12,
+   "in": 114.0,
+   "dur": 5.0,
+   "vol": 1.0,
+   "zoom": "in",
+   "trans": {
+    "type": "slide",
+    "dir": "from-left",
+    "dur": 0.4
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 12,
+   "in": 157.0,
+   "dur": 5.0,
+   "vol": 1.0,
+   "zoom": "in",
+   "fx": {
+    "glow": true,
+    "punch": {
+     "text": "Happy tears",
+     "emoji": "🥹",
+     "at": 1.0,
+     "dur": 2.6
+    }
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 12,
+   "in": 172.0,
+   "dur": 4.0,
+   "vol": 1.0,
+   "zoom": "out"
+  },
+  {
+   "type": "shot",
+   "clip": 13,
+   "in": 0.5,
+   "dur": 2.5,
+   "vol": 1.0,
+   "zoom": "punch",
+   "fx": {
+    "shake": [
+     0.2
+    ],
+    "emoji": [
+     {
+      "at": 0.1,
+      "emojis": [
+       "🎉",
+       "💙",
+       "✨"
+      ],
+      "x": 960,
+      "y": 700
+     }
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 13,
+   "in": 20.0,
+   "dur": 5.0,
+   "vol": 1.0,
+   "zoom": "in"
+  },
+  {
+   "type": "shot",
+   "clip": 13,
+   "in": 44.5,
+   "dur": 2.2,
+   "vol": 0.8,
+   "zoom": "punch"
+  },
+  {
+   "type": "scene",
+   "scene": "Chapter",
+   "props": {
+    "number": 3,
+    "title": "Make a Wish"
+   },
+   "dur": 4.0,
+   "trans": {
+    "type": "fade",
+    "dur": 0.6
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 14,
+   "in": 0.0,
+   "dur": 3.0,
+   "vol": 0.8,
+   "zoom": "in",
+   "trans": {
+    "type": "fade",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 14,
+   "in": 25.0,
+   "dur": 4.0,
+   "vol": 0.8,
+   "fx": {
+    "freeze": {
+     "at": 2.0,
+     "hold": 1.4,
+     "label": "Papa on candle duty",
+     "emoji": "🕯️",
+     "x": 1180,
+     "y": 260,
+     "r": 190,
+     "side": "left"
+    }
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 14,
+   "in": 41.0,
+   "dur": 3.5,
+   "vol": 0.9,
+   "zoom": "in",
+   "fx": {
+    "emoji": [
+     {
+      "at": 0.5,
+      "emojis": [
+       "👏",
+       "🎶",
+       "💙"
+      ],
+      "x": 960,
+      "y": 700
+     }
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 14,
+   "in": 64.5,
+   "dur": 3.0,
+   "vol": 0.9,
+   "zoom": "in",
+   "fx": {
+    "countdown": {
+     "at": 0,
+     "step": 1
+    }
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 14,
+   "in": 69.8,
+   "dur": 3.4,
+   "speed": 0.5,
+   "vol": 0.8,
+   "fx": {
+    "glow": true,
+    "punch": {
+     "text": "Make a wish",
+     "emoji": "✨",
+     "at": 0.1,
+     "dur": 1.3
+    },
+    "sfx": [
+     {
+      "name": "riser_1s",
+      "at": 1.4,
+      "vol": 0.4
+     },
+     {
+      "name": "boom_1",
+      "at": 1.4,
+      "vol": 0.7
+     },
+     {
+      "name": "glitter_2",
+      "at": 1.5,
+      "vol": 0.4
+     }
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 14,
+   "in": 71.5,
+   "dur": 5.0,
+   "vol": 1.0,
+   "zoom": "punch",
+   "fx": {
+    "shake": [
+     0.2,
+     1.5
+    ],
+    "emoji": [
+     {
+      "at": 0.1,
+      "emojis": [
+       "🎉",
+       "🥳",
+       "💙"
+      ],
+      "x": 960,
+      "y": 650
+     },
+     {
+      "at": 1.6,
+      "emojis": [
+       "🎂",
+       "✨",
+       "🦋"
+      ],
+      "x": 700,
+      "y": 700
+     }
+    ],
+    "sfx": [
+     {
+      "name": "popper",
+      "at": 0.1,
+      "vol": 0.6
+     }
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 14,
+   "in": 84.5,
+   "dur": 3.5,
+   "vol": 0.7,
+   "zoom": "in",
+   "fx": {
+    "glow": true
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 15,
+   "in": 0.0,
+   "dur": 5.0,
+   "vol": 0.6,
+   "fx": {
+    "polaroid": {
+     "at": 3.0,
+     "caption": "Family"
+    }
+   },
+   "trans": {
+    "type": "fade",
+    "dur": 0.4
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 16,
+   "in": 5.0,
+   "dur": 5.0,
+   "vol": 0.7,
+   "zoom": "in",
+   "fx": {
+    "emoji": [
+     {
+      "at": 1.0,
+      "emojis": [
+       "✌️",
+       "💙",
+       "👋"
+      ],
+      "x": 960,
+      "y": 700
+     }
+    ]
+   },
+   "trans": {
+    "type": "slide",
+    "dir": "from-right",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 17,
+   "in": 3.5,
+   "dur": 2.5,
+   "vol": 0.5,
+   "zoom": "punch"
+  }
+ ]
 }

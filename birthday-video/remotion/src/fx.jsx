@@ -10,6 +10,8 @@ import '@fontsource/playfair-display/700-italic.css';
 import '@fontsource/cormorant-garamond/400-italic.css';
 import '@fontsource/montserrat/300.css';
 import '@fontsource/montserrat/500.css';
+import '@fontsource/montserrat/800.css';
+import '@fontsource/montserrat/900.css';
 
 export const C = {
   bgInner: '#16397A',

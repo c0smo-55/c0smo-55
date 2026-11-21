@@ -8,7 +8,9 @@ import {slide} from '@remotion/transitions/slide';
 import {wipe} from '@remotion/transitions/wipe';
 import {clockWipe} from '@remotion/transitions/clock-wipe';
 import {Butterflies, C, F, Sfx, Sparkles, clamp, useFonts} from './fx';
-import {Chapter, Opening} from './scenes';
+import {Chapter, Ending, Opening} from './scenes';
+import {CheerMeter, Countdown, EmojiBurst, FreezeTag, PhotoWall, ProgressBar, Punch, shakeTransform} from './viral';
+import {Sequence, useCurrentFrame as useFrame} from 'remotion';
 import EDL from './edl.json';
 
 const FPS = EDL.fps;
@@ -84,7 +86,7 @@ const Kinetic = ({text, sub, at = 0.2, dur}) => {
         {text.split('').map((ch, i) => {
           const s = spring({frame: frame - i * 2, fps, config: {damping: 9, mass: 0.5, stiffness: 180}});
           return (
-            <span key={i} style={{fontFamily: F.sans, fontWeight: 500, fontSize: 210, letterSpacing: '0.06em',
+            <span key={i} style={{fontFamily: F.sans, fontWeight: 900, fontSize: 230, letterSpacing: '0.06em',
               color: C.white, display: 'inline-block', whiteSpace: 'pre',
               transform: `translateY(${(1 - s) * -160}px) scale(${0.6 + 0.4 * s})`, opacity: Math.min(1, s * 1.5),
               textShadow: `0 0 40px ${C.royal}, 0 6px 30px rgba(0,0,0,0.6)`, WebkitTextStroke: `2px ${C.ice}`}}>
@@ -125,10 +127,11 @@ const zoomFor = (mode, frame, total, fps) => {
   return 1;
 };
 
-const Video = ({s, name}) => (
-  <OffthreadVideo src={staticFile(`shots/${name}.mp4`)} playbackRate={s.speed || 1} volume={s.vol ?? 0.3}
-    style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+const Video = ({s, name, startFrom = 0}) => (
+  <OffthreadVideo src={staticFile(`shots/${name}.mp4`)} playbackRate={(s.speed || 1) >= 1 ? (s.speed || 1) : 1}
+    volume={s.vol ?? 0.3} startFrom={startFrom} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
 );
+export const stillName = (s, at) => `shots/${shotName(s)}_f${at.toFixed(2)}.jpg`;
 
 const PolaroidShot = ({s, name}) => {
   const frame = useCurrentFrame();
@@ -173,12 +176,36 @@ const Shot = ({s}) => {
   const total = fr(s.dur);
   const fx = s.fx || {};
   if (fx.polaroid) return <PolaroidShot s={s} name={name} />;
+  const fz = fx.freeze;
+  const fzA = fz ? fr(fz.at) : 0;
+  const fzH = fz ? fr(fz.hold || 1.3) : 0;
+  const shake = (fx.shake || []).map((a) => shakeTransform(frame, fr(a))).join(' ');
+  const zoom = `scale(${zoomFor(s.zoom, frame, total, fps)}) ${shake}`;
   return (
     <AbsoluteFill style={{backgroundColor: 'black'}}>
-      <AbsoluteFill style={{transform: `scale(${zoomFor(s.zoom, frame, total, fps)})`}}>
-        <Video s={s} name={name} />
-      </AbsoluteFill>
+      {!fz && (
+        <AbsoluteFill style={{transform: zoom}}>
+          <Video s={s} name={name} />
+        </AbsoluteFill>
+      )}
+      {fz && (
+        <>
+          <Sequence durationInFrames={fzA} layout="none">
+            <AbsoluteFill style={{transform: zoom}}><Video s={s} name={name} /></AbsoluteFill>
+          </Sequence>
+          <Sequence from={fzA} durationInFrames={fzH} layout="none">
+            <FreezeTag img={staticFile(stillName(s, fz.at))} {...fz} />
+          </Sequence>
+          <Sequence from={fzA + fzH} layout="none">
+            <AbsoluteFill style={{transform: zoom}}><Video s={s} name={name} startFrom={Math.round(fzA * (s.speed || 1))} /></AbsoluteFill>
+          </Sequence>
+        </>
+      )}
       <Vignette />
+      {(fx.emoji || []).map((e, k) => <EmojiBurst key={k} seed={`${name}-${k}`} {...e} at={fr(e.at)} />)}
+      {fx.punch && <Punch {...fx.punch} at={fr(fx.punch.at)} />}
+      {fx.countdown && <Countdown at={fr(fx.countdown.at)} step={fr(fx.countdown.step || 1)} />}
+      {(fx.sfx || []).map((x, k) => <Sfx key={k} name={x.name} at={fr(x.at)} volume={x.vol ?? 0.5} />)}
       {fx.glow && <Glow />}
       {fx.sparkles && <Sparkles start={4} points={[[420, 300, 0.9, 0], [1500, 260, 1.1, 8], [1380, 780, 0.7, 18], [560, 820, 0.6, 26]]} />}
       {fx.sparkles && <Sfx name="glitter_3" at={6} volume={0.22} />}
@@ -220,11 +247,41 @@ export const Main = () => {
       <TransitionSeries.Sequence key={`s${i}`} durationInFrames={fr(it.dur)}>
         {it.type === 'scene' && it.scene === 'Opening' && <Opening name="Jesslyn" />}
         {it.type === 'scene' && it.scene === 'Chapter' && <Chapter {...it.props} />}
+        {it.type === 'scene' && it.scene === 'Ending' && <Ending name="Jesslyn" {...it.props} />}
+        {it.type === 'scene' && it.scene === 'CheerMeter' && <CheerMeter {...it.props} />}
+        {it.type === 'scene' && it.scene === 'PhotoWall' && <PhotoWall {...it.props} />}
         {it.type === 'shot' && <Shot s={it} />}
         {whoosh && it.trans.type !== 'fade' && <Sfx name={whoosh} at={tHalf} volume={0.35} />}
         {whoosh && it.trans.type === 'fade' && it.type === 'shot' && <Sfx name="whoosh_5" at={tHalf} volume={0.18} />}
       </TransitionSeries.Sequence>,
     );
   });
-  return <AbsoluteFill style={{backgroundColor: 'black'}}><TransitionSeries>{children}</TransitionSeries></AbsoluteFill>;
+  return (
+    <AbsoluteFill style={{backgroundColor: 'black'}}>
+      <TransitionSeries>{children}</TransitionSeries>
+      <Progress />
+    </AbsoluteFill>
+  );
+};
+
+// Start frame of every item on the final timeline (transitions overlap).
+export const starts = () => {
+  let t = 0;
+  return EDL.items.map((it, i) => {
+    if (i && it.trans) t -= fr(it.trans.dur);
+    const st = t;
+    t += fr(it.dur);
+    return st;
+  });
+};
+
+const Progress = () => {
+  const frame = useFrame();
+  const st = starts();
+  const total = timelineFrames();
+  const chapters = EDL.items.map((it, i) => ({it, at: st[i]})).filter((c) => c.it.scene === 'Chapter');
+  const firstCh = chapters.length ? chapters[0].at : 0;
+  const cur = EDL.items[st.filter((x) => x <= frame).length - 1];
+  if (frame < firstCh || !cur || cur.type !== 'shot') return null;
+  return <ProgressBar frame={frame} total={total} chapters={chapters} />;
 };
