@@ -77,6 +77,46 @@ Jesslyn = the girl in the long silver/blue satin dress. Theme: blue/teal/lilac, 
 - 9–15 friends on phones joining the game
 - 21 Kahoot screen with game PIN
 
+## 18 Kahoot quiz (10:00) — NOTE: sheet labels for clips >300s are doubled; times below are REAL seconds
+- 4–6 quiz title on the TV, MC with mic beside it
+- 16 friend close-up smiling to camera
+- 20–22 room playing on phones, wide
+- 32 loud reaction (real 29.5–33.5 loud cluster)
+- 60–62 room close, friends reacting (real 78–82 crowd close)
+- 136–140 **Jesslyn laughing at the scoreboard by the backdrop** — great reaction
+- 148–150 room cheering wide; 250–252 loud (real 250.5–253)
+- 480–500 Jesslyn standing watching the screen, MC leading
+- 520–530 room close reactions
+- 548–556 friends walking up to the front (winners called)
+- **592–598 top winners standing with Jesslyn in front of the podium screen** → "Quiz champions 🏆"
+
+## 21 Dinner begins (0:44)
+- 0–4 food on the table close; 5 friend's funny surprised face to camera — **freeze "caught eating 😳"**
+- 8–15 long table of friends eating, wide; 17–19 friend smiling holding candle
+- 21–24 Jesslyn + friend photo at backdrop
+- 40–43 candle + menu card close (nice B-roll)
+
+## 22 Group photos (1:02)
+- 0–3 big group of friends at backdrop
+- 16–19 friends hugging/laughing
+- 24–31 Jesslyn (cream top, back to cam) directing a big group photo
+- **33–37 friends squealing/excited**, 40 arms up — energetic
+
+## 25 More photos (1:08)
+- 13–31 huge group photo at backdrop, everyone doing peace signs/poses (16–22 best, 28–30)
+- 38–42 pointing/cheering
+
+## 19 Food (10s) — 0–3 pasta + chicken plates, 5–9 salad/egg toast table — food B-roll
+## 20 Drinks (7s) — 0–6 tray of colourful drinks — **great B-roll, use 0–3**
+## 23 Photos (32s) — 0–8 big group at backdrop, 8–10 friends laughing close; 29–31 jumping/arms up
+## 24 Photo (6s) — 2–5 Jesslyn + friend cheek-kiss pose at name sign — **polaroid "BFF" at ~3.5**
+
+## 26 Second game rec 1 (2:41) — "guess the person on the screen" style, MC with mic + contestants at backdrop
+- 0–11 contestants line up; 12–24 contestants crouch/sit on the floor (game action) — loud 13.5–16.5
+- 28–33 MC animated, pointing, crowd loud (29.5, 32)
+- 41–46 loud reactions
+- 48–143 contestants standing answering, slower — use sparingly (126–131 moving)
+
 ## 03 Decorations
 - 0–2.5 backdrop "Jesslyn · Sweet 17th" close — **hero shot**
 - 6–7.5 name again with butterfly; 8–10 big blue "17" balloons
