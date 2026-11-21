@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {
-  Background, Bokeh, C, Confetti, F, FadeOut, Photo, ShimmerScript, Sparkles, SpringWords, clamp, useFonts,
+  Background, Bokeh, Butterflies, C, Confetti, F, FadeOut, Photo, Sfx, ShimmerScript, Sparkles, SpringWords, clamp, useFonts,
 } from './fx';
 
 const Center = ({children, style}) => (
@@ -47,12 +47,19 @@ export const Opening = ({name}) => {
           <GrowLine start={88} />
           <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 54, color: C.white, opacity: sub,
             transform: `translateY(${(1 - sub) * 20}px)`}}>
-            Happy Birthday
+            Sweet Seventeen
           </div>
         </Center>
+        <Butterflies count={6} seed="open" start={20} />
         <Sparkles start={70} points={[[560, 420, 0.9, 0], [1390, 380, 1.1, 10], [1460, 640, 0.7, 22], [470, 650, 0.6, 30], [960, 300, 0.8, 40]]} />
         <Confetti start={78} seed="open" origin={[960, 560]} />
       </FadeOut>
+      <Sfx name="riser_1s" at={32} volume={0.35} />
+      <Sfx name="boom_1" at={32} volume={0.7} />
+      <Sfx name="name_reveal" at={33} volume={0.5} />
+      <Sfx name="glitter_1" at={70} volume={0.25} />
+      <Sfx name="popper" at={78} volume={0.65} />
+      <Sfx name="chime_up" at={110} volume={0.35} />
     </AbsoluteFill>
   );
 };
@@ -80,6 +87,9 @@ export const Chapter = ({number, title}) => {
         </Center>
         <Sparkles start={30} points={[[520, 470, 0.7, 0], [1420, 560, 0.8, 12]]} />
       </FadeOut>
+      <Sfx name="whoosh_4" at={4} volume={0.45} />
+      <Sfx name="chime_down" at={17} volume={0.35} />
+      <Sfx name="glitter_2" at={32} volume={0.2} />
     </AbsoluteFill>
   );
 };
@@ -120,6 +130,10 @@ export const Polaroid = ({src, caption}) => {
       </Center>
       <Sparkles start={snap + 20} points={[[1450, 230, 0.9, 0], [430, 860, 0.7, 10]]} />
       <AbsoluteFill style={{backgroundColor: 'white', opacity: flash}} />
+      <Sfx name="shutter_1" at={snap - 1} volume={0.8} />
+      <Sfx name="whoosh_2" at={snap + 9} volume={0.35} />
+      <Sfx name="chime_single" at={snap + 20} volume={0.35} />
+      <Sfx name="glitter_3" at={snap + 22} volume={0.2} />
     </AbsoluteFill>
   );
 };
@@ -133,9 +147,10 @@ export const Ending = ({name, message}) => {
       <FadeOut at={270} len={30}>
         <Background />
         <Bokeh seed="end" />
+        <Butterflies count={5} seed="end" start={0} />
         <Confetti start={0} mode="rain" count={120} seed="end" />
         <Center>
-          <SpringWords text="Happy Birthday" start={10} stagger={8}
+          <SpringWords text="Happy Sweet 17th" start={10} stagger={8}
             style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 84, color: C.ice}} />
           <ShimmerScript text={name} start={35} size={320} duration={50} />
           <GrowLine start={100} width={600} />
@@ -147,6 +162,11 @@ export const Ending = ({name, message}) => {
         <Sparkles start={80} points={[[520, 400, 1, 0], [1400, 360, 1.1, 14], [1500, 700, 0.7, 26], [430, 700, 0.8, 36]]} />
         <Confetti start={85} seed="end-burst" origin={[960, 600]} count={140} />
       </FadeOut>
+      <Sfx name="chime_up" at={10} volume={0.3} />
+      <Sfx name="boom_2" at={35} volume={0.6} />
+      <Sfx name="name_reveal_end" at={36} volume={0.45} />
+      <Sfx name="popper" at={85} volume={0.6} />
+      <Sfx name="glitter_2" at={122} volume={0.22} />
     </AbsoluteFill>
   );
 };

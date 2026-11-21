@@ -187,3 +187,63 @@ export const FadeOut = ({children, at, len = 15}) => {
 };
 
 export const Photo = ({src, style}) => <Img src={staticFile(src)} style={{width: '100%', height: '100%', objectFit: 'cover', ...style}} />;
+
+// Sound effect placed so its sync point (from sfx/sync.json) lands exactly on frame `at`.
+import {Audio, Sequence} from 'remotion';
+import SYNC from '../public/sfx/sync.json';
+export const Sfx = ({name, at, volume = 0.6}) => {
+  const {fps} = useVideoConfig();
+  const from = Math.round(at - (SYNC[name] || 0) * fps);
+  const trim = Math.max(0, -from);
+  return (
+    <Sequence from={Math.max(0, from)} layout="none">
+      <Audio src={staticFile(`sfx/${name}.wav`)} startFrom={trim} volume={volume} />
+    </Sequence>
+  );
+};
+
+// Butterflies (her party theme): flapping wings, drifting along gentle curves.
+const Wing = ({flip, fill}) => (
+  <g transform={flip ? 'scale(-1,1)' : undefined}>
+    <path d="M0,0 C18,-46 70,-58 78,-26 C84,-2 46,10 0,4Z" fill={fill} opacity="0.92" />
+    <path d="M0,4 C34,10 62,26 50,52 C38,72 10,44 0,10Z" fill={fill} opacity="0.75" />
+    <path d="M6,-4 C26,-34 58,-42 66,-24" stroke="#ffffff" strokeOpacity="0.55" strokeWidth="2" fill="none" />
+  </g>
+);
+export const Butterflies = ({count = 5, seed = 'bf', start = 0}) => {
+  const frame = useCurrentFrame();
+  const {width, height} = useVideoConfig();
+  const fills = ['url(#bfA)', 'url(#bfB)', 'url(#bfC)'];
+  return (
+    <AbsoluteFill style={{pointerEvents: 'none'}}>
+      <svg width={width} height={height} style={{position: 'absolute'}}>
+        <defs>
+          <linearGradient id="bfA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#B8A4FF" /><stop offset="1" stopColor="#5B7CFA" /></linearGradient>
+          <linearGradient id="bfB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#9FE3FF" /><stop offset="1" stopColor="#3B7DD8" /></linearGradient>
+          <linearGradient id="bfC" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#E3D4FF" /><stop offset="1" stopColor="#8E6CF0" /></linearGradient>
+        </defs>
+        {new Array(count).fill(0).map((_, i) => {
+          const r = (k) => random(`${seed}-${i}-${k}`);
+          const t = frame - start - r('d') * 40;
+          if (t < 0) return null;
+          const dir = r('dir') > 0.5 ? 1 : -1;
+          const speed = 2.2 + r('v') * 2.5;
+          const x0 = dir > 0 ? -120 - r('x') * 200 : width + 120 + r('x') * 200;
+          const x = x0 + dir * t * speed;
+          const y = height * (0.15 + r('y') * 0.7) + Math.sin(t / (14 + r('w') * 10)) * 60 - t * (0.4 + r('u') * 0.8);
+          const flap = 0.25 + 0.75 * Math.abs(Math.cos(t / (2.6 + r('f') * 1.2)));
+          const s = 0.45 + r('s') * 0.55;
+          const tilt = Math.cos(t / (14 + r('w') * 10)) * 12 - dir * 10;
+          return (
+            <g key={i} transform={`translate(${x},${y}) rotate(${tilt}) scale(${s * (dir > 0 ? 1 : -1)},${s})`}
+              style={{filter: 'drop-shadow(0 0 10px rgba(160,190,255,0.7))'}}>
+              <g transform={`scale(${flap},1)`}><Wing fill={fills[i % 3]} /></g>
+              <g transform={`scale(${flap},1)`}><Wing flip fill={fills[(i + 1) % 3]} /></g>
+              <ellipse cx="0" cy="8" rx="3.5" ry="20" fill="#1B2A55" />
+            </g>
+          );
+        })}
+      </svg>
+    </AbsoluteFill>
+  );
+};
