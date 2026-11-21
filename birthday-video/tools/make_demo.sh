@@ -8,8 +8,10 @@ cd "$(dirname "$0")/.."
 SERIF=/usr/share/fonts/truetype/crosextra/Caladea-Italic.ttf
 LIGHT=/usr/share/fonts/opentype/inter/InterDisplay-Light.otf
 MED=/usr/share/fonts/opentype/inter/Inter-Medium.otf
-GOLD=0xC9A96E
-CREAM=0xF5EFE6
+# Blue theme (Jesslyn's favourite colour)
+BG=0x0A1630
+ACCENT=0x8EC5FF
+TEXT=0xF2F7FF
 W=build/demo
 mkdir -p "$W"
 ENC=(-c:v libx264 -preset medium -crf 18 -pix_fmt yuv420p -r 30 -an)
@@ -17,14 +19,26 @@ ENC=(-c:v libx264 -preset medium -crf 18 -pix_fmt yuv420p -r 30 -an)
 # Fade helper: alpha that fades in from $1 over $2 seconds and out at the end ($3 = clip length).
 fade_alpha() { echo "if(lt(t,$1),0,if(lt(t,$1+$2),(t-$1)/$2,if(gt(t,$3-0.6),max(0,($3-t)/0.6),1)))"; }
 
+# ---------- 0. Opening title ----------
+printf 'C E L E B R A T I N G' > "$W/t1.txt"; printf 'Jesslyn' > "$W/t2.txt"; printf 'A BIRTHDAY TO REMEMBER' > "$W/t3.txt"
+ffmpeg -y -loglevel error -f lavfi -i "color=c=$BG:s=1920x1080:d=6:r=30" \
+  -f lavfi -i "color=c=$ACCENT:s=400x2:d=6:r=30" -filter_complex "
+[0:v]vignette=PI/4,
+drawtext=fontfile=$LIGHT:textfile=$W/t1.txt:fontsize=34:fontcolor=$ACCENT:x=(w-tw)/2:y=360:alpha='$(fade_alpha 0.3 1.0 6)',
+drawtext=fontfile=$SERIF:textfile=$W/t2.txt:fontsize=170:fontcolor=$TEXT:x=(w-tw)/2:y=410:alpha='$(fade_alpha 0.6 1.2 6)',
+drawtext=fontfile=$LIGHT:textfile=$W/t3.txt:fontsize=30:fontcolor=$TEXT@0.75:x=(w-tw)/2:y=625:alpha='$(fade_alpha 1.2 1.0 6)'[bg];
+[1:v]format=rgba,fade=in:st=0.8:d=0.8:alpha=1,fade=out:st=5.4:d=0.6:alpha=1[line];
+[bg][line]overlay=x=760:y=585:shortest=1
+" "${ENC[@]}" "$W/s0_title.mp4"
+
 # ---------- 1. Chapter card ----------
 printf 'CHAPTER ONE' > "$W/ch_small.txt"
 printf 'The Celebration Begins' > "$W/ch_title.txt"
-ffmpeg -y -loglevel error -f lavfi -i "color=c=0x14110f:s=1920x1080:d=3.5:r=30" \
-  -f lavfi -i "color=c=$GOLD:s=400x2:d=3.5:r=30" -filter_complex "
+ffmpeg -y -loglevel error -f lavfi -i "color=c=$BG:s=1920x1080:d=3.5:r=30" \
+  -f lavfi -i "color=c=$ACCENT:s=400x2:d=3.5:r=30" -filter_complex "
 [0:v]vignette=PI/4,
-drawtext=fontfile=$LIGHT:textfile=$W/ch_small.txt:fontsize=30:fontcolor=$GOLD:x=(w-tw)/2:y=430:alpha='$(fade_alpha 0.2 0.6 3.5)',
-drawtext=fontfile=$SERIF:textfile=$W/ch_title.txt:fontsize=100:fontcolor=$CREAM:x=(w-tw)/2:y='490+25*max(0,1-(t-0.5)/0.7)':alpha='$(fade_alpha 0.5 0.7 3.5)'[bg];
+drawtext=fontfile=$LIGHT:textfile=$W/ch_small.txt:fontsize=30:fontcolor=$ACCENT:x=(w-tw)/2:y=430:alpha='$(fade_alpha 0.2 0.6 3.5)',
+drawtext=fontfile=$SERIF:textfile=$W/ch_title.txt:fontsize=100:fontcolor=$TEXT:x=(w-tw)/2:y='490+25*max(0,1-(t-0.5)/0.7)':alpha='$(fade_alpha 0.5 0.7 3.5)'[bg];
 [1:v]format=rgba,fade=in:st=0.8:d=0.6:alpha=1,fade=out:st=2.9:d=0.6:alpha=1[line];
 [bg][line]overlay=x=760:y=630:shortest=1
 " "${ENC[@]}" "$W/s1_chapter.mp4"
@@ -41,35 +55,35 @@ placeholder() {
 eq=saturation=1.1:gamma=1.03,
 drawtext=fontfile=$LIGHT:textfile=$W/$1_big.txt:fontsize=150:fontcolor=white@0.22:x=(w-tw)/2:y=(h-th)/2-40,
 drawtext=fontfile=$LIGHT:textfile=$W/$1_small.txt:fontsize=34:fontcolor=white@0.35:x=(w-tw)/2:y=(h/2)+70[bg];
-[1:v]format=rgba,colorchannelmixer=aa=0.5,drawbox=x=0:y=0:w=6:h=120:color=$GOLD:t=fill[box];
+[1:v]format=rgba,colorchannelmixer=aa=0.5,drawbox=x=0:y=0:w=6:h=120:color=$ACCENT:t=fill[box];
 [bg][box]overlay=x='$(slide 0.6)':y=850:shortest=1,
-drawtext=fontfile=$MED:textfile=$W/$1_l1.txt:fontsize=40:fontcolor=$CREAM:x='40+$(slide 0.7)':y=872,
-drawtext=fontfile=$LIGHT:textfile=$W/$1_l2.txt:fontsize=28:fontcolor=$GOLD:x='40+$(slide 0.8)':y=926
+drawtext=fontfile=$MED:textfile=$W/$1_l1.txt:fontsize=40:fontcolor=$TEXT:x='40+$(slide 0.7)':y=872,
+drawtext=fontfile=$LIGHT:textfile=$W/$1_l2.txt:fontsize=28:fontcolor=$ACCENT:x='40+$(slide 0.8)':y=926
 $7" "${ENC[@]}" "$W/$1.mp4"
 }
-placeholder s2_clip01 0x2B3A55 0x7A5C8E 01 "Arrival" "The restaurant" ""
+placeholder s2_clip01 0x0F2A5C 0x3B7DD8 01 "Arrival" "The restaurant" ""
 # Camera-flash effect at 1.8s for photo-taking moments.
-placeholder s3_clip05 0x8E5C6A 0xD9A066 05 "Friends Arrive" "The party fills up" \
+placeholder s3_clip05 0x1C4E8A 0x6FB1E8 05 "Friends Arrive" "The party fills up" \
   ",eq=brightness='if(between(t,1.8,2.15),0.75*(1-(t-1.8)/0.35),0)':eval=frame"
-# Warm light-leak glow for emotional moments.
-placeholder s4_clip14 0x3D2B4F 0x8A5A6A 14 "Make a Wish" "Happy Birthday song" \
-  "[base];gradients=s=1920x1080:c0=0xFF9A4D:c1=0x000000:x0=1700:y0=100:x1=900:y1=700:speed=0.03:d=4:r=30[leak];[base][leak]blend=all_mode=screen:all_opacity=0.35"
+# Soft blue light glow for emotional moments.
+placeholder s4_clip14 0x13224D 0x4A6FD1 14 "Make a Wish" "Happy Birthday song" \
+  "[base];gradients=s=1920x1080:c0=0x7FC4FF:c1=0x000000:x0=1700:y0=100:x1=900:y1=700:speed=0.03:d=4:r=30[leak];[base][leak]blend=all_mode=screen:all_opacity=0.35"
 
 # ---------- 3. End card ----------
 printf 'Happy Birthday,' > "$W/end1.txt"; printf 'Jesslyn' > "$W/end2.txt"
 printf 'WITH LOVE, PAPA & MAMA' > "$W/end3.txt"
-ffmpeg -y -loglevel error -f lavfi -i "color=c=0x14110f:s=1920x1080:d=5:r=30" -vf "
+ffmpeg -y -loglevel error -f lavfi -i "color=c=$BG:s=1920x1080:d=5:r=30" -vf "
 vignette=PI/4,
-drawtext=fontfile=$LIGHT:textfile=$W/end1.txt:fontsize=52:fontcolor=$GOLD:x=(w-tw)/2:y=360:alpha='$(fade_alpha 0.3 0.8 5)',
-drawtext=fontfile=$SERIF:textfile=$W/end2.txt:fontsize=180:fontcolor=$CREAM:x=(w-tw)/2:y=430:alpha='$(fade_alpha 0.8 1.0 5)',
-drawtext=fontfile=$LIGHT:textfile=$W/end3.txt:fontsize=30:fontcolor=$CREAM@0.75:x=(w-tw)/2:y=680:alpha='$(fade_alpha 1.6 0.8 5)'
+drawtext=fontfile=$LIGHT:textfile=$W/end1.txt:fontsize=52:fontcolor=$ACCENT:x=(w-tw)/2:y=360:alpha='$(fade_alpha 0.3 0.8 5)',
+drawtext=fontfile=$SERIF:textfile=$W/end2.txt:fontsize=180:fontcolor=$TEXT:x=(w-tw)/2:y=430:alpha='$(fade_alpha 0.8 1.0 5)',
+drawtext=fontfile=$LIGHT:textfile=$W/end3.txt:fontsize=30:fontcolor=$TEXT@0.75:x=(w-tw)/2:y=680:alpha='$(fade_alpha 1.6 0.8 5)'
 " "${ENC[@]}" "$W/s5_end.mp4"
 
 # ---------- 4. Join with transitions + sound effects ----------
 # Lengths: title 6, chapter 3.5, clips 4 each, end 5.
 # Offsets: fadeblack@5 (1.0), circleopen@7.7 (0.8), smoothleft@11.1 (0.6), zoomin@14.4 (0.7), fade@17.4 (1.0)
 ffmpeg -y -loglevel error \
-  -i title_card_sample.mp4 -i "$W/s1_chapter.mp4" -i "$W/s2_clip01.mp4" -i "$W/s3_clip05.mp4" \
+  -i "$W/s0_title.mp4" -i "$W/s1_chapter.mp4" -i "$W/s2_clip01.mp4" -i "$W/s3_clip05.mp4" \
   -i "$W/s4_clip14.mp4" -i "$W/s5_end.mp4" -filter_complex "
 [0:v]fps=30,settb=AVTB,format=yuv420p[v0];[1:v]fps=30,settb=AVTB,format=yuv420p[v1];
 [2:v]fps=30,settb=AVTB,format=yuv420p[v2];[3:v]fps=30,settb=AVTB,format=yuv420p[v3];
