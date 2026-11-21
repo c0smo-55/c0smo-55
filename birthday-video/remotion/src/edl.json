@@ -750,6 +750,807 @@
    "dur": 2.5,
    "vol": 0.5,
    "zoom": "punch"
+  },
+  {
+   "type": "scene",
+   "scene": "Chapter",
+   "props": {
+    "number": 4,
+    "title": "Quiz Night & Dinner"
+   },
+   "dur": 4.0,
+   "trans": {
+    "type": "fade",
+    "dur": 0.6
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 17,
+   "in": 9.0,
+   "dur": 3.0,
+   "vol": 0.6,
+   "zoom": "punch",
+   "fx": {
+    "punch": {
+     "text": "Quiz time",
+     "emoji": "🧠",
+     "at": 0.2,
+     "dur": 2.6
+    }
+   },
+   "trans": {
+    "type": "clockWipe",
+    "dur": 0.6
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 18,
+   "in": 4.0,
+   "dur": 2.5,
+   "vol": 0.7,
+   "zoom": "in"
+  },
+  {
+   "type": "shot",
+   "clip": 18,
+   "in": 20.0,
+   "dur": 2.5,
+   "speed": 1.5,
+   "vol": 0.5,
+   "zoom": "in"
+  },
+  {
+   "type": "shot",
+   "clip": 18,
+   "in": 29.5,
+   "dur": 3.0,
+   "vol": 1.0,
+   "zoom": "punch",
+   "fx": {
+    "shake": [
+     0.4
+    ],
+    "emoji": [
+     {
+      "at": 0.3,
+      "emojis": [
+       "😱",
+       "🤯",
+       "💙"
+      ],
+      "x": 960,
+      "y": 650
+     }
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 18,
+   "in": 78.0,
+   "dur": 3.0,
+   "vol": 0.9,
+   "zoom": "in"
+  },
+  {
+   "type": "shot",
+   "clip": 18,
+   "in": 135.0,
+   "dur": 4.0,
+   "vol": 0.8,
+   "fx": {
+    "freeze": {
+     "at": 2.0,
+     "hold": 1.3,
+     "label": "Checking the scores",
+     "emoji": "👀",
+     "x": 1480,
+     "y": 520,
+     "r": 190,
+     "side": "left"
+    }
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 18,
+   "in": 148.0,
+   "dur": 2.5,
+   "vol": 0.9,
+   "zoom": "out"
+  },
+  {
+   "type": "shot",
+   "clip": 18,
+   "in": 250.0,
+   "dur": 3.0,
+   "vol": 1.0,
+   "zoom": "punch",
+   "fx": {
+    "shake": [
+     0.5
+    ],
+    "emoji": [
+     {
+      "at": 0.4,
+      "emojis": [
+       "🤯",
+       "😂",
+       "🔥"
+      ],
+      "x": 960,
+      "y": 650
+     }
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 18,
+   "in": 520.0,
+   "dur": 3.0,
+   "vol": 0.9,
+   "zoom": "in",
+   "trans": {
+    "type": "slide",
+    "dir": "from-right",
+    "dur": 0.4
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 18,
+   "in": 548.0,
+   "dur": 3.0,
+   "speed": 1.5,
+   "vol": 0.6,
+   "zoom": "in"
+  },
+  {
+   "type": "shot",
+   "clip": 18,
+   "in": 592.0,
+   "dur": 5.0,
+   "vol": 0.9,
+   "zoom": "in",
+   "fx": {
+    "punch": {
+     "text": "Quiz champions",
+     "emoji": "🏆",
+     "at": 0.4,
+     "dur": 3.0,
+     "y": 80
+    },
+    "emoji": [
+     {
+      "at": 0.6,
+      "emojis": [
+       "🏆",
+       "🥇",
+       "✨",
+       "💙"
+      ],
+      "x": 960,
+      "y": 800
+     }
+    ],
+    "sfx": [
+     {
+      "name": "chime_up",
+      "at": 0.5,
+      "vol": 0.35
+     },
+     {
+      "name": "popper",
+      "at": 0.6,
+      "vol": 0.4
+     }
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 20,
+   "in": 0.0,
+   "dur": 2.5,
+   "vol": 0.3,
+   "zoom": "in",
+   "fx": {
+    "punch": {
+     "text": "Dinner time",
+     "emoji": "🍽️",
+     "at": 0.2,
+     "dur": 2.2
+    }
+   },
+   "trans": {
+    "type": "wipe",
+    "dir": "from-top",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 19,
+   "in": 0.0,
+   "dur": 2.0,
+   "vol": 0.3,
+   "zoom": "in"
+  },
+  {
+   "type": "shot",
+   "clip": 19,
+   "in": 5.0,
+   "dur": 2.0,
+   "vol": 0.3,
+   "zoom": "out"
+  },
+  {
+   "type": "shot",
+   "clip": 21,
+   "in": 3.5,
+   "dur": 4.0,
+   "vol": 0.6,
+   "fx": {
+    "freeze": {
+     "at": 1.7,
+     "hold": 1.3,
+     "label": "Caught mid-bite",
+     "emoji": "😳",
+     "x": 210,
+     "y": 660,
+     "r": 170,
+     "side": "right"
+    }
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 21,
+   "in": 8.0,
+   "dur": 3.0,
+   "vol": 0.5,
+   "zoom": "in"
+  },
+  {
+   "type": "shot",
+   "clip": 21,
+   "in": 40.0,
+   "dur": 2.5,
+   "vol": 0.3,
+   "zoom": "in",
+   "fx": {
+    "glow": true
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 22,
+   "in": 0.0,
+   "dur": 3.0,
+   "vol": 0.7,
+   "zoom": "in",
+   "trans": {
+    "type": "slide",
+    "dir": "from-bottom",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 23,
+   "in": 8.0,
+   "dur": 2.5,
+   "vol": 0.8,
+   "zoom": "punch"
+  },
+  {
+   "type": "shot",
+   "clip": 24,
+   "in": 0.0,
+   "dur": 5.0,
+   "vol": 0.6,
+   "fx": {
+    "polaroid": {
+     "at": 3.5,
+     "caption": "BFF"
+    }
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 25,
+   "in": 15.0,
+   "dur": 5.0,
+   "vol": 0.8,
+   "zoom": "in",
+   "fx": {
+    "punch": {
+     "text": "Say cheese",
+     "emoji": "📸",
+     "at": 0.3,
+     "dur": 2.4
+    },
+    "emoji": [
+     {
+      "at": 2.5,
+      "emojis": [
+       "✌️",
+       "📸",
+       "💙"
+      ],
+      "x": 960,
+      "y": 700
+     }
+    ],
+    "sfx": [
+     {
+      "name": "shutter_1",
+      "at": 2.6,
+      "vol": 0.6
+     }
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 22,
+   "in": 33.0,
+   "dur": 4.0,
+   "vol": 1.0,
+   "zoom": "punch",
+   "fx": {
+    "shake": [
+     0.6
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 23,
+   "in": 28.0,
+   "dur": 3.0,
+   "vol": 0.9,
+   "zoom": "in",
+   "fx": {
+    "emoji": [
+     {
+      "at": 0.8,
+      "emojis": [
+       "🙌",
+       "🎉",
+       "💙"
+      ],
+      "x": 960,
+      "y": 650
+     }
+    ]
+   }
+  },
+  {
+   "type": "scene",
+   "scene": "Chapter",
+   "props": {
+    "number": 5,
+    "title": "Game On!"
+   },
+   "dur": 4.0,
+   "trans": {
+    "type": "fade",
+    "dur": 0.6
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 26,
+   "in": 0.0,
+   "dur": 2.5,
+   "vol": 0.8,
+   "zoom": "punch",
+   "fx": {
+    "punch": {
+     "text": "Game on",
+     "emoji": "🎮",
+     "at": 0.2,
+     "dur": 2.2
+    }
+   },
+   "trans": {
+    "type": "clockWipe",
+    "dur": 0.6
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 26,
+   "in": 12.5,
+   "dur": 4.0,
+   "vol": 1.0,
+   "zoom": "in",
+   "fx": {
+    "shake": [
+     1.2
+    ],
+    "emoji": [
+     {
+      "at": 1.0,
+      "emojis": [
+       "😂",
+       "🤣",
+       "💙"
+      ],
+      "x": 960,
+      "y": 650
+     }
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 26,
+   "in": 28.0,
+   "dur": 3.0,
+   "vol": 1.0,
+   "zoom": "punch"
+  },
+  {
+   "type": "shot",
+   "clip": 26,
+   "in": 41.0,
+   "dur": 3.0,
+   "vol": 1.0,
+   "zoom": "in",
+   "fx": {
+    "emoji": [
+     {
+      "at": 0.5,
+      "emojis": [
+       "🤣",
+       "😆",
+       "✨"
+      ],
+      "x": 900,
+      "y": 650
+     }
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 27,
+   "in": 0.0,
+   "dur": 3.0,
+   "vol": 1.0,
+   "zoom": "in",
+   "trans": {
+    "type": "slide",
+    "dir": "from-right",
+    "dur": 0.4
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 27,
+   "in": 21.0,
+   "dur": 3.0,
+   "vol": 0.9,
+   "zoom": "punch"
+  },
+  {
+   "type": "shot",
+   "clip": 27,
+   "in": 88.0,
+   "dur": 3.5,
+   "vol": 1.0,
+   "zoom": "in",
+   "fx": {
+    "shake": [
+     0.8
+    ],
+    "emoji": [
+     {
+      "at": 0.6,
+      "emojis": [
+       "🔥",
+       "🙌",
+       "💙"
+      ],
+      "x": 960,
+      "y": 650
+     }
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 28,
+   "in": 290.0,
+   "dur": 3.0,
+   "speed": 1.5,
+   "vol": 0.6,
+   "zoom": "in",
+   "trans": {
+    "type": "wipe",
+    "dir": "from-left",
+    "dur": 0.4
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 28,
+   "in": 340.0,
+   "dur": 3.5,
+   "vol": 1.0,
+   "zoom": "punch",
+   "fx": {
+    "shake": [
+     1.6
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 29,
+   "in": 4.5,
+   "dur": 3.5,
+   "vol": 0.7,
+   "zoom": "in",
+   "fx": {
+    "glow": true
+   }
+  },
+  {
+   "type": "scene",
+   "scene": "Chapter",
+   "props": {
+    "number": 6,
+    "title": "Dance, Sing & Goodbye"
+   },
+   "dur": 4.0,
+   "trans": {
+    "type": "fade",
+    "dur": 0.6
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 30,
+   "in": 7.5,
+   "dur": 5.0,
+   "vol": 1.0,
+   "zoom": "punch",
+   "fx": {
+    "punch": {
+     "text": "Dance break",
+     "emoji": "💃",
+     "at": 0.3,
+     "dur": 2.4
+    },
+    "emoji": [
+     {
+      "at": 2.8,
+      "emojis": [
+       "💃",
+       "🎶",
+       "💙"
+      ],
+      "x": 960,
+      "y": 700
+     }
+    ]
+   },
+   "trans": {
+    "type": "clockWipe",
+    "dur": 0.6
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 30,
+   "in": 17.0,
+   "dur": 7.0,
+   "vol": 1.0,
+   "zoom": "in"
+  },
+  {
+   "type": "shot",
+   "clip": 30,
+   "in": 28.0,
+   "dur": 4.0,
+   "vol": 1.0,
+   "zoom": "punch",
+   "fx": {
+    "emoji": [
+     {
+      "at": 1.0,
+      "emojis": [
+       "🫶",
+       "💙",
+       "✨"
+      ],
+      "x": 960,
+      "y": 650
+     }
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 32,
+   "in": 8.0,
+   "dur": 3.5,
+   "vol": 0.9,
+   "zoom": "in",
+   "fx": {
+    "punch": {
+     "text": "Mama's turn",
+     "emoji": "📸",
+     "at": 0.4,
+     "dur": 2.6
+    }
+   },
+   "trans": {
+    "type": "slide",
+    "dir": "from-bottom",
+    "dur": 0.4
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 32,
+   "in": 13.0,
+   "dur": 2.5,
+   "vol": 0.8,
+   "zoom": "punch"
+  },
+  {
+   "type": "shot",
+   "clip": 32,
+   "in": 24.0,
+   "dur": 5.0,
+   "vol": 1.0,
+   "zoom": "in",
+   "fx": {
+    "punch": {
+     "text": "Karaoke time",
+     "emoji": "🎤",
+     "at": 0.3,
+     "dur": 2.4
+    }
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 33,
+   "in": 67.0,
+   "dur": 6.0,
+   "vol": 1.0,
+   "zoom": "in",
+   "fx": {
+    "shake": [
+     1.5
+    ],
+    "emoji": [
+     {
+      "at": 1.4,
+      "emojis": [
+       "🎶",
+       "🙌",
+       "💙",
+       "🎉"
+      ],
+      "x": 960,
+      "y": 650
+     }
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 33,
+   "in": 82.0,
+   "dur": 4.0,
+   "vol": 1.0,
+   "zoom": "out"
+  },
+  {
+   "type": "shot",
+   "clip": 31,
+   "in": 27.0,
+   "dur": 4.0,
+   "vol": 0.7,
+   "zoom": "in",
+   "fx": {
+    "glow": true,
+    "punch": {
+     "text": "See you next time",
+     "emoji": "👋",
+     "at": 0.5,
+     "dur": 3.0
+    }
+   },
+   "trans": {
+    "type": "fade",
+    "dur": 0.5
+   }
+  },
+  {
+   "type": "scene",
+   "scene": "CheerMeter",
+   "dur": 6.5,
+   "trans": {
+    "type": "slide",
+    "dir": "from-right",
+    "dur": 0.5
+   },
+   "props": {
+    "items": [
+     {
+      "label": "Quiz showdown",
+      "emoji": "🧠",
+      "db": -10.0
+     },
+     {
+      "label": "Table greetings",
+      "emoji": "👋",
+      "db": -12.6
+     },
+     {
+      "label": "Sing-along",
+      "emoji": "🎤",
+      "db": -13.0
+     },
+     {
+      "label": "Friends' wishes",
+      "emoji": "💌",
+      "db": -13.1
+     },
+     {
+      "label": "Candles out",
+      "emoji": "🎂",
+      "db": -15.3
+     }
+    ]
+   }
+  },
+  {
+   "type": "scene",
+   "scene": "PhotoWall",
+   "dur": 6.0,
+   "trans": {
+    "type": "fade",
+    "dur": 0.5
+   },
+   "props": {
+    "images": [
+     "wall/01.jpg",
+     "wall/02.jpg",
+     "wall/03.jpg",
+     "wall/04.jpg",
+     "wall/05.jpg",
+     "wall/06.jpg",
+     "wall/07.jpg",
+     "wall/08.jpg",
+     "wall/09.jpg",
+     "wall/10.jpg",
+     "wall/11.jpg",
+     "wall/12.jpg"
+    ]
+   }
+  },
+  {
+   "type": "scene",
+   "scene": "Ending",
+   "dur": 10.0,
+   "trans": {
+    "type": "fade",
+    "dur": 0.8
+   },
+   "props": {
+    "message": "With love, Papa & Mama"
+   }
   }
  ]
 }

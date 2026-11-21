@@ -132,3 +132,12 @@ Jesslyn = the girl in the long silver/blue satin dress. Theme: blue/teal/lilac, 
 - 8–14 friends hugging Jesslyn at backdrop (hug peak ~12–13)
 - 18–28 full room wide, everyone seated
 - 36–40 close hug in front of the name sign — **emotional, great**
+
+## 27 Second game rec 2 (1:34) — team round at the backdrop, girl holding a sign
+- 0–3 loud start; 21–24 girl gesturing at contestants; 85–93 loud finish
+## 28 Second game rec 3 (5:53, wide from the tables) — 288–312 teams at backdrop; 340–345 loudest crowd
+## 29 After the games (27s) — 0–1 Jesslyn by backdrop; 4.5–8 Jesslyn close among the tables; 18–21 crowd
+## 30 Dance at the backdrop (39s) — 8–12 pointing choreography; **17–24 full group dance**; 28–38 squeeze-in dance
+## 31 Friends leaving (1:19) — 24–47 last photos with guests at the backdrop (27–31)
+## 32 Mum + friends photos, karaoke (59s) — **8–11 mum laughing close**; 13–15 Jesslyn with friend; 24–29 two girls singing karaoke; 41–45 Jesslyn dancing past
+## 33 Sing-along (2:08) — whole room standing, singing/dancing; loudest 67.5–73, 82–83
