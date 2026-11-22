@@ -2,7 +2,7 @@
 // countdowns, punchy captions, cheer meter, chapter progress bar, photo wall.
 import React from 'react';
 import {AbsoluteFill, Img, OffthreadVideo, Sequence, interpolate, random, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
-import {C, F, Sfx, clamp} from './fx';
+import {Butterflies, C, F, Sfx, clamp} from './fx';
 
 const EMOJI = '"Noto Color Emoji", sans-serif';
 
@@ -314,6 +314,74 @@ export const PiP = ({name, start = 0, label, at = 0, corner = 'right'}) => {
             letterSpacing: '0.2em', color: '#FFFFFF', textShadow: '0 2px 10px rgba(0,0,0,0.8)'}}>{label.toUpperCase()}</div>}
         </div>
       </Sequence>
+    </AbsoluteFill>
+  );
+};
+
+// Scrapbook: candid snapshots drop onto a board as taped polaroids, one per beat, with handwritten captions.
+// `live: true` polaroids play their clip instead of a still.
+export const Scrapbook = ({title, shots, beat = 0.75}) => {
+  const frame = useCurrentFrame();
+  const {fps, durationInFrames} = useVideoConfig();
+  const pan = interpolate(frame, [0, durationInFrames], [1.02, 1.1]);
+  const drift = interpolate(frame, [0, durationInFrames], [0, -40]);
+  const titleIn = spring({frame, fps, config: {damping: 200}});
+  return (
+    <AbsoluteFill style={{background: `radial-gradient(ellipse at 50% 40%, #1B3F80, ${C.bgOuter} 75%)`, overflow: 'hidden'}}>
+      {/* faint paper grid */}
+      <AbsoluteFill style={{opacity: 0.07, backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
+        backgroundSize: '60px 60px'}} />
+      <AbsoluteFill style={{transform: `scale(${pan}) translateY(${drift}px)`}}>
+        {shots.map((sh, i) => {
+          const at = Math.round(10 + i * beat * fps);
+          const t = frame - at;
+          if (t < -2) return null;
+          const s = spring({frame: t, fps, config: {damping: 12, mass: 0.8}});
+          const r = (k) => random(`sb-${title}-${i}-${k}`);
+          const rot = sh.rot ?? (r('r') - 0.5) * 14;
+          const fromX = (r('fx') - 0.5) * 1400;
+          const w = sh.w || 520;
+          const flash = interpolate(t, [0, 2, 9], [0, 1, 0], clamp);
+          return (
+            <div key={i} style={{position: 'absolute', left: sh.x - w / 2, top: sh.y - w * 0.42,
+              width: w, transform: `translate(${(1 - s) * fromX}px, ${(1 - s) * -900}px) rotate(${rot + (1 - s) * 35}deg) scale(${0.85 + 0.15 * s})`,
+              zIndex: i}}>
+              <div style={{background: '#FBFBF8', padding: `${w * 0.035}px ${w * 0.035}px ${w * 0.17}px`,
+                boxShadow: '0 18px 40px rgba(0,0,0,0.55)', position: 'relative'}}>
+                <div style={{width: '100%', aspectRatio: '16 / 10', overflow: 'hidden', position: 'relative', background: '#000'}}>
+                  {sh.live ? (
+                    <Sequence from={at} layout="none">
+                      <OffthreadVideo src={vid(sh.name)} startFrom={Math.round((sh.start || 0) * fps)} volume={0}
+                        style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: `${sh.focus ?? 50}% 40%`}} />
+                    </Sequence>
+                  ) : (
+                    <Img src={staticFile(sh.img)} style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: `${sh.focus ?? 50}% 40%`,
+                      filter: `brightness(${1 + flash * 0.8}) saturate(1.08)`}} />
+                  )}
+                  {sh.live && <div style={{position: 'absolute', top: 10, right: 12, display: 'flex', alignItems: 'center', gap: 6,
+                    fontFamily: F.sans, fontWeight: 800, fontSize: 18, letterSpacing: '0.2em', color: '#fff'}}>
+                    <div style={{width: 10, height: 10, borderRadius: 5, background: '#FF4D5E', opacity: 0.5 + 0.5 * Math.sin(frame / 4)}} />LIVE</div>}
+                </div>
+                <div style={{position: 'absolute', left: 0, right: 0, bottom: w * 0.025, textAlign: 'center', fontFamily: F.script,
+                  fontSize: w * 0.11, color: '#1C3B70', opacity: interpolate(t, [10, 22], [0, 1], clamp)}}>{sh.caption}</div>
+                {/* tape */}
+                <div style={{position: 'absolute', top: -16, left: '50%', width: w * 0.3, height: 34, marginLeft: -w * 0.15,
+                  background: 'rgba(170,205,255,0.55)', transform: `rotate(${(r('t') - 0.5) * 10}deg)`, boxShadow: '0 2px 6px rgba(0,0,0,0.2)'}} />
+              </div>
+              <Sfx name={i % 2 ? 'shutter_1' : 'shutter_2'} at={at} volume={0.45} />
+              <Sfx name={['pop_1', 'pop_2', 'pop_3', 'pop_4'][i % 4]} at={at + 10} volume={0.2} />
+            </div>
+          );
+        })}
+      </AbsoluteFill>
+      <Butterflies count={4} seed={`sb-${title}`} start={0} />
+      <div style={{position: 'absolute', left: 0, right: 0, top: 40, textAlign: 'center', opacity: titleIn, zIndex: 100,
+        transform: `translateY(${(1 - titleIn) * -30}px)`}}>
+        <span style={{fontFamily: F.script, fontSize: 110, color: C.white, padding: '0 60px', borderRadius: 80,
+          background: 'radial-gradient(ellipse, rgba(5,11,28,0.75) 30%, rgba(5,11,28,0) 72%)',
+          textShadow: '0 0 30px rgba(142,197,255,0.7), 0 4px 18px rgba(0,0,0,0.8)'}}>{title}</span>
+      </div>
+      <Sfx name="chime_up" at={4} volume={0.25} />
     </AbsoluteFill>
   );
 };

@@ -396,5 +396,140 @@
    "speaker": "Friend",
    "text": "Thank you for inviting me, Jesslyn. Thank you."
   }
+ ],
+ "14": [
+  {
+   "start": 0.0,
+   "end": 1.14,
+   "speaker": "MC",
+   "id": "Dua, satu...",
+   "text": "Two, one..."
+  },
+  {
+   "start": 1.14,
+   "end": 8.22,
+   "text": "♪ Happy birthday, Jesslyn ♪"
+  },
+  {
+   "start": 8.22,
+   "end": 9.26,
+   "speaker": "MC",
+   "id": "Lagi, kencang!",
+   "text": "Again, louder!"
+  },
+  {
+   "start": 9.26,
+   "end": 16.12,
+   "text": "♪ Happy birthday, happy birthday, happy birthday, Jesslyn ♪"
+  },
+  {
+   "start": 16.12,
+   "end": 16.98,
+   "speaker": "MC",
+   "id": "Sekali lagi!",
+   "text": "One more time!"
+  },
+  {
+   "start": 16.98,
+   "end": 20.8,
+   "text": "♪ Happy birthday, Jesslyn ♪"
+  },
+  {
+   "start": 24.06,
+   "end": 28.56,
+   "text": "♪ Happy birthday, happy birthday ♪"
+  },
+  {
+   "start": 31.72,
+   "end": 39.67,
+   "id": "♪ Tiup lilinnya, tiup lilinnya, tiup lilinnya sekarang ♪",
+   "text": "♪ Blow the candles, blow the candles, blow the candles now ♪"
+  },
+  {
+   "start": 66.13,
+   "end": 67.03,
+   "speaker": "MC",
+   "id": "Tiga!",
+   "text": "Three!"
+  }
+ ],
+ "18": [
+  {
+   "start": 5.54,
+   "end": 7.92,
+   "speaker": "MC",
+   "id": "Oke, siap-siap ya!",
+   "text": "Okay, get ready!"
+  },
+  {
+   "start": 7.92,
+   "end": 12.97,
+   "speaker": "MC",
+   "id": "Oke, tiga, dua, satu!",
+   "text": "Okay — three, two, one!"
+  },
+  {
+   "start": 12.97,
+   "end": 14.69,
+   "speaker": "MC",
+   "id": "Perhatikan layarnya ya, teman-teman.",
+   "text": "Eyes on the screen, everyone."
+  },
+  {
+   "start": 14.69,
+   "end": 16.17,
+   "speaker": "MC",
+   "id": "Ada 15 pertanyaan.",
+   "text": "There are 15 questions."
+  },
+  {
+   "start": 16.17,
+   "end": 18.25,
+   "speaker": "MC",
+   "id": "Apa warna kesukaan Jesslyn?",
+   "text": "What is Jesslyn's favourite colour?"
+  },
+  {
+   "start": 18.81,
+   "end": 24.64,
+   "speaker": "MC",
+   "id": "Ada apa pilihannya? Biru, pink, dan...",
+   "text": "What are the options? Blue, pink, and..."
+  },
+  {
+   "start": 25.0,
+   "end": 28.44,
+   "speaker": "MC",
+   "id": "Kayak biru, bener ya?",
+   "text": "Looks like blue — right?"
+  },
+  {
+   "start": 137.12,
+   "end": 139.52,
+   "speaker": "MC",
+   "id": "Aduh, frozen — it's okay, teman-teman!",
+   "text": "Oh no, it froze — it's okay, everyone!"
+  },
+  {
+   "start": 140.49,
+   "end": 142.87,
+   "speaker": "MC",
+   "id": "Kita lihat siapa yang menjadi...",
+   "text": "Let's see who's in..."
+  },
+  {
+   "start": 143.73,
+   "end": 145.35,
+   "speaker": "MC",
+   "id": "Oke, masih Emily!",
+   "text": "Okay, still Emily!"
+  },
+  {
+   "start": 587.61,
+   "end": 596.56,
+   "speaker": "MC",
+   "id": "Bebas ya, bebas guys!",
+   "text": "Any pose you like, guys!"
+  }
  ]
 }

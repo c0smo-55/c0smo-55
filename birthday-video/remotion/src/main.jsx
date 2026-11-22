@@ -9,7 +9,7 @@ import {wipe} from '@remotion/transitions/wipe';
 import {clockWipe} from '@remotion/transitions/clock-wipe';
 import {Butterflies, C, F, Sfx, Sparkles, clamp, useFonts} from './fx';
 import {Chapter, Ending, Opening} from './scenes';
-import {CheerMeter, Countdown, EmojiBurst, FreezeTag, PhotoWall, PiP, ProgressBar, Punch, Stats, Teaser, Triptych, shakeTransform} from './viral';
+import {CheerMeter, Countdown, EmojiBurst, FreezeTag, PhotoWall, PiP, ProgressBar, Punch, Scrapbook, Stats, Teaser, Triptych, shakeTransform} from './viral';
 import {Sequence, useCurrentFrame as useFrame} from 'remotion';
 import EDL from './edl.json';
 import SUBS from './subs.json';
@@ -289,6 +289,7 @@ export const Main = () => {
         {it.type === 'scene' && it.scene === 'CheerMeter' && <CheerMeter {...it.props} />}
         {it.type === 'scene' && it.scene === 'PhotoWall' && <PhotoWall {...it.props} />}
         {it.type === 'scene' && it.scene === 'Teaser' && <Teaser {...it.props} />}
+        {it.type === 'scene' && it.scene === 'Scrapbook' && <Scrapbook {...it.props} />}
         {it.type === 'scene' && it.scene === 'Stats' && <Stats {...it.props} />}
         {it.type === 'scene' && it.scene === 'Triptych' && <Triptych {...it.props} />}
         {it.type === 'shot' && <Shot s={it} />}
