@@ -337,9 +337,9 @@
   {
    "type": "shot",
    "clip": 11,
-   "in": 3.5,
-   "dur": 3.0,
-   "vol": 0.6,
+   "in": 0.0,
+   "dur": 10.4,
+   "vol": 1.0,
    "fx": {
     "freeze": {
      "at": 1.5,
@@ -360,47 +360,78 @@
   {
    "type": "shot",
    "clip": 11,
-   "in": 13.0,
-   "dur": 3.0,
-   "vol": 0.5,
+   "in": 10.4,
+   "dur": 11.4,
+   "vol": 1.0,
    "zoom": "in"
   },
   {
    "type": "shot",
    "clip": 11,
-   "in": 44.0,
-   "dur": 3.0,
-   "vol": 0.9,
+   "in": 26.6,
+   "dur": 6.6,
+   "vol": 1.0,
+   "zoom": "in"
+  },
+  {
+   "type": "shot",
+   "clip": 11,
+   "in": 43.5,
+   "dur": 3.5,
+   "vol": 1.0,
    "zoom": "punch",
    "fx": {
     "shake": [
-     1.2
+     1.7
     ]
    }
   },
   {
    "type": "shot",
    "clip": 11,
-   "in": 81.0,
-   "dur": 3.5,
-   "vol": 0.7,
+   "in": 53.5,
+   "dur": 10.8,
+   "vol": 1.0,
+   "zoom": "out",
+   "trans": {
+    "type": "fade",
+    "dur": 0.3
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 11,
+   "in": 70.2,
+   "dur": 15.0,
+   "vol": 1.0,
    "zoom": "in",
    "fx": {
     "punch": {
-     "text": "Speech time",
+     "text": "The birthday girl",
      "emoji": "",
-     "at": 0.3,
-     "dur": 2.5
+     "at": 6.4,
+     "dur": 3.0
     }
    }
   },
   {
    "type": "shot",
    "clip": 11,
-   "in": 112.5,
-   "dur": 7.0,
+   "in": 88.3,
+   "dur": 12.4,
    "vol": 1.0,
    "zoom": "in"
+  },
+  {
+   "type": "shot",
+   "clip": 11,
+   "in": 108.4,
+   "dur": 16.4,
+   "vol": 1.0,
+   "zoom": "in",
+   "fx": {
+    "glow": true
+   }
   },
   {
    "type": "shot",
@@ -418,16 +449,16 @@
   {
    "type": "shot",
    "clip": 12,
-   "in": 1.0,
-   "dur": 2.5,
+   "in": 1.3,
+   "dur": 10.0,
    "vol": 1.0,
-   "zoom": "punch",
+   "zoom": "in",
    "fx": {
     "punch": {
      "text": "Wishes time",
      "emoji": "",
      "at": 0.2,
-     "dur": 2.2
+     "dur": 2.4
     }
    },
    "trans": {
@@ -439,14 +470,22 @@
   {
    "type": "shot",
    "clip": 12,
-   "in": 53.0,
-   "dur": 5.0,
+   "in": 20.2,
+   "dur": 4.0,
+   "vol": 1.0,
+   "zoom": "punch"
+  },
+  {
+   "type": "shot",
+   "clip": 12,
+   "in": 52.1,
+   "dur": 13.4,
    "vol": 1.0,
    "fx": {
     "freeze": {
      "at": 2.0,
      "hold": 1.2,
-     "label": "Wish #1",
+     "label": "Stevi",
      "emoji": "",
      "x": 945,
      "y": 435,
@@ -458,19 +497,40 @@
   {
    "type": "shot",
    "clip": 12,
-   "in": 88.0,
-   "dur": 5.0,
+   "in": 69.3,
+   "dur": 13.0,
    "vol": 1.0,
-   "zoom": "punch",
-   "fx": {}
+   "zoom": "in"
   },
   {
    "type": "shot",
    "clip": 12,
-   "in": 114.0,
-   "dur": 5.0,
+   "in": 86.3,
+   "dur": 12.0,
    "vol": 1.0,
    "zoom": "in",
+   "fx": {
+    "lower": {
+     "title": "Fiona",
+     "sub": "Birthday wishes",
+     "at": 0.4
+    }
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 12,
+   "in": 111.8,
+   "dur": 14.2,
+   "vol": 1.0,
+   "zoom": "in",
+   "fx": {
+    "lower": {
+     "title": "Shalom",
+     "sub": "Birthday wishes",
+     "at": 0.4
+    }
+   },
    "trans": {
     "type": "slide",
     "dir": "from-left",
@@ -480,8 +540,8 @@
   {
    "type": "shot",
    "clip": 12,
-   "in": 157.0,
-   "dur": 5.0,
+   "in": 152.3,
+   "dur": 14.0,
    "vol": 1.0,
    "zoom": "in",
    "fx": {
@@ -489,7 +549,7 @@
     "punch": {
      "text": "Happy tears",
      "emoji": "",
-     "at": 1.0,
+     "at": 5.0,
      "dur": 2.6
     }
    }
@@ -497,10 +557,10 @@
   {
    "type": "shot",
    "clip": 12,
-   "in": 172.0,
-   "dur": 4.0,
+   "in": 176.8,
+   "dur": 9.0,
    "vol": 1.0,
-   "zoom": "out"
+   "zoom": "in"
   },
   {
    "type": "shot",
@@ -518,8 +578,8 @@
   {
    "type": "shot",
    "clip": 13,
-   "in": 20.0,
-   "dur": 5.0,
+   "in": 14.3,
+   "dur": 25.3,
    "vol": 1.0,
    "zoom": "in"
   },
@@ -530,6 +590,18 @@
    "dur": 2.2,
    "vol": 0.8,
    "zoom": "punch"
+  },
+  {
+   "type": "shot",
+   "clip": 12,
+   "in": 187.4,
+   "dur": 23.2,
+   "vol": 1.0,
+   "zoom": "in",
+   "trans": {
+    "type": "fade",
+    "dur": 0.4
+   }
   },
   {
    "type": "scene",

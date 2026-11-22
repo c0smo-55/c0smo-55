@@ -83,7 +83,7 @@ const LowerThird = ({title, sub, at = 0.5, dur}) => {
   const x = (1 - inS) * -120 - outS * 80;
   return (
     <AbsoluteFill style={{opacity: inS * (1 - outS)}}>
-      <div style={{position: 'absolute', left: 110, bottom: 110, transform: `translateX(${x}px)`, padding: '18px 60px 26px 40px',
+      <div style={{position: 'absolute', left: 110, bottom: 230, transform: `translateX(${x}px)`, padding: '18px 60px 26px 40px',
         background: 'linear-gradient(90deg, rgba(10,22,48,0.72), rgba(10,22,48,0.25) 80%, transparent)',
         borderLeft: `4px solid ${C.sky}`, borderRadius: 6}}>
         <div style={{fontFamily: F.script, fontSize: 120, lineHeight: 1, color: C.white,
