@@ -297,11 +297,11 @@ export const Main = () => {
         {it.type === 'scene' && it.scene === 'Scrapbook' && <Scrapbook {...it.props} />}
         {it.type === 'scene' && it.scene === 'Stats' && <Stats {...it.props} />}
         {it.type === 'scene' && it.scene === 'Triptych' && <Triptych {...it.props} />}
-        {it.type === 'scene' && it.scene !== 'Teaser' && (
+        {it.type === 'scene' && it.scene !== 'Teaser' && !musicCovers(i) && (
           <Html5Audio src={staticFile('sfx/pad.wav')} loop
             volume={(f) => 0.16 * Math.min(1, f / 15, (Math.round(it.dur * FPS) - f) / 15)} />
         )}
-        {it.type === 'shot' && <Shot s={it} />}
+        {it.type === 'shot' && <Shot s={musicCovers(i) && !hasSpeech(it) ? {...it, vol: (it.vol ?? 0.3) * (SINGING_ROOM.has(it.clip) ? 0.8 : 0.4)} : it} />}
         {it.trans && it.trans.type !== 'fade' && <LensFlare at={Math.max(0, tHalf - 9)} dur={18} seed={i % 4} y={[0.38, 0.5, 0.3, 0.45][i % 4]} />}
         {it.type === 'shot' && i > 0 && EDL.items[i - 1].scene === 'Chapter' && <LightLeak at={0} dur={22} seed={i % 5} />}
         {whoosh && ['zoomBlur', 'flash', 'clockWipe', 'slide', 'wipe'].includes(it.trans.type) && <Sfx name={whoosh} at={tHalf} volume={0.3} />}
@@ -312,9 +312,81 @@ export const Main = () => {
   return (
     <AbsoluteFill style={{backgroundColor: 'black'}}>
       <TransitionSeries>{children}</TransitionSeries>
+      <Music />
       <Finish />
       <Progress />
     </AbsoluteFill>
+  );
+};
+
+
+// ---------- music ----------
+// Which song plays where (by item), and how far the music ducks under speech.
+const idxOf = (pred) => EDL.items.findIndex(pred);
+const chapterIdx = (n) => idxOf((it) => it.scene === 'Chapter' && it.props.number === n);
+const CUES = (() => {
+  const candles = idxOf((it) => it.clip === 14 && it.in === 71.5);
+  const goodbye = idxOf((it) => it.clip === 31 && it.in === 24);
+  const ending = idxOf((it) => it.scene === 'Ending');
+  return [
+    {song: 'birthday_n.m4a', from: 0, to: chapterIdx(3) - 1},
+    {song: 'whitney_n.m4a', from: candles, to: chapterIdx(4) - 1},
+    {song: 'rockwithyou_n.m4a', from: chapterIdx(4), to: chapterIdx(5) - 1},
+    {song: 'dontstop_n.m4a', from: chapterIdx(5), to: chapterIdx(6) - 1},
+    {song: 'allnightlong_n.m4a', from: chapterIdx(6), to: goodbye - 1},
+    {song: 'celine_n.m4a', from: goodbye, to: ending - 1},
+    {song: 'sinatra_n.m4a', from: ending, to: EDL.items.length - 1},
+  ];
+})();
+const SINGING = new Set([32, 33]);
+const SINGING_ROOM = new Set([32, 33, 14]);
+// Does this shot contain speech that has subtitles?
+export const hasSpeech = (it) => {
+  if (it.type !== 'shot') return false;
+  const lines = SUBS[String(it.clip)];
+  if (!lines) return false;
+  const a = it.in;
+  const b = it.in + it.dur * (it.speed || 1);
+  return lines.some((l) => l.end > a + 0.3 && l.start < b - 0.3);
+};
+export const musicCovers = (i) => CUES.some((c) => i >= c.from && i <= c.to);
+const duckFor = (it) => {
+  if (hasSpeech(it)) return 0.16;
+  if (it.type === 'shot' && SINGING.has(it.clip)) return 0.35;
+  return 1;
+};
+
+const Music = () => {
+  const st = starts();
+  const ends = EDL.items.map((it, i) => st[i] + fr(it.dur));
+  return (
+    <>
+      {CUES.map((c, k) => {
+        const from = st[c.from];
+        const len = ends[c.to] - from;
+        const fade = fr(1.5);
+        const ducks = EDL.items.map((it, i) => ({a: st[i] - from, b: ends[i] - from, d: duckFor(it), i}))
+          .filter((x) => x.i >= c.from && x.i <= c.to);
+        const duckAt = (f) => {
+          // smooth 0.4s ramps between per-item duck levels
+          let level = 1;
+          for (const x of ducks) {
+            if (f >= x.a && f < x.b) level = x.d;
+          }
+          for (const x of ducks) {
+            const edge = Math.min(Math.abs(f - x.a), Math.abs(f - x.b));
+            if (edge < 12 && x.d < level) level = level - (level - x.d) * (1 - edge / 12);
+          }
+          return level;
+        };
+        return (
+          <Sequence key={k} from={from} durationInFrames={len} layout="none">
+            <Html5Audio src={staticFile(`music/${c.song}`)}
+              volume={(f) => 0.42 * Math.min(1, f / fade, (len - f) / fade) * duckAt(f)} />
+          </Sequence>
+        );
+      })}
+    </>
   );
 };
 
