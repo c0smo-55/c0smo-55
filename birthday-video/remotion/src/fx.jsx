@@ -193,8 +193,13 @@ export const Photo = ({src, style}) => <Img src={staticFile(src)} style={{width:
 // Sound effect placed so its sync point (from sfx/sync.json) lands exactly on frame `at`.
 import {Audio, Sequence} from 'remotion';
 import SYNC from '../public/sfx/sync.json';
+// Overall mix: effects sit under the footage; harsh ones are pulled down further.
+const SFX_GAIN = 0.55;
+const SFX_TRIM = [[/^boom/, 0.35], [/^popper/, 0.35], [/^shutter/, 0.5], [/^whoosh/, 0.55], [/^tick/, 0.5], [/^pop_/, 0.6], [/^riser/, 0.5]];
 export const Sfx = ({name, at, volume = 0.6}) => {
   const {fps} = useVideoConfig();
+  const trimGain = (SFX_TRIM.find(([re]) => re.test(name)) || [null, 1])[1];
+  volume = volume * SFX_GAIN * trimGain;
   const from = Math.round(at - (SYNC[name] || 0) * fps);
   const trim = Math.max(0, -from);
   return (

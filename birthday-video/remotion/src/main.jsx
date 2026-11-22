@@ -91,7 +91,7 @@ const LowerThird = ({title, sub, at = 0.5, dur}) => {
   const x = (1 - inS) * -120 - outS * 80;
   return (
     <AbsoluteFill style={{opacity: inS * (1 - outS)}}>
-      <div style={{position: 'absolute', left: 110, bottom: 230, transform: `translateX(${x}px)`, padding: '18px 60px 26px 40px',
+      <div style={{position: 'absolute', left: 110, bottom: 330, transform: `translateX(${x}px)`, padding: '18px 60px 26px 40px',
         background: 'linear-gradient(90deg, rgba(10,22,48,0.72), rgba(10,22,48,0.25) 80%, transparent)',
         borderLeft: `4px solid ${C.sky}`, borderRadius: 6}}>
         <div style={{fontFamily: F.script, fontSize: 120, lineHeight: 1.3, paddingBottom: 18, color: C.white,
@@ -300,8 +300,8 @@ export const Main = () => {
         {it.type === 'shot' && <Shot s={it} />}
         {it.trans && it.trans.type !== 'fade' && <LensFlare at={Math.max(0, tHalf - 9)} dur={18} seed={i % 4} y={[0.38, 0.5, 0.3, 0.45][i % 4]} />}
         {it.type === 'shot' && i > 0 && EDL.items[i - 1].scene === 'Chapter' && <LightLeak at={0} dur={22} seed={i % 5} />}
-        {whoosh && it.trans.type !== 'fade' && <Sfx name={whoosh} at={tHalf} volume={0.35} />}
-        {whoosh && it.trans.type === 'fade' && it.type === 'shot' && <Sfx name="whoosh_5" at={tHalf} volume={0.18} />}
+        {whoosh && ['zoomBlur', 'flash', 'clockWipe', 'slide', 'wipe'].includes(it.trans.type) && <Sfx name={whoosh} at={tHalf} volume={0.3} />}
+        
       </TransitionSeries.Sequence>,
     );
   });

@@ -216,14 +216,14 @@ export const Teaser = ({clips, line = 'Jesslyn turns 17'}) => {
           <OffthreadVideo src={vid(c.name)} startFrom={Math.round((c.start || 0) * fps)} volume={c.vol ?? 0.5}
             style={{width: '100%', height: '100%', objectFit: 'cover'}} />
         </AbsoluteFill>
-        <Sfx name={['whoosh_1', 'whoosh_3', 'whoosh_6', 'whoosh_4'][i % 4]} at={0} volume={0.3} />
+        
       </Sequence>
     );
     t += d;
     return {el, at: t};
   });
   const end = t;
-  const flashes = seqs.map((s) => interpolate(frame, [s.at - 2, s.at, s.at + 4], [0, 0.85, 0], clamp)).reduce((a, b) => Math.max(a, b), 0);
+  const flashes = seqs.map((s) => interpolate(frame, [s.at - 2, s.at, s.at + 6], [0, 0.3, 0], clamp)).reduce((a, b) => Math.max(a, b), 0);
   const txt = spring({frame: frame - end, fps, config: {damping: 200}});
   return (
     <AbsoluteFill style={{backgroundColor: C.bgOuter}}>
@@ -368,8 +368,8 @@ export const Scrapbook = ({title, shots, beat = 0.75}) => {
                 <div style={{position: 'absolute', top: -16, left: '50%', width: w * 0.3, height: 34, marginLeft: -w * 0.15,
                   background: 'rgba(170,205,255,0.55)', transform: `rotate(${(r('t') - 0.5) * 10}deg)`, boxShadow: '0 2px 6px rgba(0,0,0,0.2)'}} />
               </div>
-              <Sfx name={i % 2 ? 'shutter_1' : 'shutter_2'} at={at} volume={0.45} />
-              <Sfx name={['pop_1', 'pop_2', 'pop_3', 'pop_4'][i % 4]} at={at + 10} volume={0.2} />
+              {i % 2 === 0 && <Sfx name="shutter_1" at={at} volume={0.35} />}
+              
             </div>
           );
         })}
