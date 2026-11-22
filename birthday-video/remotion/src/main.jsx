@@ -10,9 +10,9 @@ import {clockWipe} from '@remotion/transitions/clock-wipe';
 import {Butterflies, C, F, Sfx, Sparkles, clamp, useFonts} from './fx';
 import {Chapter, Ending, LightLeak, Opening} from './scenes';
 import {CheerMeter, Countdown, EmojiBurst, FreezeTag, PhotoWall, PiP, ProgressBar, Punch, Scrapbook, Stats, Teaser, Triptych, shakeTransform} from './viral';
-import {Sequence, useCurrentFrame as useFrame} from 'remotion';
+import {Html5Audio, Sequence, useCurrentFrame as useFrame} from 'remotion';
 import EDL from './edl.json';
-import {Finish, FairyDust, LensFlare, dreamy, flash, zoomBlur} from './magic';
+import {Finish, FairyDust, LensFlare, PapaNote, Viewfinder, dreamy, flash, zoomBlur} from './magic';
 import SUBS from './subs.json';
 
 // English subtitles: lines are timed in the ORIGINAL clip's seconds; map timeline frame -> source time.
@@ -20,11 +20,7 @@ const Subtitles = ({s}) => {
   const frame = useFrame();
   const lines = SUBS[String(s.clip)];
   if (!lines) return null;
-  const fz = s.fx && s.fx.freeze;
-  const fzA = fz ? fr(fz.at) : Infinity;
-  const fzH = fz ? fr(fz.hold || 1.3) : 0;
-  if (frame >= fzA && frame < fzA + fzH) return null;
-  const f = frame >= fzA + fzH ? frame - fzH : frame;
+  const f = frame;
   const sp = s.speed || 1;
   const t = s.in + (sp >= 1 ? (f / FPS) * sp : (f / FPS) * sp);
   const cur = lines.find((l) => t >= l.start && t < l.end);
@@ -232,9 +228,11 @@ const Shot = ({s}) => {
           </Sequence>
           <Sequence from={fzA} durationInFrames={fzH} layout="none">
             <FreezeTag img={staticFile(stillName(s, fz.at))} {...fz} />
+            {/* keep the room sound running under the freeze so nobody gets cut off */}
+            <Html5Audio src={staticFile(`shots/${name}.mp4`)} startFrom={Math.round(fzA * (s.speed || 1))} volume={s.vol ?? 0.3} />
           </Sequence>
           <Sequence from={fzA + fzH} layout="none">
-            <AbsoluteFill style={{transform: zoom}}><Video s={s} name={name} startFrom={Math.round(fzA * (s.speed || 1))} /></AbsoluteFill>
+            <AbsoluteFill style={{transform: zoom}}><Video s={s} name={name} startFrom={Math.round((fzA + fzH) * (s.speed || 1))} /></AbsoluteFill>
           </Sequence>
         </>
       )}
@@ -242,6 +240,8 @@ const Shot = ({s}) => {
       <FairyDust seed={name} count={fx.glow ? 40 : 18} strength={fx.glow ? 1 : 0.6} />
       {(fx.emoji || []).map((e, k) => <EmojiBurst key={k} seed={`${name}-${k}`} {...e} at={fr(e.at)} />)}
       {s.subs !== false && <Subtitles s={s} />}
+      {fx.viewfinder && <Viewfinder dur={Math.min(s.dur, 4)} />}
+      {fx.note && <PapaNote {...fx.note} />}
       {fx.pip && <PiP {...fx.pip} at={fr(fx.pip.at || 0)} />}
       {fx.punch && <Punch {...fx.punch} at={fr(fx.punch.at)} />}
       {fx.countdown && <Countdown at={fr(fx.countdown.at)} step={fr(fx.countdown.step || 1)} />}
@@ -297,6 +297,10 @@ export const Main = () => {
         {it.type === 'scene' && it.scene === 'Scrapbook' && <Scrapbook {...it.props} />}
         {it.type === 'scene' && it.scene === 'Stats' && <Stats {...it.props} />}
         {it.type === 'scene' && it.scene === 'Triptych' && <Triptych {...it.props} />}
+        {it.type === 'scene' && it.scene !== 'Teaser' && (
+          <Html5Audio src={staticFile('sfx/pad.wav')} loop
+            volume={(f) => 0.16 * Math.min(1, f / 15, (Math.round(it.dur * FPS) - f) / 15)} />
+        )}
         {it.type === 'shot' && <Shot s={it} />}
         {it.trans && it.trans.type !== 'fade' && <LensFlare at={Math.max(0, tHalf - 9)} dur={18} seed={i % 4} y={[0.38, 0.5, 0.3, 0.45][i % 4]} />}
         {it.type === 'shot' && i > 0 && EDL.items[i - 1].scene === 'Chapter' && <LightLeak at={0} dur={22} seed={i % 5} />}

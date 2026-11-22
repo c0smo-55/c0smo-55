@@ -113,3 +113,51 @@ export const Finish = () => {
     </AbsoluteFill>
   );
 };
+
+// Papa's camera: a soft viewfinder overlay (REC dot, corner brackets, date) so it feels like we're seeing through his lens.
+export const Viewfinder = ({dur = 3.5, date = '07.11.2026'}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const end = Math.round(dur * fps);
+  const o = interpolate(frame, [0, 10, end - 12, end], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  if (o <= 0) return null;
+  const blink = Math.floor(frame / 15) % 2 === 0 ? 1 : 0.25;
+  const c = 'rgba(255,255,255,0.85)';
+  const corner = (pos) => ({position: 'absolute', width: 70, height: 70, ...pos});
+  const sec = Math.floor(frame / fps);
+  return (
+    <AbsoluteFill style={{pointerEvents: 'none', opacity: o, fontFamily: 'Montserrat, sans-serif', fontWeight: 500, color: c}}>
+      <div style={{...corner({left: 70, top: 70}), borderLeft: `3px solid ${c}`, borderTop: `3px solid ${c}`}} />
+      <div style={{...corner({right: 70, top: 70}), borderRight: `3px solid ${c}`, borderTop: `3px solid ${c}`}} />
+      <div style={{...corner({left: 70, bottom: 70}), borderLeft: `3px solid ${c}`, borderBottom: `3px solid ${c}`}} />
+      <div style={{...corner({right: 70, bottom: 70}), borderRight: `3px solid ${c}`, borderBottom: `3px solid ${c}`}} />
+      <div style={{position: 'absolute', left: 110, top: 100, display: 'flex', alignItems: 'center', gap: 12, fontSize: 30, letterSpacing: '0.15em'}}>
+        <div style={{width: 18, height: 18, borderRadius: 9, background: '#FF4D5E', opacity: blink}} />REC
+      </div>
+      <div style={{position: 'absolute', right: 110, top: 100, fontSize: 28, letterSpacing: '0.15em'}}>{date}</div>
+      <div style={{position: 'absolute', right: 110, bottom: 100, fontSize: 26, letterSpacing: '0.15em'}}>00:{String(sec).padStart(2, '0')}</div>
+      <div style={{position: 'absolute', left: 110, bottom: 100, fontSize: 24, letterSpacing: '0.3em'}}>PAPA'S CAMERA</div>
+    </AbsoluteFill>
+  );
+};
+
+// A short handwritten note from Papa over the footage.
+export const PapaNote = ({text, at = 0.5, dur = 3.5}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const a = Math.round(at * fps);
+  const end = a + Math.round(dur * fps);
+  const o = interpolate(frame, [a, a + 14, end - 12, end], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  if (o <= 0) return null;
+  const reveal = interpolate(frame, [a, a + 30], [0, 100], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  return (
+    <AbsoluteFill style={{pointerEvents: 'none', justifyContent: 'flex-start', alignItems: 'flex-end', padding: '150px 130px 0 0', opacity: o}}>
+      <div style={{maxWidth: 820, textAlign: 'right'}}>
+        <div style={{fontFamily: '"Great Vibes", cursive', fontSize: 78, lineHeight: 1.2, color: '#FFFFFF', paddingBottom: 12,
+          clipPath: `inset(-20% ${100 - reveal}% -40% 0)`, textShadow: '0 2px 18px rgba(0,0,0,0.75), 0 0 30px rgba(59,125,216,0.6)'}}>{text}</div>
+        <div style={{fontFamily: 'Montserrat, sans-serif', fontWeight: 500, fontSize: 24, letterSpacing: '0.35em', color: 'rgba(220,235,255,0.9)',
+          textShadow: '0 2px 10px rgba(0,0,0,0.7)', opacity: interpolate(frame, [a + 24, a + 36], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}}>— PAPA</div>
+      </div>
+    </AbsoluteFill>
+  );
+};

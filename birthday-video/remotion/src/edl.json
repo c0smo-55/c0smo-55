@@ -8,7 +8,7 @@
    "scene": "Teaser",
    "dur": 10.0,
    "props": {
-    "line": "Jesslyn turns 17",
+    "line": "Jesslyn's 17th, through Papa's camera",
     "clips": [
      {
       "name": "c14_0071.50_1",
@@ -128,7 +128,8 @@
    "vol": 0.2,
    "zoom": "punch",
    "fx": {
-    "sparkles": true
+    "sparkles": true,
+    "viewfinder": true
    },
    "trans": {
     "type": "clockWipe",
@@ -223,6 +224,11 @@
      "title": "Jesslyn",
      "sub": "17 today",
      "at": 0.6
+    },
+    "note": {
+     "text": "The calm before everyone arrived.",
+     "at": 0.4,
+     "dur": 3.6
     }
    },
    "trans": {
@@ -472,7 +478,8 @@
      "y": 450,
      "r": 170,
      "side": "left"
-    }
+    },
+    "viewfinder": true
    },
    "trans": {
     "type": "clockWipe",
@@ -512,7 +519,7 @@
    "type": "shot",
    "clip": 11,
    "in": 75.9,
-   "dur": 9.0,
+   "dur": 7.0,
    "vol": 1.0,
    "zoom": "in",
    "fx": {
@@ -720,7 +727,7 @@
     "freeze": {
      "at": 3.0,
      "hold": 1.4,
-     "label": "papa lighting the candles",
+     "label": "lighting the candles",
      "emoji": "",
      "x": 1180,
      "y": 260,
@@ -748,6 +755,11 @@
     "countdown": {
      "at": 0,
      "step": 1
+    },
+    "note": {
+     "text": "Make a wish, sayang.",
+     "at": 0.4,
+     "dur": 2.5
     }
    }
   },
@@ -814,7 +826,12 @@
    "vol": 0.8,
    "zoom": "in",
    "fx": {
-    "glow": true
+    "glow": true,
+    "note": {
+     "text": "My girl is seventeen.",
+     "at": 0.4,
+     "dur": 3.6
+    }
    }
   },
   {
@@ -834,7 +851,7 @@
    "fx": {
     "polaroid": {
      "at": 3.0,
-     "caption": "family"
+     "caption": "cake photo"
     }
    },
    "trans": {
@@ -888,7 +905,9 @@
    "dur": 23.2,
    "vol": 1.0,
    "zoom": "in",
-   "fx": {}
+   "fx": {
+    "viewfinder": true
+   }
   },
   {
    "type": "shot",
@@ -1127,7 +1146,7 @@
     "freeze": {
      "at": 2.0,
      "hold": 1.4,
-     "label": "papa, filming everything",
+     "label": "the camera guy",
      "emoji": "",
      "x": 1560,
      "y": 450,
@@ -1356,7 +1375,7 @@
      },
      {
       "img": "snaps/b1.jpg",
-      "caption": "papa filming",
+      "caption": "behind the camera",
       "x": 1515,
       "y": 818,
       "focus": 30,
@@ -1385,7 +1404,9 @@
    "dur": 2.5,
    "vol": 0.8,
    "zoom": "punch",
-   "fx": {},
+   "fx": {
+    "viewfinder": true
+   },
    "trans": {
     "type": "clockWipe",
     "dur": 0.6
@@ -1555,7 +1576,14 @@
    "dur": 5.0,
    "vol": 1.0,
    "zoom": "punch",
-   "fx": {},
+   "fx": {
+    "note": {
+     "text": "I could watch this all night.",
+     "at": 0.4,
+     "dur": 3.6
+    },
+    "viewfinder": true
+   },
    "trans": {
     "type": "clockWipe",
     "dur": 0.6
@@ -1719,7 +1747,12 @@
    "vol": 0.7,
    "zoom": "in",
    "fx": {
-    "glow": true
+    "glow": true,
+    "note": {
+     "text": "Thank you for coming, everyone.",
+     "at": 0.4,
+     "dur": 3.6
+    }
    },
    "trans": {
     "type": "fade",

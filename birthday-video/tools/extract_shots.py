@@ -40,6 +40,15 @@ def extract(s):
     src = SRC / f"{s['clip']}.MOV"
     speed = s.get("speed", 1)
     length = s["dur"] * speed + 0.6
+    if mp4.exists():
+        have = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(mp4)],
+                                    capture_output=True, text=True).stdout.strip() or 0)
+        need = s["dur"] if speed < 1 else s["dur"] * speed
+        if have < need + 0.05:   # shot was lengthened since it was cut: cut it again
+            print("re-cut", name, round(have, 2), "->", round(need, 2), flush=True)
+            mp4.unlink()
+            for old in OUT.glob(f"{name}_*.jpg"):
+                old.unlink()
     if not mp4.exists():
         a = aac_index(src)
         cmd = ["ffmpeg", "-y", "-loglevel", "error", "-threads", "2", "-ss", str(s["in"]), "-t", f"{length:.3f}",

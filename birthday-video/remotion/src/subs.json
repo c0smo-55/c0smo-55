@@ -451,6 +451,13 @@
    "speaker": "MC",
    "id": "Tiga!",
    "text": "Three!"
+  },
+  {
+   "start": 92.58,
+   "end": 94.58,
+   "speaker": "MC",
+   "id": "Boleh tetap di posisi, ya.",
+   "text": "Stay right there for a sec."
   }
  ],
  "18": [
@@ -504,25 +511,46 @@
    "text": "It's blue, right?"
   },
   {
-   "start": 137.12,
-   "end": 139.52,
+   "start": 134.84,
+   "end": 137.66,
    "speaker": "MC",
-   "id": "Aduh, frozen — it's okay, teman-teman!",
-   "text": "Oh no, it froze — it's fine, guys!"
+   "id": "Waduh, aduh!",
+   "text": "Oh no!"
   },
   {
-   "start": 140.49,
+   "start": 137.66,
+   "end": 139.52,
+   "speaker": "MC",
+   "id": "Frozen — it's okay, teman-teman!",
+   "text": "It froze — it's fine, guys!"
+  },
+  {
+   "start": 139.52,
    "end": 142.87,
    "speaker": "MC",
-   "id": "Kita lihat siapa yang menjadi...",
+   "id": "Kita lihat siapa yang jadi...",
    "text": "Let's see who's..."
   },
   {
-   "start": 143.73,
-   "end": 145.35,
+   "start": 149.16,
+   "end": 151.86,
    "speaker": "MC",
-   "id": "Oke, masih Emily!",
-   "text": "Okay, still Emily!"
+   "id": "Aduh, kita lanjut ya, teman-teman.",
+   "text": "Okay, let's keep going, guys."
+  },
+  {
+   "start": 481.41,
+   "end": 484.25,
+   "speaker": "MC",
+   "id": "Ketiga, Nisha. Keempat, Emily.",
+   "text": "Third, Nisha. Fourth, Emily."
+  },
+  {
+   "start": 549.67,
+   "end": 552.33,
+   "speaker": "MC",
+   "id": "Berarti kalian tadi jawabnya benar semua, gak?",
+   "text": "So did you all get it right?"
   },
   {
    "start": 587.61,
@@ -530,6 +558,109 @@
    "speaker": "MC",
    "id": "Bebas ya, bebas guys!",
    "text": "Pose however you want, guys!"
+  }
+ ],
+ "26": [
+  {
+   "start": 0.0,
+   "end": 1.1,
+   "speaker": "MC",
+   "id": "Siap-siap!",
+   "text": "Get ready!"
+  },
+  {
+   "start": 1.1,
+   "end": 4.6,
+   "speaker": "MC",
+   "id": "Yang pertama adalah...",
+   "text": "First up is..."
+  },
+  {
+   "start": 4.6,
+   "end": 9.9,
+   "speaker": "MC",
+   "id": "Oke, pintar!",
+   "text": "Okay, nice!"
+  }
+ ],
+ "27": [
+  {
+   "start": 0.1,
+   "end": 2.1,
+   "speaker": "MC",
+   "id": "Berdiri!",
+   "text": "Stand up!"
+  },
+  {
+   "start": 2.1,
+   "end": 5.5,
+   "speaker": "MC",
+   "id": "Pinter!",
+   "text": "Nice!"
+  },
+  {
+   "start": 5.5,
+   "end": 6.6,
+   "speaker": "MC",
+   "id": "Dua orang lagi.",
+   "text": "Two more people."
+  },
+  {
+   "start": 16.0,
+   "end": 19.3,
+   "speaker": "MC",
+   "id": "Empat orang selanjutnya.",
+   "text": "Next four people."
+  },
+  {
+   "start": 19.3,
+   "end": 21.8,
+   "speaker": "MC",
+   "id": "Pinter. Selanjutnya adalah...",
+   "text": "Nice. Next up..."
+  },
+  {
+   "start": 21.8,
+   "end": 24.5,
+   "speaker": "MC",
+   "id": "...ke kanan!",
+   "text": "...to the right!"
+  },
+  {
+   "start": 24.5,
+   "end": 26.0,
+   "speaker": "MC",
+   "id": "Oke, kompak!",
+   "text": "Okay, all together!"
+  },
+  {
+   "start": 26.0,
+   "end": 27.8,
+   "speaker": "MC",
+   "id": "Keren banget!",
+   "text": "So good!"
+  },
+  {
+   "start": 27.8,
+   "end": 30.0,
+   "speaker": "MC",
+   "id": "Langkahkan kaki kanan ke depan!",
+   "text": "Right foot forward!"
+  },
+  {
+   "start": 90.9,
+   "end": 92.6,
+   "speaker": "MC",
+   "id": "Hadiahnya... aku panggil lagi ke depan.",
+   "text": "For the prize, I'll call you back up."
+  }
+ ],
+ "21": [
+  {
+   "start": 4.2,
+   "end": 6.0,
+   "id": "Oh, makan ya?",
+   "text": "Oh, eating, huh?"
   }
  ]
 }
