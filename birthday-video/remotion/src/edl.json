@@ -1769,31 +1769,6 @@
   },
   {
    "type": "scene",
-   "scene": "Stats",
-   "dur": 5.5,
-   "trans": {
-    "type": "fade",
-    "dur": 0.5
-   },
-   "props": {
-    "items": [
-     {
-      "value": 17,
-      "label": "years old"
-     },
-     {
-      "value": 33,
-      "label": "videos"
-     },
-     {
-      "value": 41,
-      "label": "minutes of footage"
-     }
-    ]
-   }
-  },
-  {
-   "type": "scene",
    "scene": "CheerMeter",
    "dur": 6.5,
    "trans": {
