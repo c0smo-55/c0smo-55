@@ -1,65 +1,400 @@
 {
  "11": [
-  {"start": 0.0, "end": 5.16, "speaker": "MC", "text": "Everyone, thank you so much for coming tonight."},
-  {"start": 5.16, "end": 10.46, "speaker": "MC", "text": "Thank you for taking the time to be here this evening."},
-  {"start": 10.46, "end": 14.24, "speaker": "MC", "text": "Tonight I just want everyone to relax and enjoy,"},
-  {"start": 14.24, "end": 16.52, "speaker": "MC", "text": "because we're here to have fun together"},
-  {"start": 16.52, "end": 21.68, "speaker": "MC", "text": "and celebrate the birthday of someone special to all of us."},
-  {"start": 22.4, "end": 26.66, "speaker": "MC", "text": "Okay, I feel like the energy is a bit low..."},
-  {"start": 26.66, "end": 28.62, "speaker": "MC", "text": "so let me test the crowd first."},
-  {"start": 28.62, "end": 30.36, "speaker": "MC", "text": "I want to hear you!"},
-  {"start": 30.36, "end": 33.2, "speaker": "MC", "text": "Where are my people on the left side?!"},
-  {"start": 53.58, "end": 56.96, "speaker": "MC", "text": "Because tonight is going to be so much fun,"},
-  {"start": 56.96, "end": 59.53, "speaker": "MC", "text": "and the night is still long —"},
-  {"start": 59.53, "end": 64.17, "speaker": "MC", "text": "there are lots of fun games coming, with prizes too!"},
-  {"start": 64.17, "end": 70.25, "speaker": "MC", "text": "Okay, without further ado — I don't want to be up here alone for too long."},
-  {"start": 70.25, "end": 75.95, "speaker": "MC", "text": "Let me call someone who's been waiting over on our left..."},
-  {"start": 76.46, "end": 79.5, "speaker": "MC", "text": "Please welcome... the Birthday Girl!"},
-  {"start": 88.43, "end": 95.61, "speaker": "MC", "text": "May everything Jesslyn dreams of and hopes for come true in this new year of her life."},
-  {"start": 95.61, "end": 100.55, "speaker": "MC", "text": "Okay everyone, let me ask — doesn't Jesslyn look beautiful tonight?"},
-  {"start": 108.52, "end": 112.3, "speaker": "MC", "text": "Jesslyn, say a few words to all your friends who came tonight —"},
-  {"start": 112.3, "end": 113.86, "speaker": "MC", "text": "or to your family, too."},
-  {"start": 113.86, "end": 124.47, "speaker": "Jesslyn", "text": "Thank you so much, everyone."}
+  {
+   "start": 0.0,
+   "end": 5.16,
+   "speaker": "MC",
+   "text": "Everyone, thank you so much for coming tonight.",
+   "id": "Teman-teman semua, aku mau bilang terima kasih banyak udah hadir pada malam hari ini."
+  },
+  {
+   "start": 5.16,
+   "end": 10.46,
+   "speaker": "MC",
+   "text": "Thank you for taking the time to be here this evening.",
+   "id": "Terima kasih sudah menyempatkan waktu untuk hadir di malam hari ini."
+  },
+  {
+   "start": 10.46,
+   "end": 14.24,
+   "speaker": "MC",
+   "text": "Tonight I just want everyone to relax and enjoy,",
+   "id": "Pokoknya aku pengen teman-teman semua malam hari ini santai aja,"
+  },
+  {
+   "start": 14.24,
+   "end": 16.52,
+   "speaker": "MC",
+   "text": "because we're here to have fun together",
+   "id": "karena kita mau seru-seruan bareng"
+  },
+  {
+   "start": 16.52,
+   "end": 21.68,
+   "speaker": "MC",
+   "text": "and celebrate the birthday of someone special to all of us.",
+   "id": "dan mau merayakan ulang tahun orang yang spesial buat kita."
+  },
+  {
+   "start": 22.4,
+   "end": 26.66,
+   "speaker": "MC",
+   "text": "Okay, I feel like the energy is a bit low...",
+   "id": "Oke, karena kayaknya aku merasa kurang semangat..."
+  },
+  {
+   "start": 26.66,
+   "end": 28.62,
+   "speaker": "MC",
+   "text": "so let me test the crowd first.",
+   "id": "aku mau tes ombak dulu nih."
+  },
+  {
+   "start": 28.62,
+   "end": 30.36,
+   "speaker": "MC",
+   "text": "I want to hear you!",
+   "id": "Aku mau denger dulu nih!"
+  },
+  {
+   "start": 30.36,
+   "end": 33.2,
+   "speaker": "MC",
+   "text": "Where are my people on the left side?!",
+   "id": "Mana suaranya yang di sebelah kiri aku?!"
+  },
+  {
+   "start": 53.58,
+   "end": 56.96,
+   "speaker": "MC",
+   "text": "Because tonight is going to be so much fun,",
+   "id": "Karena acara malam hari ini akan seru banget,"
+  },
+  {
+   "start": 56.96,
+   "end": 59.53,
+   "speaker": "MC",
+   "text": "and the night is still long —",
+   "id": "karena acara malam hari ini masih panjang —"
+  },
+  {
+   "start": 59.53,
+   "end": 64.17,
+   "speaker": "MC",
+   "text": "there are lots of fun games coming, with prizes too!",
+   "id": "masih akan ada banyak game seru yang tentunya berhadiah juga!"
+  },
+  {
+   "start": 64.17,
+   "end": 70.25,
+   "speaker": "MC",
+   "text": "Okay, without further ado — I don't want to be up here alone for too long.",
+   "id": "Oke, tanpa berlama-lama, aku gak mau sendiri lama-lama di sini."
+  },
+  {
+   "start": 70.25,
+   "end": 75.95,
+   "speaker": "MC",
+   "text": "Let me call someone who's been waiting over on our left...",
+   "id": "Aku mau panggil seseorang yang sepertinya udah nunggu di sebelah kiri kita..."
+  },
+  {
+   "start": 76.46,
+   "end": 79.5,
+   "speaker": "MC",
+   "text": "Please welcome... the Birthday Girl!",
+   "id": "Aku mau panggil... The Birthday Girl!"
+  },
+  {
+   "start": 88.43,
+   "end": 95.61,
+   "speaker": "MC",
+   "text": "May everything Jesslyn dreams of and hopes for come true in this new year of her life.",
+   "id": "Semoga apapun yang diimpikan, apapun yang dicita-citakan Jesslyn bisa tercapai di usia yang baru ini."
+  },
+  {
+   "start": 95.61,
+   "end": 100.55,
+   "speaker": "MC",
+   "text": "Okay everyone, let me ask — doesn't Jesslyn look beautiful tonight?",
+   "id": "Oke, teman-teman, aku mau tanya dulu nih — Jesslyn cantik gak malam hari ini?"
+  },
+  {
+   "start": 108.52,
+   "end": 112.3,
+   "speaker": "MC",
+   "text": "Jesslyn, say a few words to all your friends who came tonight —",
+   "id": "Sampaikan ke teman-teman yang udah hadir pada malam hari ini,"
+  },
+  {
+   "start": 112.3,
+   "end": 113.86,
+   "speaker": "MC",
+   "text": "or to your family, too.",
+   "id": "atau buat keluarga juga boleh."
+  },
+  {
+   "start": 113.86,
+   "end": 124.47,
+   "speaker": "Jesslyn",
+   "text": "Thank you so much, everyone.",
+   "id": "Terima kasih banyak."
+  }
  ],
  "12": [
-  {"start": 1.44, "end": 5.0, "speaker": "MC", "text": "Before I pick someone — does anyone want to go first?"},
-  {"start": 5.98, "end": 8.42, "speaker": "MC", "text": "No one? Then I'll just choose!"},
-  {"start": 8.56, "end": 9.02, "speaker": "Jesslyn", "text": "I have a request!"},
-  {"start": 9.18, "end": 10.72, "speaker": "MC", "text": "Oh, a request! Sure — who?"},
-  {"start": 13.94, "end": 14.74, "text": "Stevi, come up!"},
-  {"start": 20.31, "end": 23.91, "speaker": "Jesslyn", "text": "Stevi, Fiona, Shalom."},
-  {"start": 52.22, "end": 61.0, "speaker": "Stevi", "text": "I just want Jesslyn to always be healthy and always stay as kind as she is."},
-  {"start": 61.12, "end": 65.4, "speaker": "Stevi", "text": "And I hope Jesslyn never loses that smile of hers."},
-  {"start": 69.39, "end": 74.85, "speaker": "Stevi", "text": "Even more darling, even more everything — just better and better!"},
-  {"start": 75.44, "end": 76.52, "speaker": "MC", "text": "Thank you, Stevi."},
-  {"start": 76.97, "end": 78.29, "speaker": "Jesslyn", "text": "Thank you so much!"},
-  {"start": 78.83, "end": 80.53, "speaker": "MC", "text": "Who was second, Jesslyn?"},
-  {"start": 80.81, "end": 82.06, "speaker": "Jesslyn", "text": "Fiona."},
-  {"start": 86.46, "end": 90.2, "speaker": "Fiona", "text": "Thank you so much for inviting me, Jesslyn, and I wish you all the best."},
-  {"start": 90.32, "end": 96.72, "speaker": "Fiona", "text": "I hope you stay the kindest person that I've ever met."},
-  {"start": 97.3, "end": 98.06, "speaker": "Fiona", "text": "Thank you, Jesslyn."},
-  {"start": 112.0, "end": 116.38, "speaker": "Shalom", "text": "I want to say thank you for being my friend."},
-  {"start": 116.66, "end": 123.28, "speaker": "Shalom", "text": "May you have a long life, always be healthy and happy, and may all your dreams come true."},
-  {"start": 124.41, "end": 125.83, "speaker": "MC", "text": "Okay, thank you!"},
-  {"start": 128.11, "end": 130.87, "speaker": "MC", "text": "Jesslyn, can I pick one last person?"},
-  {"start": 152.47, "end": 153.99, "speaker": "MC", "text": "How do you know Jesslyn?"},
-  {"start": 154.27, "end": 155.13, "speaker": "MC", "text": "From school?"},
-  {"start": 158.5, "end": 161.67, "speaker": "MC", "text": "Since when? — Since last year."},
-  {"start": 161.67, "end": 165.87, "speaker": "MC", "text": "Only since last year, but you already feel so close to her!"},
-  {"start": 177.06, "end": 183.8, "speaker": "Friend", "text": "This year, may all good things come to you — and always stay a good person."},
-  {"start": 183.8, "end": 185.24, "speaker": "Friend", "text": "Thank you, Jesslyn."},
-  {"start": 187.58, "end": 195.72, "speaker": "MC", "text": "Thank you so much to Jesslyn's four friends for their lovely wishes and prayers."},
-  {"start": 195.72, "end": 204.62, "speaker": "MC", "text": "Next, the main event of the night: blowing out the candles and cutting the cake!"},
-  {"start": 204.86, "end": 210.28, "speaker": "MC", "text": "I'd like to invite Jesslyn and her family to come to the front."}
+  {
+   "start": 1.44,
+   "end": 5.0,
+   "speaker": "MC",
+   "text": "Before I pick someone — does anyone want to go first?",
+   "id": "Sebelum aku tunjuk, ada yang mau duluan gak?"
+  },
+  {
+   "start": 5.98,
+   "end": 8.42,
+   "speaker": "MC",
+   "text": "No one? Then I'll just choose!",
+   "id": "Gak ada yang mau? Gimana nih? Aku tunjuk aja ya!"
+  },
+  {
+   "start": 8.56,
+   "end": 9.02,
+   "speaker": "Jesslyn",
+   "text": "I have a request!",
+   "id": "Aku mau request!"
+  },
+  {
+   "start": 9.18,
+   "end": 10.72,
+   "speaker": "MC",
+   "text": "Oh, a request! Sure — who?",
+   "id": "Oh, kamu mau request! Boleh, siapa?"
+  },
+  {
+   "start": 13.94,
+   "end": 14.74,
+   "text": "Stevi, come up!",
+   "id": "Stevi, maju!"
+  },
+  {
+   "start": 20.31,
+   "end": 23.91,
+   "speaker": "Jesslyn",
+   "text": "Stevi, Fiona, Shalom.",
+   "id": "Stevi, Fiona, Shalom."
+  },
+  {
+   "start": 52.22,
+   "end": 61.0,
+   "speaker": "Stevi",
+   "text": "I just want Jesslyn to always be healthy and always stay as kind as she is.",
+   "id": "Pokoknya aku pengen Jesslyn sehat selalu, semoga Jesslyn selalu baik."
+  },
+  {
+   "start": 61.12,
+   "end": 65.4,
+   "speaker": "Stevi",
+   "text": "And I hope Jesslyn never loses that smile of hers.",
+   "id": "Dan aku harap Jesslyn gak pernah kehilangan senyumnya."
+  },
+  {
+   "start": 69.39,
+   "end": 74.85,
+   "speaker": "Stevi",
+   "text": "Even more darling, even more everything — just better and better!",
+   "id": "Makin, makin darling, makin semuanya — makin baik lah pokoknya!"
+  },
+  {
+   "start": 75.44,
+   "end": 76.52,
+   "speaker": "MC",
+   "text": "Thank you, Stevi.",
+   "id": "Thank you, Stevi."
+  },
+  {
+   "start": 76.97,
+   "end": 78.29,
+   "speaker": "Jesslyn",
+   "text": "Thank you so much!",
+   "id": "Thank you so much!"
+  },
+  {
+   "start": 78.83,
+   "end": 80.53,
+   "speaker": "MC",
+   "text": "Who was second, Jesslyn?",
+   "id": "Yang kedua tadi siapa ya, Jesslyn?"
+  },
+  {
+   "start": 80.81,
+   "end": 82.06,
+   "speaker": "Jesslyn",
+   "text": "Fiona.",
+   "id": "Fiona."
+  },
+  {
+   "start": 86.46,
+   "end": 90.2,
+   "speaker": "Fiona",
+   "text": "Thank you so much for inviting me, Jesslyn, and I wish you all the best.",
+   "id": "Makasih banget Jesslyn udah undang aku, and I wish you all the best."
+  },
+  {
+   "start": 90.32,
+   "end": 96.72,
+   "speaker": "Fiona",
+   "text": "I hope you stay the kindest person that I've ever met.",
+   "id": "And I hope you stay the kindest person that I've ever met."
+  },
+  {
+   "start": 97.3,
+   "end": 98.06,
+   "speaker": "Fiona",
+   "text": "Thank you, Jesslyn.",
+   "id": "Thank you, Jesslyn."
+  },
+  {
+   "start": 112.0,
+   "end": 116.38,
+   "speaker": "Shalom",
+   "text": "I want to say thank you for being my friend.",
+   "id": "Aku mau ucapin terima kasih, karena udah kenal aku."
+  },
+  {
+   "start": 116.66,
+   "end": 123.28,
+   "speaker": "Shalom",
+   "text": "May you have a long life, always be healthy and happy, and may all your dreams come true.",
+   "id": "Semoga Jesslyn panjang umur, sehat selalu, bahagia selalu, dan cita-citanya tercapai."
+  },
+  {
+   "start": 124.41,
+   "end": 125.83,
+   "speaker": "MC",
+   "text": "Okay, thank you!",
+   "id": "Oke, thank you!"
+  },
+  {
+   "start": 128.11,
+   "end": 130.87,
+   "speaker": "MC",
+   "text": "Jesslyn, can I pick one last person?",
+   "id": "Jesslyn, aku boleh gak tunjuk satu orang lagi, terakhir?"
+  },
+  {
+   "start": 152.47,
+   "end": 153.99,
+   "speaker": "MC",
+   "text": "How do you know Jesslyn?",
+   "id": "Kamu kenal Jesslyn dari mana?"
+  },
+  {
+   "start": 154.27,
+   "end": 155.13,
+   "speaker": "MC",
+   "text": "From school?",
+   "id": "Temen sekolah?"
+  },
+  {
+   "start": 158.5,
+   "end": 161.67,
+   "speaker": "MC",
+   "text": "Since when? — Since last year.",
+   "id": "Dari tahun berapa? — Dari tahun lalu."
+  },
+  {
+   "start": 161.67,
+   "end": 165.87,
+   "speaker": "MC",
+   "text": "Only since last year, but you already feel so close to her!",
+   "id": "Oh, berarti baru tahun lalu, tapi udah merasa dekat ya sama Jesslyn."
+  },
+  {
+   "start": 177.06,
+   "end": 183.8,
+   "speaker": "Friend",
+   "text": "This year, may all good things come to you — and always stay a good person.",
+   "id": "Semoga di tahun ini semua hal yang positif datang ke kamu, dan tetap jadi orang baik."
+  },
+  {
+   "start": 183.8,
+   "end": 185.24,
+   "speaker": "Friend",
+   "text": "Thank you, Jesslyn.",
+   "id": "Terima kasih, Jesslyn."
+  },
+  {
+   "start": 187.58,
+   "end": 195.72,
+   "speaker": "MC",
+   "text": "Thank you so much to Jesslyn's four friends for their lovely wishes and prayers.",
+   "id": "Terima kasih banyak buat keempat teman Jesslyn tadi yang udah memanjatkan ucapan serta doa-doanya."
+  },
+  {
+   "start": 195.72,
+   "end": 204.62,
+   "speaker": "MC",
+   "text": "Next, the main event of the night: blowing out the candles and cutting the cake!",
+   "id": "Oke, selanjutnya kita masuk ke inti acara malam hari ini: tiup lilin dan potong kue!"
+  },
+  {
+   "start": 204.86,
+   "end": 210.28,
+   "speaker": "MC",
+   "text": "I'd like to invite Jesslyn and her family to come to the front.",
+   "id": "Sebelumnya saya undang Jesslyn beserta keluarga untuk menempati posisi di depan."
+  }
  ],
  "13": [
-  {"start": 3.45, "end": 7.87, "speaker": "MC", "text": "Are you a school friend, a friend from home — how do you know Jesslyn?"},
-  {"start": 14.54, "end": 19.75, "speaker": "Friend", "text": "Is it okay if I speak in English?"},
-  {"start": 19.75, "end": 23.53, "speaker": "Friend", "text": "Thank you for inviting me over, Jesslyn,"},
-  {"start": 23.53, "end": 26.61, "speaker": "Friend", "text": "and I wish you all the best."},
-  {"start": 26.61, "end": 29.81, "speaker": "Friend", "text": "I've heard about your plans for the future,"},
-  {"start": 29.81, "end": 33.53, "speaker": "Friend", "text": "so in my prayers, I will always be praying for you"},
-  {"start": 34.6, "end": 36.78, "speaker": "Friend", "text": "until you reach that peak."},
-  {"start": 36.78, "end": 39.4, "speaker": "Friend", "text": "Thank you for inviting me, Jesslyn. Thank you."}
+  {
+   "start": 3.45,
+   "end": 7.87,
+   "speaker": "MC",
+   "text": "Are you a school friend, a friend from home — how do you know Jesslyn?",
+   "id": "Kamu temen sekolah, temen rumah, atau temen apanya Jesslyn?"
+  },
+  {
+   "start": 14.54,
+   "end": 19.75,
+   "speaker": "Friend",
+   "text": "Is it okay if I speak in English?",
+   "id": "Aku izin pakai bahasa Inggris, ya."
+  },
+  {
+   "start": 19.75,
+   "end": 23.53,
+   "speaker": "Friend",
+   "text": "Thank you for inviting me over, Jesslyn,"
+  },
+  {
+   "start": 23.53,
+   "end": 26.61,
+   "speaker": "Friend",
+   "text": "and I wish you all the best."
+  },
+  {
+   "start": 26.61,
+   "end": 29.81,
+   "speaker": "Friend",
+   "text": "I've heard about your plans for the future,"
+  },
+  {
+   "start": 29.81,
+   "end": 33.53,
+   "speaker": "Friend",
+   "text": "so in my prayers, I will always be praying for you"
+  },
+  {
+   "start": 34.6,
+   "end": 36.78,
+   "speaker": "Friend",
+   "text": "until you reach that peak."
+  },
+  {
+   "start": 36.78,
+   "end": 39.4,
+   "speaker": "Friend",
+   "text": "Thank you for inviting me, Jesslyn. Thank you."
+  }
  ]
 }

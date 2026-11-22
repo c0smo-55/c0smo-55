@@ -35,8 +35,15 @@ const Subtitles = ({s}) => {
         background: 'rgba(5,11,28,0.62)', opacity: Math.min(1, into / 4),
         fontFamily: F.sans, fontWeight: 500, fontSize: 46, lineHeight: 1.3, color: '#FFFFFF',
         textShadow: '0 2px 8px rgba(0,0,0,0.6)'}}>
-        {cur.speaker && <span style={{color: C.sky, fontWeight: 800}}>{cur.speaker}: </span>}
-        {cur.text}
+        {cur.id && cur.id !== cur.text && (
+          <div style={{fontSize: 34, fontWeight: 500, color: 'rgba(230,240,255,0.82)', fontStyle: 'italic', marginBottom: 4}}>
+            {cur.speaker && <span style={{color: C.sky, fontWeight: 800, fontStyle: 'normal'}}>{cur.speaker}: </span>}{cur.id}
+          </div>
+        )}
+        <div>
+          {cur.speaker && !(cur.id && cur.id !== cur.text) && <span style={{color: C.sky, fontWeight: 800}}>{cur.speaker}: </span>}
+          {cur.text}
+        </div>
       </div>
     </AbsoluteFill>
   );
