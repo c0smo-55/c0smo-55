@@ -1,4 +1,5 @@
 import React from 'react';
+import {FairyDust, LensFlare} from './magic';
 import {AbsoluteFill, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {
   Background, Bokeh, Butterflies, C, Confetti, F, FadeOut, Photo, Sfx, ShimmerScript, Sparkles, SpringWords, clamp, useFonts,
@@ -53,6 +54,8 @@ export const Opening = ({name}) => {
         <Butterflies count={6} seed="open" start={20} />
         <Sparkles start={70} points={[[560, 420, 0.9, 0], [1390, 380, 1.1, 10], [1460, 640, 0.7, 22], [470, 650, 0.6, 30], [960, 300, 0.8, 40]]} />
         <Confetti start={78} seed="open" origin={[960, 560]} />
+        <FairyDust seed="open-dust" count={40} />
+        <LensFlare at={30} dur={26} y={0.47} />
       </FadeOut>
       <Sfx name="riser_1s" at={32} volume={0.35} />
       <Sfx name="boom_1" at={32} volume={0.7} />

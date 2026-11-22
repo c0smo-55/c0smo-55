@@ -12,6 +12,7 @@ import {Chapter, Ending, LightLeak, Opening} from './scenes';
 import {CheerMeter, Countdown, EmojiBurst, FreezeTag, PhotoWall, PiP, ProgressBar, Punch, Scrapbook, Stats, Teaser, Triptych, shakeTransform} from './viral';
 import {Sequence, useCurrentFrame as useFrame} from 'remotion';
 import EDL from './edl.json';
+import {Finish, FairyDust, LensFlare, dreamy, flash, zoomBlur} from './magic';
 import SUBS from './subs.json';
 
 // English subtitles: lines are timed in the ORIGINAL clip's seconds; map timeline frame -> source time.
@@ -238,6 +239,7 @@ const Shot = ({s}) => {
         </>
       )}
       <Vignette />
+      <FairyDust seed={name} count={fx.glow ? 40 : 18} strength={fx.glow ? 1 : 0.6} />
       {(fx.emoji || []).map((e, k) => <EmojiBurst key={k} seed={`${name}-${k}`} {...e} at={fr(e.at)} />)}
       {s.subs !== false && <Subtitles s={s} />}
       {fx.pip && <PiP {...fx.pip} at={fr(fx.pip.at || 0)} />}
@@ -258,10 +260,13 @@ const Shot = ({s}) => {
 
 const presentation = (t) => {
   switch (t.type) {
-    case 'slide': return slide({direction: t.dir || 'from-right'});
-    case 'wipe': return wipe({direction: t.dir || 'from-left'});
-    case 'clockWipe': return clockWipe({width: 1920, height: 1080});
-    default: return fade();
+    case 'slide': return zoomBlur({strength: 0.7});
+    case 'wipe': return flash();
+    case 'clockWipe': return zoomBlur({strength: 1});
+    case 'zoomBlur': return zoomBlur({strength: t.strength ?? 1});
+    case 'flash': return flash();
+    case 'dreamy': return dreamy();
+    default: return dreamy();
   }
 };
 const WHOOSHES = ['whoosh_1', 'whoosh_3', 'whoosh_6', 'whoosh_2', 'whoosh_5', 'whoosh_4'];
@@ -293,6 +298,7 @@ export const Main = () => {
         {it.type === 'scene' && it.scene === 'Stats' && <Stats {...it.props} />}
         {it.type === 'scene' && it.scene === 'Triptych' && <Triptych {...it.props} />}
         {it.type === 'shot' && <Shot s={it} />}
+        {it.trans && it.trans.type !== 'fade' && <LensFlare at={Math.max(0, tHalf - 9)} dur={18} seed={i % 4} y={[0.38, 0.5, 0.3, 0.45][i % 4]} />}
         {it.type === 'shot' && i > 0 && EDL.items[i - 1].scene === 'Chapter' && <LightLeak at={0} dur={22} seed={i % 5} />}
         {whoosh && it.trans.type !== 'fade' && <Sfx name={whoosh} at={tHalf} volume={0.35} />}
         {whoosh && it.trans.type === 'fade' && it.type === 'shot' && <Sfx name="whoosh_5" at={tHalf} volume={0.18} />}
@@ -302,6 +308,7 @@ export const Main = () => {
   return (
     <AbsoluteFill style={{backgroundColor: 'black'}}>
       <TransitionSeries>{children}</TransitionSeries>
+      <Finish />
       <Progress />
     </AbsoluteFill>
   );

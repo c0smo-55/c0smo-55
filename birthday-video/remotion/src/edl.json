@@ -117,7 +117,12 @@
    "dur": 3.0,
    "speed": 1.25,
    "vol": 0.2,
-   "zoom": "in"
+   "zoom": "in",
+   "trans": {
+    "type": "zoomBlur",
+    "strength": 0.6,
+    "dur": 0.4
+   }
   },
   {
    "type": "scene",
@@ -161,7 +166,11 @@
    "in": 0.0,
    "dur": 2.0,
    "vol": 0.2,
-   "zoom": "in"
+   "zoom": "in",
+   "trans": {
+    "type": "dreamy",
+    "dur": 0.35
+   }
   },
   {
    "type": "shot",
@@ -176,6 +185,10 @@
      "sub": "seventeen",
      "at": 0.2
     }
+   },
+   "trans": {
+    "type": "dreamy",
+    "dur": 0.35
    }
   },
   {
@@ -184,7 +197,12 @@
    "in": 4.0,
    "dur": 2.0,
    "vol": 0.2,
-   "zoom": "in"
+   "zoom": "in",
+   "trans": {
+    "type": "zoomBlur",
+    "strength": 0.6,
+    "dur": 0.4
+   }
   },
   {
    "type": "shot",
@@ -193,7 +211,11 @@
    "dur": 3.0,
    "speed": 1.5,
    "vol": 0.2,
-   "zoom": "out"
+   "zoom": "out",
+   "trans": {
+    "type": "dreamy",
+    "dur": 0.35
+   }
   },
   {
    "type": "shot",
@@ -201,7 +223,11 @@
    "in": 0.0,
    "dur": 1.5,
    "vol": 0.2,
-   "zoom": "punch"
+   "zoom": "punch",
+   "trans": {
+    "type": "dreamy",
+    "dur": 0.35
+   }
   },
   {
    "type": "shot",
@@ -241,7 +267,12 @@
    "in": 8.0,
    "dur": 4.0,
    "vol": 0.6,
-   "zoom": "in"
+   "zoom": "in",
+   "trans": {
+    "type": "zoomBlur",
+    "strength": 0.6,
+    "dur": 0.4
+   }
   },
   {
    "type": "shot",
@@ -268,6 +299,10 @@
      "r": 200,
      "side": "left"
     }
+   },
+   "trans": {
+    "type": "dreamy",
+    "dur": 0.35
    }
   },
   {
@@ -286,7 +321,11 @@
    "dur": 5.0,
    "vol": 0.4,
    "zoom": "in",
-   "fx": {}
+   "fx": {},
+   "trans": {
+    "type": "dreamy",
+    "dur": 0.35
+   }
   },
   {
    "type": "shot",
@@ -308,7 +347,12 @@
    "in": 5.0,
    "dur": 5.0,
    "vol": 0.6,
-   "zoom": "in"
+   "zoom": "in",
+   "trans": {
+    "type": "zoomBlur",
+    "strength": 0.6,
+    "dur": 0.4
+   }
   },
   {
    "type": "shot",
@@ -317,7 +361,11 @@
    "dur": 2.5,
    "speed": 1.6,
    "vol": 0.3,
-   "zoom": "in"
+   "zoom": "in",
+   "trans": {
+    "type": "dreamy",
+    "dur": 0.35
+   }
   },
   {
    "type": "shot",
@@ -330,6 +378,10 @@
      "at": 2.0,
      "caption": "besties"
     }
+   },
+   "trans": {
+    "type": "dreamy",
+    "dur": 0.35
    }
   },
   {
@@ -629,6 +681,11 @@
     "shake": [
      0.2
     ]
+   },
+   "trans": {
+    "type": "zoomBlur",
+    "strength": 0.6,
+    "dur": 0.4
    }
   },
   {
@@ -824,7 +881,11 @@
    "in": 3.5,
    "dur": 2.5,
    "vol": 0.5,
-   "zoom": "punch"
+   "zoom": "punch",
+   "trans": {
+    "type": "dreamy",
+    "dur": 0.35
+   }
   },
   {
    "type": "scene",
@@ -1029,7 +1090,11 @@
    "in": 0.0,
    "dur": 3.0,
    "vol": 0.3,
-   "zoom": "in"
+   "zoom": "in",
+   "trans": {
+    "type": "dreamy",
+    "dur": 0.35
+   }
   },
   {
    "type": "shot",
@@ -1056,6 +1121,11 @@
      "r": 170,
      "side": "right"
     }
+   },
+   "trans": {
+    "type": "zoomBlur",
+    "strength": 0.6,
+    "dur": 0.4
    }
   },
   {
@@ -1123,7 +1193,11 @@
    "in": 0.0,
    "dur": 4.0,
    "vol": 0.8,
-   "zoom": "in"
+   "zoom": "in",
+   "trans": {
+    "type": "dreamy",
+    "dur": 0.35
+   }
   },
   {
    "type": "scene",
@@ -1173,6 +1247,10 @@
      "at": 3.5,
      "caption": "BFF"
     }
+   },
+   "trans": {
+    "type": "dreamy",
+    "dur": 0.35
    }
   },
   {
@@ -1190,6 +1268,11 @@
       "vol": 0.6
      }
     ]
+   },
+   "trans": {
+    "type": "zoomBlur",
+    "strength": 0.6,
+    "dur": 0.4
    }
   },
   {
@@ -1219,6 +1302,10 @@
     "shake": [
      0.6
     ]
+   },
+   "trans": {
+    "type": "dreamy",
+    "dur": 0.35
    }
   },
   {
@@ -1228,7 +1315,11 @@
    "dur": 3.0,
    "vol": 0.9,
    "zoom": "in",
-   "fx": {}
+   "fx": {},
+   "trans": {
+    "type": "dreamy",
+    "dur": 0.35
+   }
   },
   {
    "type": "scene",
@@ -1456,6 +1547,11 @@
    "zoom": "in",
    "fx": {
     "glow": true
+   },
+   "trans": {
+    "type": "zoomBlur",
+    "strength": 0.6,
+    "dur": 0.4
    }
   },
   {
@@ -1557,6 +1653,10 @@
     "shake": [
      1.5
     ]
+   },
+   "trans": {
+    "type": "dreamy",
+    "dur": 0.35
    }
   },
   {
