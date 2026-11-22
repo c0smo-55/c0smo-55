@@ -1,7 +1,7 @@
 // "Viral YouTube" style motion graphics: freeze-frame name tags, emoji bursts, screen shake,
 // countdowns, punchy captions, cheer meter, chapter progress bar, photo wall.
 import React from 'react';
-import {AbsoluteFill, Img, interpolate, random, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Img, OffthreadVideo, Sequence, interpolate, random, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {C, F, Sfx, clamp} from './fx';
 
 const EMOJI = '"Noto Color Emoji", sans-serif';
@@ -197,6 +197,123 @@ export const PhotoWall = ({images}) => {
           </div>
         );
       })}
+    </AbsoluteFill>
+  );
+};
+
+const vid = (name) => staticFile(`shots/${name}.mp4`);
+
+// Cold-open teaser: rapid best-moment cuts with white flash frames, then a title line.
+export const Teaser = ({clips, line = 'One unforgettable night'}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  let t = 0;
+  const seqs = clips.map((c, i) => {
+    const d = Math.round(c.dur * fps);
+    const el = (
+      <Sequence key={i} from={t} durationInFrames={d} layout="none">
+        <AbsoluteFill style={{transform: `scale(${1.04 + 0.04 * (i % 2)})`}}>
+          <OffthreadVideo src={vid(c.name)} startFrom={Math.round((c.start || 0) * fps)} volume={c.vol ?? 0.5}
+            style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+        </AbsoluteFill>
+        <Sfx name={['whoosh_1', 'whoosh_3', 'whoosh_6', 'whoosh_4'][i % 4]} at={0} volume={0.3} />
+      </Sequence>
+    );
+    t += d;
+    return {el, at: t};
+  });
+  const end = t;
+  const flashes = seqs.map((s) => interpolate(frame, [s.at - 2, s.at, s.at + 4], [0, 0.85, 0], clamp)).reduce((a, b) => Math.max(a, b), 0);
+  const txt = spring({frame: frame - end, fps, config: {damping: 200}});
+  return (
+    <AbsoluteFill style={{backgroundColor: C.bgOuter}}>
+      {seqs.map((s) => s.el)}
+      <AbsoluteFill style={{background: 'radial-gradient(ellipse at center, transparent 50%, rgba(5,11,28,0.6) 100%)'}} />
+      <AbsoluteFill style={{backgroundColor: 'white', opacity: flashes}} />
+      {frame >= end && (
+        <AbsoluteFill style={{backgroundColor: C.bgOuter, alignItems: 'center', justifyContent: 'center'}}>
+          <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 92, color: C.white, opacity: txt,
+            transform: `translateY(${(1 - txt) * 20}px)`, letterSpacing: '0.02em'}}>{line}</div>
+          <Sfx name="boom_2" at={end} volume={0.6} />
+          <Sfx name="chime_single" at={end + 4} volume={0.3} />
+        </AbsoluteFill>
+      )}
+    </AbsoluteFill>
+  );
+};
+
+// Animated "by the numbers" card.
+export const Stats = ({items, title = 'The night in numbers'}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  return (
+    <AbsoluteFill style={{background: `radial-gradient(ellipse at 50% 40%, ${C.bgInner}, ${C.bgOuter})`, alignItems: 'center', justifyContent: 'center'}}>
+      <div style={{fontFamily: F.sans, fontWeight: 500, fontSize: 30, letterSpacing: '0.45em', color: C.sky, marginBottom: 70,
+        opacity: interpolate(frame, [0, 15], [0, 1], clamp)}}>{title.toUpperCase()}</div>
+      <div style={{display: 'flex', gap: 110}}>
+        {items.map((it, i) => {
+          const g = spring({frame: frame - 10 - i * 10, fps, config: {damping: 200}, durationInFrames: 45});
+          return (
+            <div key={i} style={{textAlign: 'center', opacity: g, transform: `translateY(${(1 - g) * 40}px)`}}>
+              <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 190, color: C.white, lineHeight: 1,
+                textShadow: `0 0 40px ${C.royal}`}}>
+                {Math.round(it.value * g)}{it.suffix || ''}
+              </div>
+              <div style={{width: 120 * g, height: 2, margin: '20px auto', background: C.sky}} />
+              <div style={{fontFamily: F.sans, fontWeight: 500, fontSize: 30, letterSpacing: '0.25em', color: C.ice}}>{it.label.toUpperCase()}</div>
+            </div>
+          );
+        })}
+      </div>
+      {items.map((_, i) => <Sfx key={i} name="tick" at={10 + i * 10} volume={0.3} />)}
+    </AbsoluteFill>
+  );
+};
+
+// Three clips side by side, sliding in one after another.
+export const Triptych = ({clips, caption}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  return (
+    <AbsoluteFill style={{backgroundColor: C.bgOuter, flexDirection: 'row', gap: 14, padding: 14}}>
+      {clips.map((c, i) => {
+        const s = spring({frame: frame - i * 6, fps, config: {damping: 16}});
+        return (
+          <div key={i} style={{flex: 1, overflow: 'hidden', borderRadius: 10, transform: `translateY(${(1 - s) * (i % 2 ? -1100 : 1100)}px)`}}>
+            <OffthreadVideo src={vid(c.name)} startFrom={Math.round((c.start || 0) * fps)} volume={i === 0 ? (c.vol ?? 0.6) : 0}
+              style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: `${c.focus ?? 50}% 50%`}} />
+          </div>
+        );
+      })}
+      {caption && (
+        <AbsoluteFill style={{justifyContent: 'flex-start', alignItems: 'center', paddingTop: 70, pointerEvents: 'none'}}>
+          <div style={{fontFamily: F.sans, fontWeight: 800, fontSize: 70, letterSpacing: '0.14em', color: '#FFFFFF',
+            textShadow: '0 4px 24px rgba(0,0,0,0.7)', opacity: interpolate(frame, [12, 24], [0, 1], clamp)}}>{caption.toUpperCase()}</div>
+        </AbsoluteFill>
+      )}
+      {clips.map((_, i) => <Sfx key={i} name={['whoosh_4', 'whoosh_1', 'whoosh_6'][i]} at={i * 6 + 3} volume={0.3} />)}
+    </AbsoluteFill>
+  );
+};
+
+// Picture-in-picture reaction window.
+export const PiP = ({name, start = 0, label, at = 0, corner = 'right'}) => {
+  const frame = useCurrentFrame() - at;
+  const {fps} = useVideoConfig();
+  if (frame < 0) return null;
+  const s = spring({frame, fps, config: {damping: 15}});
+  return (
+    <AbsoluteFill style={{pointerEvents: 'none'}}>
+      <Sequence from={at} layout="none">
+        <div style={{position: 'absolute', top: 70, [corner]: 70, width: 520, height: 292, borderRadius: 18, overflow: 'hidden',
+          border: `4px solid ${C.ice}`, boxShadow: '0 20px 50px rgba(0,0,0,0.55)', transform: `scale(${s})`,
+          transformOrigin: corner === 'right' ? 'top right' : 'top left'}}>
+          <OffthreadVideo src={vid(name)} startFrom={Math.round(start * fps)} volume={0}
+            style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+          {label && <div style={{position: 'absolute', left: 14, bottom: 10, fontFamily: F.sans, fontWeight: 800, fontSize: 24,
+            letterSpacing: '0.2em', color: '#FFFFFF', textShadow: '0 2px 10px rgba(0,0,0,0.8)'}}>{label.toUpperCase()}</div>}
+        </div>
+      </Sequence>
     </AbsoluteFill>
   );
 };

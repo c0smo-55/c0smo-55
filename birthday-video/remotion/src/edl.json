@@ -5,8 +5,66 @@
  "items": [
   {
    "type": "scene",
+   "scene": "Teaser",
+   "dur": 8.6,
+   "props": {
+    "line": "One unforgettable night",
+    "clips": [
+     {
+      "name": "c14_0071.50_1",
+      "start": 0.2,
+      "dur": 0.8,
+      "vol": 0.6
+     },
+     {
+      "name": "c30_0017.00_1",
+      "start": 1.0,
+      "dur": 0.8
+     },
+     {
+      "name": "c08_0036.00_1",
+      "start": 1.0,
+      "dur": 0.8
+     },
+     {
+      "name": "c22_0033.00_1",
+      "start": 0.5,
+      "dur": 0.8,
+      "vol": 0.6
+     },
+     {
+      "name": "c33_0067.00_1",
+      "start": 1.5,
+      "dur": 0.8
+     },
+     {
+      "name": "c18_0029.50_1",
+      "start": 0.3,
+      "dur": 0.8,
+      "vol": 0.6
+     },
+     {
+      "name": "c26_0012.50_1",
+      "start": 1.2,
+      "dur": 0.8
+     },
+     {
+      "name": "c14_0069.80_0.5",
+      "start": 1.0,
+      "dur": 1.0,
+      "vol": 0.4
+     }
+    ]
+   }
+  },
+  {
+   "type": "scene",
    "scene": "Opening",
-   "dur": 8
+   "dur": 8,
+   "trans": {
+    "type": "fade",
+    "dur": 0.6
+   }
   },
   {
    "type": "shot",
@@ -43,8 +101,8 @@
    "type": "shot",
    "clip": 1,
    "in": 6.0,
-   "dur": 2.0,
-   "speed": 1.5,
+   "dur": 3.0,
+   "speed": 1.25,
    "vol": 0.2,
    "zoom": "in"
   },
@@ -149,6 +207,14 @@
   },
   {
    "type": "shot",
+   "clip": 7,
+   "in": 8.0,
+   "dur": 4.0,
+   "vol": 0.6,
+   "zoom": "in"
+  },
+  {
+   "type": "shot",
    "clip": 6,
    "in": 2.0,
    "dur": 3.6,
@@ -203,6 +269,14 @@
     "dur": 0.5
    },
    "fx": {}
+  },
+  {
+   "type": "shot",
+   "clip": 16,
+   "in": 5.0,
+   "dur": 5.0,
+   "vol": 0.6,
+   "zoom": "in"
   },
   {
    "type": "shot",
@@ -701,6 +775,48 @@
    "zoom": "in"
   },
   {
+   "type": "scene",
+   "scene": "Triptych",
+   "dur": 4.5,
+   "trans": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "props": {
+    "caption": "Quiz chaos",
+    "clips": [
+     {
+      "name": "c18_0029.50_1",
+      "start": 0.0,
+      "vol": 0.8,
+      "focus": 50
+     },
+     {
+      "name": "c18_0250.00_1",
+      "start": 0.0,
+      "focus": 40
+     },
+     {
+      "name": "c18_0520.00_1",
+      "start": 0.0,
+      "focus": 55
+     }
+    ]
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 18,
+   "in": 480.0,
+   "dur": 4.0,
+   "vol": 0.8,
+   "zoom": "in",
+   "trans": {
+    "type": "fade",
+    "dur": 0.3
+   }
+  },
+  {
    "type": "shot",
    "clip": 18,
    "in": 135.0,
@@ -858,6 +974,25 @@
   {
    "type": "shot",
    "clip": 21,
+   "in": 16.5,
+   "dur": 4.0,
+   "vol": 0.5,
+   "fx": {
+    "freeze": {
+     "at": 2.0,
+     "hold": 1.4,
+     "label": "Behind the lens",
+     "emoji": "",
+     "x": 1560,
+     "y": 450,
+     "r": 200,
+     "side": "left"
+    }
+   }
+  },
+  {
+   "type": "shot",
+   "clip": 21,
    "in": 40.0,
    "dur": 2.5,
    "vol": 0.3,
@@ -877,6 +1012,36 @@
     "type": "slide",
     "dir": "from-bottom",
     "dur": 0.5
+   }
+  },
+  {
+   "type": "scene",
+   "scene": "Triptych",
+   "dur": 4.5,
+   "trans": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "props": {
+    "caption": "Photo time",
+    "clips": [
+     {
+      "name": "c25_0015.00_1",
+      "start": 0.5,
+      "vol": 0.7,
+      "focus": 45
+     },
+     {
+      "name": "c23_0008.00_1",
+      "start": 0.0,
+      "focus": 45
+     },
+     {
+      "name": "c22_0033.00_1",
+      "start": 0.5,
+      "focus": 50
+     }
+    ]
    }
   },
   {
@@ -982,7 +1147,7 @@
    "type": "shot",
    "clip": 26,
    "in": 12.5,
-   "dur": 4.0,
+   "dur": 6.0,
    "vol": 1.0,
    "zoom": "in",
    "fx": {
@@ -1039,6 +1204,36 @@
    "fx": {
     "shake": [
      0.8
+    ]
+   }
+  },
+  {
+   "type": "scene",
+   "scene": "Triptych",
+   "dur": 4.5,
+   "trans": {
+    "type": "fade",
+    "dur": 0.3
+   },
+   "props": {
+    "caption": "Game faces",
+    "clips": [
+     {
+      "name": "c26_0012.50_1",
+      "start": 0.5,
+      "vol": 0.8,
+      "focus": 50
+     },
+     {
+      "name": "c27_0021.00_1",
+      "start": 0.0,
+      "focus": 40
+     },
+     {
+      "name": "c26_0041.00_1",
+      "start": 0.0,
+      "focus": 50
+     }
     ]
    }
   },
@@ -1117,7 +1312,7 @@
    "type": "shot",
    "clip": 30,
    "in": 17.0,
-   "dur": 7.0,
+   "dur": 10.0,
    "vol": 1.0,
    "zoom": "in"
   },
@@ -1163,7 +1358,7 @@
    "type": "shot",
    "clip": 32,
    "in": 24.0,
-   "dur": 5.0,
+   "dur": 7.0,
    "vol": 1.0,
    "zoom": "in",
    "fx": {
@@ -1179,7 +1374,7 @@
    "type": "shot",
    "clip": 33,
    "in": 67.0,
-   "dur": 6.0,
+   "dur": 10.0,
    "vol": 1.0,
    "zoom": "in",
    "fx": {
@@ -1219,12 +1414,36 @@
   },
   {
    "type": "scene",
+   "scene": "Stats",
+   "dur": 5.5,
+   "trans": {
+    "type": "fade",
+    "dur": 0.5
+   },
+   "props": {
+    "items": [
+     {
+      "value": 17,
+      "label": "Years"
+     },
+     {
+      "value": 33,
+      "label": "Videos filmed"
+     },
+     {
+      "value": 41,
+      "label": "Minutes of memories"
+     }
+    ]
+   }
+  },
+  {
+   "type": "scene",
    "scene": "CheerMeter",
    "dur": 6.5,
    "trans": {
-    "type": "slide",
-    "dir": "from-right",
-    "dur": 0.5
+    "type": "fade",
+    "dur": 0.4
    },
    "props": {
     "items": [

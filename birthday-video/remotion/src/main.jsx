@@ -9,7 +9,7 @@ import {wipe} from '@remotion/transitions/wipe';
 import {clockWipe} from '@remotion/transitions/clock-wipe';
 import {Butterflies, C, F, Sfx, Sparkles, clamp, useFonts} from './fx';
 import {Chapter, Ending, Opening} from './scenes';
-import {CheerMeter, Countdown, EmojiBurst, FreezeTag, PhotoWall, ProgressBar, Punch, shakeTransform} from './viral';
+import {CheerMeter, Countdown, EmojiBurst, FreezeTag, PhotoWall, PiP, ProgressBar, Punch, Stats, Teaser, Triptych, shakeTransform} from './viral';
 import {Sequence, useCurrentFrame as useFrame} from 'remotion';
 import EDL from './edl.json';
 import SUBS from './subs.json';
@@ -233,6 +233,7 @@ const Shot = ({s}) => {
       <Vignette />
       {(fx.emoji || []).map((e, k) => <EmojiBurst key={k} seed={`${name}-${k}`} {...e} at={fr(e.at)} />)}
       {s.subs !== false && <Subtitles s={s} />}
+      {fx.pip && <PiP {...fx.pip} at={fr(fx.pip.at || 0)} />}
       {fx.punch && <Punch {...fx.punch} at={fr(fx.punch.at)} />}
       {fx.countdown && <Countdown at={fr(fx.countdown.at)} step={fr(fx.countdown.step || 1)} />}
       {(fx.sfx || []).map((x, k) => <Sfx key={k} name={x.name} at={fr(x.at)} volume={x.vol ?? 0.5} />)}
@@ -280,6 +281,9 @@ export const Main = () => {
         {it.type === 'scene' && it.scene === 'Ending' && <Ending name="Jesslyn" {...it.props} />}
         {it.type === 'scene' && it.scene === 'CheerMeter' && <CheerMeter {...it.props} />}
         {it.type === 'scene' && it.scene === 'PhotoWall' && <PhotoWall {...it.props} />}
+        {it.type === 'scene' && it.scene === 'Teaser' && <Teaser {...it.props} />}
+        {it.type === 'scene' && it.scene === 'Stats' && <Stats {...it.props} />}
+        {it.type === 'scene' && it.scene === 'Triptych' && <Triptych {...it.props} />}
         {it.type === 'shot' && <Shot s={it} />}
         {whoosh && it.trans.type !== 'fade' && <Sfx name={whoosh} at={tHalf} volume={0.35} />}
         {whoosh && it.trans.type === 'fade' && it.type === 'shot' && <Sfx name="whoosh_5" at={tHalf} volume={0.18} />}
