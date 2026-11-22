@@ -12,6 +12,35 @@ import {Chapter, Ending, Opening} from './scenes';
 import {CheerMeter, Countdown, EmojiBurst, FreezeTag, PhotoWall, ProgressBar, Punch, shakeTransform} from './viral';
 import {Sequence, useCurrentFrame as useFrame} from 'remotion';
 import EDL from './edl.json';
+import SUBS from './subs.json';
+
+// English subtitles: lines are timed in the ORIGINAL clip's seconds; map timeline frame -> source time.
+const Subtitles = ({s}) => {
+  const frame = useFrame();
+  const lines = SUBS[String(s.clip)];
+  if (!lines) return null;
+  const fz = s.fx && s.fx.freeze;
+  const fzA = fz ? fr(fz.at) : Infinity;
+  const fzH = fz ? fr(fz.hold || 1.3) : 0;
+  if (frame >= fzA && frame < fzA + fzH) return null;
+  const f = frame >= fzA + fzH ? frame - fzH : frame;
+  const sp = s.speed || 1;
+  const t = s.in + (sp >= 1 ? (f / FPS) * sp : (f / FPS) * sp);
+  const cur = lines.find((l) => t >= l.start && t < l.end);
+  if (!cur) return null;
+  const into = (t - cur.start) * FPS / sp;
+  return (
+    <AbsoluteFill style={{justifyContent: 'flex-end', alignItems: 'center', paddingBottom: 70, pointerEvents: 'none'}}>
+      <div style={{maxWidth: 1500, textAlign: 'center', padding: '12px 28px', borderRadius: 14,
+        background: 'rgba(5,11,28,0.62)', opacity: Math.min(1, into / 4),
+        fontFamily: F.sans, fontWeight: 500, fontSize: 46, lineHeight: 1.3, color: '#FFFFFF',
+        textShadow: '0 2px 8px rgba(0,0,0,0.6)'}}>
+        {cur.speaker && <span style={{color: C.sky, fontWeight: 800}}>{cur.speaker}: </span>}
+        {cur.text}
+      </div>
+    </AbsoluteFill>
+  );
+};
 
 const FPS = EDL.fps;
 const fr = (s) => Math.round(s * FPS);
@@ -203,6 +232,7 @@ const Shot = ({s}) => {
       )}
       <Vignette />
       {(fx.emoji || []).map((e, k) => <EmojiBurst key={k} seed={`${name}-${k}`} {...e} at={fr(e.at)} />)}
+      {s.subs !== false && <Subtitles s={s} />}
       {fx.punch && <Punch {...fx.punch} at={fr(fx.punch.at)} />}
       {fx.countdown && <Countdown at={fr(fx.countdown.at)} step={fr(fx.countdown.step || 1)} />}
       {(fx.sfx || []).map((x, k) => <Sfx key={k} name={x.name} at={fr(x.at)} volume={x.vol ?? 0.5} />)}

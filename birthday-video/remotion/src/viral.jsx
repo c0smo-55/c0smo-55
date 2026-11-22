@@ -38,7 +38,7 @@ export const FreezeTag = ({img, label, emoji, x = 960, y = 500, r = 160, side = 
         background: '#FFFFFF', color: '#0B1F4A', padding: '14px 30px', borderRadius: 18,
         fontFamily: F.sans, fontWeight: 900, fontSize: 60, letterSpacing: '0.01em', whiteSpace: 'nowrap',
         boxShadow: `0 10px 0 ${C.royal}, 0 20px 50px rgba(0,0,0,0.45)`}}>
-        {label} <span style={{fontFamily: EMOJI}}>{emoji}</span>
+        {label}
       </div>
       <Sfx name="tick" at={0} volume={0.35} />
       <Sfx name="pop_2" at={5} volume={0.45} />
@@ -82,7 +82,7 @@ export const shakeTransform = (frame, at, len = 14, amp = 18) => {
 };
 
 // Big punchy caption (bold white, blue outline) with an emoji; bounces in.
-export const Punch = ({text, emoji, at = 0, dur = 2, y = 820}) => {
+export const Punch = ({text, emoji, at = 0, dur = 2, y = 90}) => {
   const frame = useCurrentFrame() - at;
   const {fps} = useVideoConfig();
   if (frame < 0 || frame > dur * fps) return null;
@@ -91,14 +91,15 @@ export const Punch = ({text, emoji, at = 0, dur = 2, y = 820}) => {
   return (
     <AbsoluteFill style={{pointerEvents: 'none'}}>
       <div style={{position: 'absolute', left: 0, right: 0, top: y, textAlign: 'center', opacity: out,
-        transform: `scale(${s}) rotate(${(1 - s) * 6 - 1.5}deg)`}}>
-        <span style={{fontFamily: F.sans, fontWeight: 900, fontSize: 118, color: '#FFFFFF', textTransform: 'uppercase',
-          WebkitTextStroke: '10px #0B1F4A', paintOrder: 'stroke fill', letterSpacing: '0.02em',
-          textShadow: `0 6px 0 ${C.royal}, 0 12px 40px rgba(0,0,0,0.55)`}}>
-          {text} <span style={{fontFamily: EMOJI, WebkitTextStroke: 0}}>{emoji}</span>
+        transform: `translateY(${(1 - s) * 30}px)`}}>
+        <span style={{fontFamily: F.sans, fontWeight: 800, fontSize: 84, color: '#FFFFFF', textTransform: 'uppercase',
+          letterSpacing: '0.12em', textShadow: '0 4px 24px rgba(0,0,0,0.65), 0 0 40px rgba(59,125,216,0.55)'}}>
+          {text}
         </span>
+        <div style={{width: 220 * s, height: 3, margin: '14px auto 0', background: `linear-gradient(90deg, transparent, ${C.sky}, transparent)`}} />
+
       </div>
-      <Sfx name="pop_1" at={at} volume={0.4} />
+      <Sfx name="tick" at={at} volume={0.25} />
     </AbsoluteFill>
   );
 };
@@ -134,7 +135,7 @@ export const CheerMeter = ({items, title = 'Cheer-o-meter'}) => {
   return (
     <AbsoluteFill style={{background: `radial-gradient(ellipse at 50% 40%, ${C.bgInner}, ${C.bgOuter})`, padding: '120px 200px'}}>
       <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 96, color: C.white,
-        opacity: interpolate(frame, [0, 12], [0, 1], clamp)}}>{title} <span style={{fontFamily: EMOJI}}>📣</span></div>
+        opacity: interpolate(frame, [0, 12], [0, 1], clamp)}}>{title}</div>
       <div style={{fontFamily: F.sans, fontSize: 28, letterSpacing: '0.35em', color: C.sky, margin: '10px 0 60px'}}>
         LOUDEST MOMENTS OF THE NIGHT (MEASURED FROM THE VIDEO)
       </div>
@@ -146,7 +147,7 @@ export const CheerMeter = ({items, title = 'Cheer-o-meter'}) => {
         return (
           <div key={i} style={{display: 'flex', alignItems: 'center', marginBottom: 34}}>
             <div style={{width: 430, fontFamily: F.sans, fontWeight: 500, fontSize: 40, color: C.white}}>
-              <span style={{fontFamily: EMOJI}}>{it.emoji}</span> {it.label}
+              {it.label}
             </div>
             <div style={{flex: 1, height: 70, background: 'rgba(255,255,255,0.06)', borderRadius: 35, overflow: 'hidden'}}>
               <div style={{width: `${w * 100}%`, height: '100%', borderRadius: 35,

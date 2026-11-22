@@ -158,7 +158,7 @@
      "at": 1.5,
      "hold": 1.3,
      "label": "The Birthday Girl",
-     "emoji": "👑",
+     "emoji": "",
      "x": 1150,
      "y": 320,
      "r": 200,
@@ -188,20 +188,7 @@
    "dur": 5.0,
    "vol": 0.4,
    "zoom": "in",
-   "fx": {
-    "emoji": [
-     {
-      "at": 3.0,
-      "emojis": [
-       "🤗",
-       "💙",
-       "🦋"
-      ],
-      "x": 1150,
-      "y": 600
-     }
-    ]
-   }
+   "fx": {}
   },
   {
    "type": "shot",
@@ -215,20 +202,7 @@
     "dir": "from-bottom",
     "dur": 0.5
    },
-   "fx": {
-    "emoji": [
-     {
-      "at": 0.6,
-      "emojis": [
-       "😂",
-       "💙",
-       "✨"
-      ],
-      "x": 900,
-      "y": 650
-     }
-    ]
-   }
+   "fx": {}
   },
   {
    "type": "shot",
@@ -263,7 +237,7 @@
     "glow": true,
     "punch": {
      "text": "Bestie hugs",
-     "emoji": "🫶",
+     "emoji": "",
      "at": 1.2,
      "dur": 2.4
     }
@@ -297,7 +271,7 @@
      "at": 1.5,
      "hold": 1.3,
      "label": "The MC",
-     "emoji": "🎤",
+     "emoji": "",
      "x": 1020,
      "y": 450,
      "r": 170,
@@ -325,18 +299,6 @@
    "vol": 0.9,
    "zoom": "punch",
    "fx": {
-    "emoji": [
-     {
-      "at": 0.8,
-      "emojis": [
-       "😂",
-       "🤣",
-       "💙"
-      ],
-      "x": 960,
-      "y": 650
-     }
-    ],
     "shake": [
      1.2
     ]
@@ -352,7 +314,7 @@
    "fx": {
     "punch": {
      "text": "Speech time",
-     "emoji": "🎙️",
+     "emoji": "",
      "at": 0.3,
      "dur": 2.5
     }
@@ -376,18 +338,6 @@
    "fx": {
     "shake": [
      0.3
-    ],
-    "emoji": [
-     {
-      "at": 0.2,
-      "emojis": [
-       "👏",
-       "💙",
-       "🎉"
-      ],
-      "x": 960,
-      "y": 700
-     }
     ]
    }
   },
@@ -401,7 +351,7 @@
    "fx": {
     "punch": {
      "text": "Wishes time",
-     "emoji": "💌",
+     "emoji": "",
      "at": 0.2,
      "dur": 2.2
     }
@@ -423,7 +373,7 @@
      "at": 2.0,
      "hold": 1.2,
      "label": "Wish #1",
-     "emoji": "💌",
+     "emoji": "",
      "x": 945,
      "y": 435,
      "r": 200,
@@ -438,19 +388,7 @@
    "dur": 5.0,
    "vol": 1.0,
    "zoom": "punch",
-   "fx": {
-    "emoji": [
-     {
-      "at": 2.0,
-      "emojis": [
-       "😂",
-       "💙"
-      ],
-      "x": 700,
-      "y": 600
-     }
-    ]
-   }
+   "fx": {}
   },
   {
    "type": "shot",
@@ -476,7 +414,7 @@
     "glow": true,
     "punch": {
      "text": "Happy tears",
-     "emoji": "🥹",
+     "emoji": "",
      "at": 1.0,
      "dur": 2.6
     }
@@ -500,18 +438,6 @@
    "fx": {
     "shake": [
      0.2
-    ],
-    "emoji": [
-     {
-      "at": 0.1,
-      "emojis": [
-       "🎉",
-       "💙",
-       "✨"
-      ],
-      "x": 960,
-      "y": 700
-     }
     ]
    }
   },
@@ -567,7 +493,7 @@
      "at": 2.0,
      "hold": 1.4,
      "label": "Papa on candle duty",
-     "emoji": "🕯️",
+     "emoji": "",
      "x": 1180,
      "y": 260,
      "r": 190,
@@ -582,20 +508,7 @@
    "dur": 3.5,
    "vol": 0.9,
    "zoom": "in",
-   "fx": {
-    "emoji": [
-     {
-      "at": 0.5,
-      "emojis": [
-       "👏",
-       "🎶",
-       "💙"
-      ],
-      "x": 960,
-      "y": 700
-     }
-    ]
-   }
+   "fx": {}
   },
   {
    "type": "shot",
@@ -622,7 +535,7 @@
     "glow": true,
     "punch": {
      "text": "Make a wish",
-     "emoji": "✨",
+     "emoji": "",
      "at": 0.1,
      "dur": 1.3
     },
@@ -656,28 +569,6 @@
     "shake": [
      0.2,
      1.5
-    ],
-    "emoji": [
-     {
-      "at": 0.1,
-      "emojis": [
-       "🎉",
-       "🥳",
-       "💙"
-      ],
-      "x": 960,
-      "y": 650
-     },
-     {
-      "at": 1.6,
-      "emojis": [
-       "🎂",
-       "✨",
-       "🦋"
-      ],
-      "x": 700,
-      "y": 700
-     }
     ],
     "sfx": [
      {
@@ -723,20 +614,7 @@
    "dur": 5.0,
    "vol": 0.7,
    "zoom": "in",
-   "fx": {
-    "emoji": [
-     {
-      "at": 1.0,
-      "emojis": [
-       "✌️",
-       "💙",
-       "👋"
-      ],
-      "x": 960,
-      "y": 700
-     }
-    ]
-   },
+   "fx": {},
    "trans": {
     "type": "slide",
     "dir": "from-right",
@@ -774,7 +652,7 @@
    "fx": {
     "punch": {
      "text": "Quiz time",
-     "emoji": "🧠",
+     "emoji": "",
      "at": 0.2,
      "dur": 2.6
     }
@@ -811,18 +689,6 @@
    "fx": {
     "shake": [
      0.4
-    ],
-    "emoji": [
-     {
-      "at": 0.3,
-      "emojis": [
-       "😱",
-       "🤯",
-       "💙"
-      ],
-      "x": 960,
-      "y": 650
-     }
     ]
    }
   },
@@ -845,7 +711,7 @@
      "at": 2.0,
      "hold": 1.3,
      "label": "Checking the scores",
-     "emoji": "👀",
+     "emoji": "",
      "x": 1480,
      "y": 520,
      "r": 190,
@@ -871,18 +737,6 @@
    "fx": {
     "shake": [
      0.5
-    ],
-    "emoji": [
-     {
-      "at": 0.4,
-      "emojis": [
-       "🤯",
-       "😂",
-       "🔥"
-      ],
-      "x": 960,
-      "y": 650
-     }
     ]
    }
   },
@@ -918,24 +772,11 @@
    "fx": {
     "punch": {
      "text": "Quiz champions",
-     "emoji": "🏆",
+     "emoji": "",
      "at": 0.4,
      "dur": 3.0,
      "y": 80
     },
-    "emoji": [
-     {
-      "at": 0.6,
-      "emojis": [
-       "🏆",
-       "🥇",
-       "✨",
-       "💙"
-      ],
-      "x": 960,
-      "y": 800
-     }
-    ],
     "sfx": [
      {
       "name": "chime_up",
@@ -960,7 +801,7 @@
    "fx": {
     "punch": {
      "text": "Dinner time",
-     "emoji": "🍽️",
+     "emoji": "",
      "at": 0.2,
      "dur": 2.2
     }
@@ -998,7 +839,7 @@
      "at": 1.7,
      "hold": 1.3,
      "label": "Caught mid-bite",
-     "emoji": "😳",
+     "emoji": "",
      "x": 210,
      "y": 660,
      "r": 170,
@@ -1069,22 +910,10 @@
    "fx": {
     "punch": {
      "text": "Say cheese",
-     "emoji": "📸",
+     "emoji": "",
      "at": 0.3,
      "dur": 2.4
     },
-    "emoji": [
-     {
-      "at": 2.5,
-      "emojis": [
-       "✌️",
-       "📸",
-       "💙"
-      ],
-      "x": 960,
-      "y": 700
-     }
-    ],
     "sfx": [
      {
       "name": "shutter_1",
@@ -1114,20 +943,7 @@
    "dur": 3.0,
    "vol": 0.9,
    "zoom": "in",
-   "fx": {
-    "emoji": [
-     {
-      "at": 0.8,
-      "emojis": [
-       "🙌",
-       "🎉",
-       "💙"
-      ],
-      "x": 960,
-      "y": 650
-     }
-    ]
-   }
+   "fx": {}
   },
   {
    "type": "scene",
@@ -1152,7 +968,7 @@
    "fx": {
     "punch": {
      "text": "Game on",
-     "emoji": "🎮",
+     "emoji": "",
      "at": 0.2,
      "dur": 2.2
     }
@@ -1172,18 +988,6 @@
    "fx": {
     "shake": [
      1.2
-    ],
-    "emoji": [
-     {
-      "at": 1.0,
-      "emojis": [
-       "😂",
-       "🤣",
-       "💙"
-      ],
-      "x": 960,
-      "y": 650
-     }
     ]
    }
   },
@@ -1202,20 +1006,7 @@
    "dur": 3.0,
    "vol": 1.0,
    "zoom": "in",
-   "fx": {
-    "emoji": [
-     {
-      "at": 0.5,
-      "emojis": [
-       "🤣",
-       "😆",
-       "✨"
-      ],
-      "x": 900,
-      "y": 650
-     }
-    ]
-   }
+   "fx": {}
   },
   {
    "type": "shot",
@@ -1248,18 +1039,6 @@
    "fx": {
     "shake": [
      0.8
-    ],
-    "emoji": [
-     {
-      "at": 0.6,
-      "emojis": [
-       "🔥",
-       "🙌",
-       "💙"
-      ],
-      "x": 960,
-      "y": 650
-     }
     ]
    }
   },
@@ -1324,22 +1103,10 @@
    "fx": {
     "punch": {
      "text": "Dance break",
-     "emoji": "💃",
+     "emoji": "",
      "at": 0.3,
      "dur": 2.4
-    },
-    "emoji": [
-     {
-      "at": 2.8,
-      "emojis": [
-       "💃",
-       "🎶",
-       "💙"
-      ],
-      "x": 960,
-      "y": 700
-     }
-    ]
+    }
    },
    "trans": {
     "type": "clockWipe",
@@ -1361,20 +1128,7 @@
    "dur": 4.0,
    "vol": 1.0,
    "zoom": "punch",
-   "fx": {
-    "emoji": [
-     {
-      "at": 1.0,
-      "emojis": [
-       "🫶",
-       "💙",
-       "✨"
-      ],
-      "x": 960,
-      "y": 650
-     }
-    ]
-   }
+   "fx": {}
   },
   {
    "type": "shot",
@@ -1386,7 +1140,7 @@
    "fx": {
     "punch": {
      "text": "Mama's turn",
-     "emoji": "📸",
+     "emoji": "",
      "at": 0.4,
      "dur": 2.6
     }
@@ -1415,7 +1169,7 @@
    "fx": {
     "punch": {
      "text": "Karaoke time",
-     "emoji": "🎤",
+     "emoji": "",
      "at": 0.3,
      "dur": 2.4
     }
@@ -1431,19 +1185,6 @@
    "fx": {
     "shake": [
      1.5
-    ],
-    "emoji": [
-     {
-      "at": 1.4,
-      "emojis": [
-       "🎶",
-       "🙌",
-       "💙",
-       "🎉"
-      ],
-      "x": 960,
-      "y": 650
-     }
     ]
    }
   },
@@ -1466,7 +1207,7 @@
     "glow": true,
     "punch": {
      "text": "See you next time",
-     "emoji": "👋",
+     "emoji": "",
      "at": 0.5,
      "dur": 3.0
     }
@@ -1489,27 +1230,27 @@
     "items": [
      {
       "label": "Quiz showdown",
-      "emoji": "🧠",
+      "emoji": "",
       "db": -10.0
      },
      {
       "label": "Table greetings",
-      "emoji": "👋",
+      "emoji": "",
       "db": -12.6
      },
      {
       "label": "Sing-along",
-      "emoji": "🎤",
+      "emoji": "",
       "db": -13.0
      },
      {
       "label": "Friends' wishes",
-      "emoji": "💌",
+      "emoji": "",
       "db": -13.1
      },
      {
       "label": "Candles out",
-      "emoji": "🎂",
+      "emoji": "",
       "db": -15.3
      }
     ]
