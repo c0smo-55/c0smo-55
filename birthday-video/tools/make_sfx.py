@@ -178,6 +178,19 @@ def popper(rng):
     return l, r
 
 
+def page_turn(rng, dur=0.9):
+    """Paper page flip: airy swoosh with papery flutter, then a soft settle."""
+    t = t_axis(dur)
+    p = t / dur
+    n = rng.standard_normal(len(t))
+    env = np.sin(np.pi * np.clip(p / 0.75, 0, 1)) ** 1.5
+    flutter = 0.6 + 0.4 * np.abs(np.sin(2 * np.pi * (14 + 10 * p) * t))
+    sig = bandpass(n, 600 + 1500 * p, 7000) * env * flutter
+    settle = bandpass(rng.standard_normal(len(t)), 200, 2500) * np.exp(-np.clip(t - dur * 0.72, 0, None) * 40) * (t >= dur * 0.72)
+    sig += 0.9 * settle
+    return pan(sig, 0.65 - 0.3 * p)
+
+
 def tick(freq=2400):
     t = t_axis(0.12)
     sig = np.sin(2 * np.pi * freq * t) * np.exp(-t * 90) + 0.3 * np.sin(2 * np.pi * freq * 2.7 * t) * np.exp(-t * 140)
@@ -220,6 +233,8 @@ if __name__ == "__main__":
     for i, f in enumerate((520, 660, 780, 880), 1):
         lib[f"pop_{i}"] = (soft_pop(f), dict(verb=0.2, size=0.6))
     lib["tick"] = (tick(), dict(verb=0.15, size=0.5))
+    lib["page_turn"] = (page_turn(rng), dict(verb=0.08, size=0.5))
+    lib["page_turn_2"] = (page_turn(rng, 0.75), dict(verb=0.08, size=0.5))
     # Sync point (seconds into the file) = the moment that should land on the visual event.
     sync = {f"whoosh_{i}": specs[i - 1][0] * 0.5 for i in range(1, 7)}
     sync.update({"riser_2s": 2.0, "riser_1s": 1.0})

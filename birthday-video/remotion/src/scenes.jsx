@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {
   Background, Bokeh, Butterflies, C, Confetti, F, FadeOut, Photo, Sfx, ShimmerScript, Sparkles, SpringWords, clamp, useFonts,
 } from './fx';
@@ -167,6 +167,153 @@ export const Ending = ({name, message}) => {
       <Sfx name="name_reveal_end" at={36} volume={0.45} />
       <Sfx name="popper" at={85} volume={0.6} />
       <Sfx name="glitter_2" at={122} volume={0.22} />
+    </AbsoluteFill>
+  );
+};
+
+// ---------- Storybook ----------
+const PAPER = '#F6F0E4';
+const INK = '#1C2F55';
+const WORDS = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven'];
+
+const BookShell = ({children, open = 1}) => (
+  <div style={{position: 'absolute', left: 160, top: 110, width: 1600, height: 860, perspective: 2400}}>
+    <div style={{position: 'absolute', inset: 0, borderRadius: 14, background: '#0E2350',
+      boxShadow: '0 40px 90px rgba(0,0,0,0.6)', transform: 'translate(-14px, 12px)'}} />
+    <div style={{position: 'absolute', inset: 0, display: 'flex'}}>
+      <div style={{flex: 1, background: `linear-gradient(90deg, ${PAPER} 80%, #E3D9C6)`, borderRadius: '10px 0 0 10px'}} />
+      <div style={{flex: 1, background: `linear-gradient(270deg, ${PAPER} 80%, #E3D9C6)`, borderRadius: '0 10px 10px 0'}} />
+    </div>
+    <div style={{position: 'absolute', left: '50%', top: 0, bottom: 0, width: 4, marginLeft: -2, background: 'rgba(80,60,30,0.25)'}} />
+    {children}
+  </div>
+);
+
+
+// After-Effects style finishing: a glossy light sweep, a ribbon bookmark and a butterfly that lands on the page.
+const BookPolish = ({seed, sweepAt = 40}) => {
+  const frame = useCurrentFrame();
+  const sweep = interpolate(frame, [sweepAt, sweepAt + 34], [-40, 140], clamp);
+  const ribbon = spring({frame: frame - 10, fps: 30, config: {damping: 14}});
+  const t = Math.max(0, frame - 20);
+  const land = Math.min(1, t / 50);
+  const ease = 1 - Math.pow(1 - land, 3);
+  const bx = interpolate(ease, [0, 1], [1700, 1380]) + Math.sin(t / 7) * 30 * (1 - ease);
+  const by = interpolate(ease, [0, 1], [-80, 150]) + Math.cos(t / 9) * 25 * (1 - ease);
+  const flap = land < 1 ? 0.25 + 0.75 * Math.abs(Math.cos(t / 2.6)) : 0.55 + 0.45 * Math.abs(Math.cos(t / 14));
+  return (
+    <>
+      <div style={{position: 'absolute', left: 160, top: 110, width: 1600, height: 860, overflow: 'hidden', borderRadius: 10, pointerEvents: 'none',
+        background: `linear-gradient(105deg, transparent ${sweep - 12}%, rgba(255,255,255,0.45) ${sweep}%, transparent ${sweep + 12}%)`,
+        mixBlendMode: 'soft-light'}} />
+      <div style={{position: 'absolute', left: 830, top: 104, width: 46, height: 230 * ribbon,
+        background: 'linear-gradient(90deg, #2A5DB8, #4F86E0 50%, #2A5DB8)', clipPath: 'polygon(0 0, 100% 0, 100% 100%, 50% 88%, 0 100%)',
+        boxShadow: '0 6px 14px rgba(0,0,0,0.3)'}} />
+      <svg width={1920} height={1080} style={{position: 'absolute', left: 0, top: 0, pointerEvents: 'none'}}>
+        <defs><linearGradient id={`bk-${seed}`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#B8D8FF" /><stop offset="1" stopColor="#3B6FD8" /></linearGradient></defs>
+        <g transform={`translate(${bx},${by}) rotate(${-15 + 15 * ease}) scale(0.7)`} style={{filter: 'drop-shadow(0 6px 10px rgba(0,0,0,0.35))'}}>
+          <g transform={`scale(${flap},1)`}><path d="M0,0 C18,-46 70,-58 78,-26 C84,-2 46,10 0,4Z" fill={`url(#bk-${seed})`} /><path d="M0,4 C34,10 62,26 50,52 C38,72 10,44 0,10Z" fill={`url(#bk-${seed})`} opacity="0.8" /></g>
+          <g transform={`scale(${-flap},1)`}><path d="M0,0 C18,-46 70,-58 78,-26 C84,-2 46,10 0,4Z" fill={`url(#bk-${seed})`} /><path d="M0,4 C34,10 62,26 50,52 C38,72 10,44 0,10Z" fill={`url(#bk-${seed})`} opacity="0.8" /></g>
+          <ellipse cx="0" cy="8" rx="3.5" ry="20" fill="#1B2A55" />
+        </g>
+      </svg>
+    </>
+  );
+};
+
+// A chapter page: the book sits open, a page turns, then the chapter number, title and one story line appear.
+export const StoryChapter = ({number, title, line, img}) => {
+  useFonts();
+  const frame = useCurrentFrame();
+  const {fps, durationInFrames} = useVideoConfig();
+  const enter = spring({frame, fps, config: {damping: 200}, durationInFrames: 20});
+  const flip = interpolate(frame, [6, 30], [0, -180], {...clamp, easing: (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2)});
+  const reveal = (d) => interpolate(frame, [d, d + 14], [0, 1], clamp);
+  const words = line.split(' ');
+  const zoom = interpolate(frame, [0, durationInFrames], [1, 1.05]);
+  const out = interpolate(frame, [durationInFrames - 12, durationInFrames], [1, 0], clamp);
+  return (
+    <AbsoluteFill style={{backgroundColor: C.bgOuter, opacity: out}}>
+      <Background />
+      <Bokeh seed={`story-${number}`} count={25} strength={0.6} />
+      <AbsoluteFill style={{transform: `scale(${(0.92 + 0.08 * enter) * zoom}) translateY(${(1 - enter) * 60}px)`, opacity: enter}}>
+        <BookShell>
+          {/* left page: chapter + title + story line */}
+          <div style={{position: 'absolute', left: 90, top: 110, width: 620, color: INK}}>
+            <div style={{fontFamily: F.sans, fontWeight: 500, fontSize: 26, letterSpacing: '0.5em', color: '#6E83AD', opacity: reveal(28)}}>
+              CHAPTER {WORDS[number].toUpperCase()}
+            </div>
+            <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 82, lineHeight: 1.08, marginTop: 24, opacity: reveal(34),
+              transform: `translateY(${(1 - reveal(34)) * 16}px)`}}>{title}</div>
+            <div style={{width: 140 * reveal(44), height: 2, background: '#8EA9D8', margin: '34px 0'}} />
+            <div style={{fontFamily: F.soft, fontStyle: 'italic', fontSize: 46, lineHeight: 1.35, color: '#2E3F63'}}>
+              {words.map((w, i) => (
+                <span key={i} style={{opacity: reveal(50 + i * 2.2)}}>{w} </span>
+              ))}
+            </div>
+          </div>
+          <div style={{position: 'absolute', left: 90, bottom: 60, fontFamily: F.soft, fontStyle: 'italic', fontSize: 30, color: '#8A7C66'}}>{number * 2 + 1}</div>
+          {/* right page: taped photo */}
+          <div style={{position: 'absolute', left: 900, top: 120, width: 600, transform: `rotate(2.5deg) scale(${0.9 + 0.1 * reveal(30)})`, opacity: reveal(30)}}>
+            <div style={{background: '#FFFFFF', padding: '18px 18px 70px', boxShadow: '0 14px 30px rgba(40,30,10,0.35)'}}>
+              <Img src={staticFile(img)} style={{width: '100%', aspectRatio: '4 / 3.4', objectFit: 'cover', display: 'block'}} />
+            </div>
+            <div style={{position: 'absolute', top: -14, left: 220, width: 160, height: 34, background: 'rgba(170,200,240,0.6)', transform: 'rotate(-4deg)'}} />
+          </div>
+          <div style={{position: 'absolute', right: 90, bottom: 60, fontFamily: F.soft, fontStyle: 'italic', fontSize: 30, color: '#8A7C66'}}>{number * 2 + 2}</div>
+          {/* the turning page */}
+          {flip > -180 && (
+            <div style={{position: 'absolute', left: '50%', top: 0, width: '50%', height: '100%', transformOrigin: 'left center',
+              transform: `rotateY(${flip}deg)`, transformStyle: 'preserve-3d'}}>
+              <div style={{position: 'absolute', inset: 0, background: `linear-gradient(270deg, ${PAPER} 70%, #DDD2BC)`, borderRadius: '0 10px 10px 0',
+                backfaceVisibility: 'hidden', boxShadow: `${-20 * Math.sin((-flip * Math.PI) / 180)}px 0 40px rgba(0,0,0,0.25)`}} />
+              <div style={{position: 'absolute', inset: 0, background: `linear-gradient(90deg, ${PAPER} 70%, #DDD2BC)`, borderRadius: '10px 0 0 10px',
+                transform: 'rotateY(180deg)', backfaceVisibility: 'hidden'}} />
+            </div>
+          )}
+        </BookShell>
+        <BookPolish seed={`ch${number}`} />
+      </AbsoluteFill>
+      <Sfx name={number % 2 ? 'page_turn' : 'page_turn_2'} at={6} volume={0.7} />
+      <Sfx name="chime_single" at={36} volume={0.18} />
+    </AbsoluteFill>
+  );
+};
+
+// Closing page of the book.
+export const StoryEnd = ({line1 = 'The end of sixteen.', line2 = 'Chapter seventeen starts now.', img}) => {
+  useFonts();
+  const frame = useCurrentFrame();
+  const {fps, durationInFrames} = useVideoConfig();
+  const enter = spring({frame, fps, config: {damping: 200}, durationInFrames: 20});
+  const reveal = (d) => interpolate(frame, [d, d + 18], [0, 1], clamp);
+  const close = interpolate(frame, [durationInFrames - 30, durationInFrames - 8], [0, 180], clamp);
+  const out = interpolate(frame, [durationInFrames - 10, durationInFrames], [1, 0], clamp);
+  return (
+    <AbsoluteFill style={{backgroundColor: C.bgOuter, opacity: out}}>
+      <Background />
+      <Bokeh seed="story-end" count={30} strength={0.7} />
+      <AbsoluteFill style={{transform: `scale(${0.92 + 0.08 * enter})`, opacity: enter}}>
+        <BookShell>
+          <div style={{position: 'absolute', left: 900, top: 140, width: 600, transform: 'rotate(-2deg)', opacity: reveal(8)}}>
+            <div style={{background: '#FFFFFF', padding: '18px 18px 70px', boxShadow: '0 14px 30px rgba(40,30,10,0.35)'}}>
+              <Img src={staticFile(img)} style={{width: '100%', aspectRatio: '4 / 3.4', objectFit: 'cover', display: 'block'}} />
+            </div>
+          </div>
+          <div style={{position: 'absolute', left: 90, top: 250, width: 640, color: INK}}>
+            <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 74, lineHeight: 1.15, opacity: reveal(18)}}>{line1}</div>
+            <div style={{fontFamily: F.soft, fontStyle: 'italic', fontSize: 56, lineHeight: 1.25, marginTop: 30, color: '#2E3F63', opacity: reveal(50)}}>{line2}</div>
+          </div>
+          {close > 0 && (
+            <div style={{position: 'absolute', left: '50%', top: 0, width: '50%', height: '100%', transformOrigin: 'left center',
+              transform: `rotateY(${-close}deg)`, background: '#16397A', borderRadius: '0 10px 10px 0', backfaceVisibility: 'visible'}} />
+          )}
+        </BookShell>
+        <BookPolish seed="end" sweepAt={30} />
+      </AbsoluteFill>
+      <Sfx name="page_turn" at={2} volume={0.6} />
+      <Sfx name="chime_up" at={52} volume={0.25} />
+      <Sfx name="page_turn_2" at={durationInFrames - 30} volume={0.6} />
     </AbsoluteFill>
   );
 };

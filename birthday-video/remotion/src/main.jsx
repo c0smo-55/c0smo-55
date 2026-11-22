@@ -8,7 +8,7 @@ import {slide} from '@remotion/transitions/slide';
 import {wipe} from '@remotion/transitions/wipe';
 import {clockWipe} from '@remotion/transitions/clock-wipe';
 import {Butterflies, C, F, Sfx, Sparkles, clamp, useFonts} from './fx';
-import {Chapter, Ending, Opening} from './scenes';
+import {Chapter, Ending, Opening, StoryChapter, StoryEnd} from './scenes';
 import {CheerMeter, Countdown, EmojiBurst, FreezeTag, PhotoWall, PiP, ProgressBar, Punch, Scrapbook, Stats, Teaser, Triptych, shakeTransform} from './viral';
 import {Sequence, useCurrentFrame as useFrame} from 'remotion';
 import EDL from './edl.json';
@@ -284,7 +284,8 @@ export const Main = () => {
     children.push(
       <TransitionSeries.Sequence key={`s${i}`} durationInFrames={fr(it.dur)}>
         {it.type === 'scene' && it.scene === 'Opening' && <Opening name="Jesslyn" />}
-        {it.type === 'scene' && it.scene === 'Chapter' && <Chapter {...it.props} />}
+        {it.type === 'scene' && it.scene === 'Chapter' && <StoryChapter {...it.props} />}
+        {it.type === 'scene' && it.scene === 'StoryEnd' && <StoryEnd {...it.props} />}
         {it.type === 'scene' && it.scene === 'Ending' && <Ending name="Jesslyn" {...it.props} />}
         {it.type === 'scene' && it.scene === 'CheerMeter' && <CheerMeter {...it.props} />}
         {it.type === 'scene' && it.scene === 'PhotoWall' && <PhotoWall {...it.props} />}

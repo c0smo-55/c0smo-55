@@ -67,6 +67,21 @@
    }
   },
   {
+   "type": "scene",
+   "scene": "Chapter",
+   "dur": 6.5,
+   "trans": {
+    "type": "fade",
+    "dur": 0.6
+   },
+   "props": {
+    "number": 1,
+    "title": "Main Street",
+    "line": "It all started here, on a November night at Main Street.",
+    "img": "snaps/ch1.jpg"
+   }
+  },
+  {
    "type": "shot",
    "clip": 1,
    "in": 0.2,
@@ -81,7 +96,7 @@
    },
    "trans": {
     "type": "fade",
-    "dur": 0.8
+    "dur": 0.5
    }
   },
   {
@@ -109,14 +124,16 @@
   {
    "type": "scene",
    "scene": "Chapter",
-   "props": {
-    "number": 1,
-    "title": "Everyone Arrives"
-   },
-   "dur": 4.0,
+   "dur": 6.5,
    "trans": {
     "type": "fade",
     "dur": 0.6
+   },
+   "props": {
+    "number": 2,
+    "title": "Decorations & Guests",
+    "line": "Blue balloons, butterflies, and a room slowly filling up with her favourite people.",
+    "img": "snaps/dec.jpg"
    }
   },
   {
@@ -400,14 +417,16 @@
   {
    "type": "scene",
    "scene": "Chapter",
-   "props": {
-    "number": 2,
-    "title": "Speeches & Wishes"
-   },
-   "dur": 4.0,
+   "dur": 6.5,
    "trans": {
     "type": "fade",
     "dur": 0.6
+   },
+   "props": {
+    "number": 3,
+    "title": "Speeches, Wishes & Cake",
+    "line": "A few words from the MC, some really sweet wishes from her friends — and then, the cake.",
+    "img": "snaps/ch3.jpg"
    }
   },
   {
@@ -647,19 +666,6 @@
    }
   },
   {
-   "type": "scene",
-   "scene": "Chapter",
-   "props": {
-    "number": 3,
-    "title": "Cake Time"
-   },
-   "dur": 4.0,
-   "trans": {
-    "type": "fade",
-    "dur": 0.6
-   }
-  },
-  {
    "type": "shot",
    "clip": 14,
    "in": 0.0,
@@ -669,7 +675,7 @@
    "fx": {},
    "trans": {
     "type": "fade",
-    "dur": 0.5
+    "dur": 0.6
    }
   },
   {
@@ -829,14 +835,16 @@
   {
    "type": "scene",
    "scene": "Chapter",
-   "props": {
-    "number": 4,
-    "title": "Kahoot & Dinner"
-   },
-   "dur": 4.0,
+   "dur": 6.5,
    "trans": {
     "type": "fade",
     "dur": 0.6
+   },
+   "props": {
+    "number": 4,
+    "title": "Kahoot & Dinner",
+    "line": "A Kahoot all about Jesslyn (the answer was blue), then dinner, and way too many photos.",
+    "img": "snaps/ch4.jpg"
    }
   },
   {
@@ -1296,14 +1304,16 @@
   {
    "type": "scene",
    "scene": "Chapter",
-   "props": {
-    "number": 5,
-    "title": "Games"
-   },
-   "dur": 4.0,
+   "dur": 6.5,
    "trans": {
     "type": "fade",
     "dur": 0.6
+   },
+   "props": {
+    "number": 5,
+    "title": "The Second Game",
+    "line": "Then things got a little competitive.",
+    "img": "snaps/ch5.jpg"
    }
   },
   {
@@ -1461,14 +1471,16 @@
   {
    "type": "scene",
    "scene": "Chapter",
-   "props": {
-    "number": 6,
-    "title": "Dancing & Karaoke"
-   },
-   "dur": 4.0,
+   "dur": 6.5,
    "trans": {
     "type": "fade",
     "dur": 0.6
+   },
+   "props": {
+    "number": 6,
+    "title": "Final Photos & Singing",
+    "line": "And the night ended the best way — everyone singing together.",
+    "img": "snaps/ch6.jpg"
    }
   },
   {
@@ -1739,6 +1751,18 @@
      "wall/11.jpg",
      "wall/12.jpg"
     ]
+   }
+  },
+  {
+   "type": "scene",
+   "scene": "StoryEnd",
+   "dur": 7.0,
+   "trans": {
+    "type": "fade",
+    "dur": 0.6
+   },
+   "props": {
+    "img": "snaps/ch7.jpg"
    }
   },
   {
