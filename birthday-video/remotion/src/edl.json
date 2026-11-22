@@ -69,16 +69,14 @@
   {
    "type": "scene",
    "scene": "Chapter",
-   "dur": 6.5,
+   "dur": 4.5,
    "trans": {
     "type": "fade",
     "dur": 0.6
    },
    "props": {
     "number": 1,
-    "title": "Main Street",
-    "line": "It all started here, on a November night at Main Street.",
-    "img": "snaps/ch1.jpg"
+    "title": "Main Street"
    }
   },
   {
@@ -124,16 +122,14 @@
   {
    "type": "scene",
    "scene": "Chapter",
-   "dur": 6.5,
+   "dur": 4.5,
    "trans": {
     "type": "fade",
     "dur": 0.6
    },
    "props": {
     "number": 2,
-    "title": "Decorations & Guests",
-    "line": "Blue balloons, butterflies, and a room slowly filling up with her favourite people.",
-    "img": "snaps/dec.jpg"
+    "title": "Decorations & Guests"
    }
   },
   {
@@ -417,16 +413,14 @@
   {
    "type": "scene",
    "scene": "Chapter",
-   "dur": 6.5,
+   "dur": 4.5,
    "trans": {
     "type": "fade",
     "dur": 0.6
    },
    "props": {
     "number": 3,
-    "title": "Speeches, Wishes & Cake",
-    "line": "A few words from the MC, some really sweet wishes from her friends — and then, the cake.",
-    "img": "snaps/ch3.jpg"
+    "title": "Speeches, Wishes & Cake"
    }
   },
   {
@@ -835,16 +829,14 @@
   {
    "type": "scene",
    "scene": "Chapter",
-   "dur": 6.5,
+   "dur": 4.5,
    "trans": {
     "type": "fade",
     "dur": 0.6
    },
    "props": {
     "number": 4,
-    "title": "Kahoot & Dinner",
-    "line": "A Kahoot all about Jesslyn (the answer was blue), then dinner, and way too many photos.",
-    "img": "snaps/ch4.jpg"
+    "title": "Kahoot & Dinner"
    }
   },
   {
@@ -1304,16 +1296,14 @@
   {
    "type": "scene",
    "scene": "Chapter",
-   "dur": 6.5,
+   "dur": 4.5,
    "trans": {
     "type": "fade",
     "dur": 0.6
    },
    "props": {
     "number": 5,
-    "title": "The Second Game",
-    "line": "Then things got a little competitive.",
-    "img": "snaps/ch5.jpg"
+    "title": "The Second Game"
    }
   },
   {
@@ -1471,16 +1461,14 @@
   {
    "type": "scene",
    "scene": "Chapter",
-   "dur": 6.5,
+   "dur": 4.5,
    "trans": {
     "type": "fade",
     "dur": 0.6
    },
    "props": {
     "number": 6,
-    "title": "Final Photos & Singing",
-    "line": "And the night ended the best way — everyone singing together.",
-    "img": "snaps/ch6.jpg"
+    "title": "Final Photos & Singing"
    }
   },
   {
@@ -1751,18 +1739,6 @@
      "wall/11.jpg",
      "wall/12.jpg"
     ]
-   }
-  },
-  {
-   "type": "scene",
-   "scene": "StoryEnd",
-   "dur": 7.0,
-   "trans": {
-    "type": "fade",
-    "dur": 0.6
-   },
-   "props": {
-    "img": "snaps/ch7.jpg"
    }
   },
   {

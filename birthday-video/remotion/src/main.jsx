@@ -8,7 +8,7 @@ import {slide} from '@remotion/transitions/slide';
 import {wipe} from '@remotion/transitions/wipe';
 import {clockWipe} from '@remotion/transitions/clock-wipe';
 import {Butterflies, C, F, Sfx, Sparkles, clamp, useFonts} from './fx';
-import {Chapter, Ending, Opening, StoryChapter, StoryEnd} from './scenes';
+import {Chapter, Ending, LightLeak, Opening} from './scenes';
 import {CheerMeter, Countdown, EmojiBurst, FreezeTag, PhotoWall, PiP, ProgressBar, Punch, Scrapbook, Stats, Teaser, Triptych, shakeTransform} from './viral';
 import {Sequence, useCurrentFrame as useFrame} from 'remotion';
 import EDL from './edl.json';
@@ -284,8 +284,7 @@ export const Main = () => {
     children.push(
       <TransitionSeries.Sequence key={`s${i}`} durationInFrames={fr(it.dur)}>
         {it.type === 'scene' && it.scene === 'Opening' && <Opening name="Jesslyn" />}
-        {it.type === 'scene' && it.scene === 'Chapter' && <StoryChapter {...it.props} />}
-        {it.type === 'scene' && it.scene === 'StoryEnd' && <StoryEnd {...it.props} />}
+        {it.type === 'scene' && it.scene === 'Chapter' && <Chapter {...it.props} />}
         {it.type === 'scene' && it.scene === 'Ending' && <Ending name="Jesslyn" {...it.props} />}
         {it.type === 'scene' && it.scene === 'CheerMeter' && <CheerMeter {...it.props} />}
         {it.type === 'scene' && it.scene === 'PhotoWall' && <PhotoWall {...it.props} />}
@@ -294,6 +293,7 @@ export const Main = () => {
         {it.type === 'scene' && it.scene === 'Stats' && <Stats {...it.props} />}
         {it.type === 'scene' && it.scene === 'Triptych' && <Triptych {...it.props} />}
         {it.type === 'shot' && <Shot s={it} />}
+        {it.type === 'shot' && i > 0 && EDL.items[i - 1].scene === 'Chapter' && <LightLeak at={0} dur={22} seed={i % 5} />}
         {whoosh && it.trans.type !== 'fade' && <Sfx name={whoosh} at={tHalf} volume={0.35} />}
         {whoosh && it.trans.type === 'fade' && it.type === 'shot' && <Sfx name="whoosh_5" at={tHalf} volume={0.18} />}
       </TransitionSeries.Sequence>,

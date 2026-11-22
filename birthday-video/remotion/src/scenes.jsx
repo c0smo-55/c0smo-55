@@ -71,7 +71,7 @@ export const Chapter = ({number, title}) => {
   const num = spring({frame: frame - 2, fps, config: {damping: 14}});
   return (
     <AbsoluteFill style={{backgroundColor: C.bgOuter}}>
-      <FadeOut at={105} len={15}>
+      <FadeOut at={118} len={14}>
         <Background />
         <Bokeh seed={`ch-${number}`} count={30} strength={0.8} />
         <Center>
@@ -80,13 +80,14 @@ export const Chapter = ({number, title}) => {
             transform: `translateX(${(1 - num) * 120}px) scale(${0.9 + num * 0.1})`}}>
             {String(number).padStart(2, '0')}
           </div>
-          <SpacedCaps text={`Part ${number}`} start={8} size={28} />
+          <SpacedCaps text={`Chapter ${['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six'][number]}`} start={8} size={30} />
           <SpringWords text={title} start={16} style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 120, color: C.white, marginTop: 10,
             textShadow: '0 0 30px rgba(142,197,255,0.45)'}} />
           <GrowLine start={34} width={420} />
         </Center>
         <Sparkles start={30} points={[[520, 470, 0.7, 0], [1420, 560, 0.8, 12]]} />
       </FadeOut>
+      <LightLeak at={0} dur={26} seed={number} />
       <Sfx name="whoosh_4" at={4} volume={0.45} />
       <Sfx name="chime_down" at={17} volume={0.35} />
       <Sfx name="glitter_2" at={32} volume={0.2} />
@@ -314,6 +315,23 @@ export const StoryEnd = ({line1 = 'The end of sixteen.', line2 = 'Chapter sevent
       <Sfx name="page_turn" at={2} volume={0.6} />
       <Sfx name="chime_up" at={52} volume={0.25} />
       <Sfx name="page_turn_2" at={durationInFrames - 30} volume={0.6} />
+    </AbsoluteFill>
+  );
+};
+
+// Soft blue/warm light leak built from animated gradients (no WebGL needed). Sweeps across once.
+export const LightLeak = ({at = 0, dur = 24, seed = 0}) => {
+  const frame = useCurrentFrame() - at;
+  if (frame < 0 || frame > dur) return null;
+  const p = frame / dur;
+  const o = 0.5 * Math.sin(Math.PI * p);
+  const x = -10 + 50 * p;
+  const y = 30 + 20 * Math.sin(p * 3 + seed);
+  return (
+    <AbsoluteFill style={{pointerEvents: 'none', mixBlendMode: 'screen', opacity: o}}>
+      <AbsoluteFill style={{background: `radial-gradient(ellipse 35% 60% at ${x}% ${y}%, rgba(150,200,255,0.8), rgba(90,140,255,0.3) 40%, transparent 70%)`}} />
+      <AbsoluteFill style={{background: `radial-gradient(ellipse 30% 45% at ${x + 18}% ${y + 25}%, rgba(255,214,170,0.55), transparent 70%)`}} />
+      <AbsoluteFill style={{background: `linear-gradient(${100 + seed * 20}deg, transparent ${x - 30}%, rgba(255,255,255,0.35) ${x}%, transparent ${x + 25}%)`}} />
     </AbsoluteFill>
   );
 };
