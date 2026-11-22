@@ -153,10 +153,10 @@ export const ShimmerScript = ({text, start, size = 260, duration = 45}) => {
   return (
     <div
       style={{
-        fontFamily: F.script, fontSize: size, lineHeight: 1.15, padding: '0 60px',
+        fontFamily: F.script, fontSize: size, lineHeight: 1.15, padding: '0.12em 60px 0.38em',
         backgroundImage: `linear-gradient(100deg, ${C.silver} 0%, ${C.white} ${shimmer - 12}%, #FFFFFF ${shimmer}%, ${C.sky} ${shimmer + 12}%, ${C.silver} 100%)`,
         WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent',
-        clipPath: `inset(-20% ${100 - reveal}% -20% -5%)`,
+        clipPath: `inset(-30% ${100 - reveal}% -40% -5%)`,
         filter: `blur(${blur}px) drop-shadow(0 0 28px rgba(142,197,255,0.55))`,
       }}
     >

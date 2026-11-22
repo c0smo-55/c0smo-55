@@ -94,8 +94,8 @@ const LowerThird = ({title, sub, at = 0.5, dur}) => {
       <div style={{position: 'absolute', left: 110, bottom: 230, transform: `translateX(${x}px)`, padding: '18px 60px 26px 40px',
         background: 'linear-gradient(90deg, rgba(10,22,48,0.72), rgba(10,22,48,0.25) 80%, transparent)',
         borderLeft: `4px solid ${C.sky}`, borderRadius: 6}}>
-        <div style={{fontFamily: F.script, fontSize: 120, lineHeight: 1, color: C.white,
-          clipPath: `inset(0 ${100 - interpolate(frame, [4, 30], [0, 100], clamp)}% 0 0)`,
+        <div style={{fontFamily: F.script, fontSize: 120, lineHeight: 1.3, paddingBottom: 18, color: C.white,
+          clipPath: `inset(-20% ${100 - interpolate(frame, [4, 30], [0, 100], clamp)}% -40% 0)`,
           textShadow: '0 0 24px rgba(142,197,255,0.6)'}}>
           {title}
         </div>
