@@ -42,12 +42,12 @@ export const Opening = ({name}) => {
           <Bokeh seed="open" />
         </AbsoluteFill>
         <Center>
-          <SpacedCaps text="Celebrating" start={12} />
+          <SpacedCaps text="Happy birthday" start={12} />
           <ShimmerScript text={name} start={32} size={300} />
           <GrowLine start={88} />
           <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 54, color: C.white, opacity: sub,
             transform: `translateY(${(1 - sub) * 20}px)`}}>
-            Sweet Seventeen
+            turns 17
           </div>
         </Center>
         <Butterflies count={6} seed="open" start={20} />
@@ -80,7 +80,7 @@ export const Chapter = ({number, title}) => {
             transform: `translateX(${(1 - num) * 120}px) scale(${0.9 + num * 0.1})`}}>
             {String(number).padStart(2, '0')}
           </div>
-          <SpacedCaps text={`Chapter ${['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six'][number]}`} start={8} size={28} />
+          <SpacedCaps text={`Part ${number}`} start={8} size={28} />
           <SpringWords text={title} start={16} style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 120, color: C.white, marginTop: 10,
             textShadow: '0 0 30px rgba(142,197,255,0.45)'}} />
           <GrowLine start={34} width={420} />
@@ -150,7 +150,7 @@ export const Ending = ({name, message}) => {
         <Butterflies count={5} seed="end" start={0} />
         <Confetti start={0} mode="rain" count={120} seed="end" />
         <Center>
-          <SpringWords text="Happy Sweet 17th" start={10} stagger={8}
+          <SpringWords text="Happy 17th" start={10} stagger={8}
             style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 84, color: C.ice}} />
           <ShimmerScript text={name} start={35} size={320} duration={50} />
           <GrowLine start={100} width={600} />

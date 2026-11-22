@@ -8,7 +8,7 @@
    "scene": "Teaser",
    "dur": 8.6,
    "props": {
-    "line": "One unforgettable night",
+    "line": "Jesslyn turns 17",
     "clips": [
      {
       "name": "c14_0071.50_1",
@@ -75,7 +75,7 @@
    "zoom": "in",
    "fx": {
     "date": {
-     "text": "07 · 11 · 2026",
+     "text": "7 November 2026",
      "place": "Main Street · Dining & Coffee"
     }
    },
@@ -111,7 +111,7 @@
    "scene": "Chapter",
    "props": {
     "number": 1,
-    "title": "Welcome to the Party"
+    "title": "Everyone Arrives"
    },
    "dur": 4.0,
    "trans": {
@@ -200,7 +200,7 @@
    "fx": {
     "lower": {
      "title": "Jesslyn",
-     "sub": "The Birthday Girl",
+     "sub": "17 today",
      "at": 0.6
     }
    },
@@ -248,7 +248,7 @@
     "freeze": {
      "at": 1.5,
      "hold": 1.3,
-     "label": "The Birthday Girl",
+     "label": "birthday girl",
      "emoji": "",
      "x": 1150,
      "y": 320,
@@ -264,13 +264,7 @@
    "dur": 2.5,
    "vol": 0.35,
    "zoom": "in",
-   "fx": {
-    "kinetic": {
-     "text": "THE GIRLS",
-     "sub": "are here",
-     "at": 0.3
-    }
-   }
+   "fx": {}
   },
   {
    "type": "shot",
@@ -321,7 +315,7 @@
    "fx": {
     "polaroid": {
      "at": 2.0,
-     "caption": "Besties"
+     "caption": "besties"
     }
    }
   },
@@ -333,13 +327,7 @@
    "vol": 0.45,
    "zoom": "in",
    "fx": {
-    "glow": true,
-    "punch": {
-     "text": "Bestie hugs",
-     "emoji": "",
-     "at": 1.2,
-     "dur": 2.4
-    }
+    "glow": true
    },
    "trans": {
     "type": "fade",
@@ -355,7 +343,7 @@
     "dur": 0.5
    },
    "props": {
-    "title": "Candid moments",
+    "title": "little moments",
     "beat": 0.7,
     "shots": [
      {
@@ -368,7 +356,7 @@
      },
      {
       "img": "snaps/a2.jpg",
-      "caption": "best hugs",
+      "caption": "hugs",
       "x": 965,
       "y": 375,
       "focus": 55,
@@ -376,7 +364,7 @@
      },
      {
       "img": "snaps/a3.jpg",
-      "caption": "giggles",
+      "caption": "giggling",
       "x": 1530,
       "y": 400,
       "focus": 75,
@@ -392,7 +380,7 @@
      },
      {
       "img": "snaps/a5.jpg",
-      "caption": "hi everyone!",
+      "caption": "hi guys!",
       "x": 960,
       "y": 800,
       "focus": 45,
@@ -400,7 +388,7 @@
      },
      {
       "img": "snaps/a6.jpg",
-      "caption": "party mode",
+      "caption": "full house",
       "x": 1515,
       "y": 818,
       "focus": 72,
@@ -432,7 +420,7 @@
     "freeze": {
      "at": 1.5,
      "hold": 1.3,
-     "label": "The MC",
+     "label": "our MC",
      "emoji": "",
      "x": 1020,
      "y": 450,
@@ -483,7 +471,7 @@
    "zoom": "in",
    "fx": {
     "punch": {
-     "text": "The birthday girl",
+     "text": "the birthday girl",
      "emoji": "",
      "at": 0.8,
      "dur": 3.0
@@ -529,14 +517,7 @@
    "dur": 5.0,
    "vol": 1.0,
    "zoom": "in",
-   "fx": {
-    "punch": {
-     "text": "Wishes time",
-     "emoji": "",
-     "at": 0.2,
-     "dur": 2.4
-    }
-   },
+   "fx": {},
    "trans": {
     "type": "wipe",
     "dir": "from-right",
@@ -580,7 +561,7 @@
    "fx": {
     "lower": {
      "title": "Fiona",
-     "sub": "Birthday wishes",
+     "sub": "Jesslyn's friend",
      "at": 0.4
     }
    }
@@ -595,7 +576,7 @@
    "fx": {
     "lower": {
      "title": "Shalom",
-     "sub": "Birthday wishes",
+     "sub": "Jesslyn's friend",
      "at": 0.4
     }
    },
@@ -613,13 +594,7 @@
    "vol": 1.0,
    "zoom": "in",
    "fx": {
-    "glow": true,
-    "punch": {
-     "text": "Happy tears",
-     "emoji": "",
-     "at": 0.8,
-     "dur": 2.6
-    }
+    "glow": true
    }
   },
   {
@@ -676,7 +651,7 @@
    "scene": "Chapter",
    "props": {
     "number": 3,
-    "title": "Make a Wish"
+    "title": "Cake Time"
    },
    "dur": 4.0,
    "trans": {
@@ -691,14 +666,7 @@
    "dur": 21.0,
    "vol": 1.0,
    "zoom": "in",
-   "fx": {
-    "punch": {
-     "text": "Happy birthday",
-     "emoji": "",
-     "at": 1.2,
-     "dur": 3.0
-    }
-   },
+   "fx": {},
    "trans": {
     "type": "fade",
     "dur": 0.5
@@ -714,7 +682,7 @@
     "freeze": {
      "at": 3.0,
      "hold": 1.4,
-     "label": "Papa on candle duty",
+     "label": "papa lighting the candles",
      "emoji": "",
      "x": 1180,
      "y": 260,
@@ -755,7 +723,7 @@
    "fx": {
     "glow": true,
     "punch": {
-     "text": "Make a wish",
+     "text": "make a wish",
      "emoji": "",
      "at": 0.1,
      "dur": 1.3
@@ -808,13 +776,7 @@
    "vol": 0.8,
    "zoom": "in",
    "fx": {
-    "glow": true,
-    "punch": {
-     "text": "Happy tears",
-     "emoji": "",
-     "at": 1.5,
-     "dur": 2.6
-    }
+    "glow": true
    }
   },
   {
@@ -834,7 +796,7 @@
    "fx": {
     "polaroid": {
      "at": 3.0,
-     "caption": "Family"
+     "caption": "family"
     }
    },
    "trans": {
@@ -869,7 +831,7 @@
    "scene": "Chapter",
    "props": {
     "number": 4,
-    "title": "Quiz Night & Dinner"
+    "title": "Kahoot & Dinner"
    },
    "dur": 4.0,
    "trans": {
@@ -884,14 +846,7 @@
    "dur": 23.2,
    "vol": 1.0,
    "zoom": "in",
-   "fx": {
-    "punch": {
-     "text": "Quiz time",
-     "emoji": "",
-     "at": 0.3,
-     "dur": 2.4
-    }
-   }
+   "fx": {}
   },
   {
    "type": "shot",
@@ -923,7 +878,6 @@
     "dur": 0.3
    },
    "props": {
-    "caption": "Quiz chaos",
     "clips": [
      {
       "name": "c18_0029.50_1",
@@ -966,7 +920,7 @@
     "freeze": {
      "at": 2.2,
      "hold": 1.3,
-     "label": "Checking the scores",
+     "label": "wait, who's winning?",
      "emoji": "",
      "x": 1480,
      "y": 520,
@@ -1035,7 +989,7 @@
    "zoom": "in",
    "fx": {
     "punch": {
-     "text": "Quiz champions",
+     "text": "kahoot winners",
      "emoji": "",
      "at": 0.4,
      "dur": 3.0,
@@ -1062,14 +1016,7 @@
    "dur": 2.5,
    "vol": 0.3,
    "zoom": "in",
-   "fx": {
-    "punch": {
-     "text": "Dinner time",
-     "emoji": "",
-     "at": 0.2,
-     "dur": 2.2
-    }
-   },
+   "fx": {},
    "trans": {
     "type": "wipe",
     "dir": "from-top",
@@ -1102,7 +1049,7 @@
     "freeze": {
      "at": 1.7,
      "hold": 1.3,
-     "label": "Caught mid-bite",
+     "label": "caught eating",
      "emoji": "",
      "x": 210,
      "y": 660,
@@ -1129,7 +1076,7 @@
     "freeze": {
      "at": 2.0,
      "hold": 1.4,
-     "label": "Behind the lens",
+     "label": "papa, filming everything",
      "emoji": "",
      "x": 1560,
      "y": 450,
@@ -1187,7 +1134,6 @@
     "dur": 0.3
    },
    "props": {
-    "caption": "Photo time",
     "clips": [
      {
       "name": "c25_0015.00_1",
@@ -1237,12 +1183,6 @@
    "vol": 0.8,
    "zoom": "in",
    "fx": {
-    "punch": {
-     "text": "Say cheese",
-     "emoji": "",
-     "at": 0.3,
-     "dur": 2.4
-    },
     "sfx": [
      {
       "name": "shutter_1",
@@ -1299,12 +1239,12 @@
     "dur": 0.5
    },
    "props": {
-    "title": "Snapshots",
+    "title": "more pics",
     "beat": 0.7,
     "shots": [
      {
       "img": "snaps/b6.jpg",
-      "caption": "17 & glowing",
+      "caption": "17!",
       "x": 390,
       "y": 390,
       "focus": 62,
@@ -1312,7 +1252,7 @@
      },
      {
       "img": "snaps/b2.jpg",
-      "caption": "screaming!!",
+      "caption": "screaming lol",
       "x": 965,
       "y": 375,
       "focus": 55,
@@ -1320,7 +1260,7 @@
      },
      {
       "img": "snaps/b3.jpg",
-      "caption": "laugh attack",
+      "caption": "can't stop laughing",
       "x": 1530,
       "y": 400,
       "focus": 35,
@@ -1328,7 +1268,7 @@
      },
      {
       "img": "snaps/b4.jpg",
-      "caption": "the whole squad",
+      "caption": "the girls",
       "x": 415,
       "y": 815,
       "focus": 50,
@@ -1336,7 +1276,7 @@
      },
      {
       "img": "snaps/b5.jpg",
-      "caption": "hug it out",
+      "caption": "group hug",
       "x": 960,
       "y": 800,
       "focus": 50,
@@ -1344,7 +1284,7 @@
      },
      {
       "img": "snaps/b1.jpg",
-      "caption": "papa on duty",
+      "caption": "papa filming",
       "x": 1515,
       "y": 818,
       "focus": 30,
@@ -1358,7 +1298,7 @@
    "scene": "Chapter",
    "props": {
     "number": 5,
-    "title": "Game On!"
+    "title": "Games"
    },
    "dur": 4.0,
    "trans": {
@@ -1373,14 +1313,7 @@
    "dur": 2.5,
    "vol": 0.8,
    "zoom": "punch",
-   "fx": {
-    "punch": {
-     "text": "Game on",
-     "emoji": "",
-     "at": 0.2,
-     "dur": 2.2
-    }
-   },
+   "fx": {},
    "trans": {
     "type": "clockWipe",
     "dur": 0.6
@@ -1459,7 +1392,6 @@
     "dur": 0.3
    },
    "props": {
-    "caption": "Game faces",
     "clips": [
      {
       "name": "c26_0012.50_1",
@@ -1531,7 +1463,7 @@
    "scene": "Chapter",
    "props": {
     "number": 6,
-    "title": "Dance, Sing & Goodbye"
+    "title": "Dancing & Karaoke"
    },
    "dur": 4.0,
    "trans": {
@@ -1546,14 +1478,7 @@
    "dur": 5.0,
    "vol": 1.0,
    "zoom": "punch",
-   "fx": {
-    "punch": {
-     "text": "Dance break",
-     "emoji": "",
-     "at": 0.3,
-     "dur": 2.4
-    }
-   },
+   "fx": {},
    "trans": {
     "type": "clockWipe",
     "dur": 0.6
@@ -1582,14 +1507,7 @@
    "dur": 3.5,
    "vol": 0.9,
    "zoom": "in",
-   "fx": {
-    "punch": {
-     "text": "Mama's turn",
-     "emoji": "",
-     "at": 0.4,
-     "dur": 2.6
-    }
-   },
+   "fx": {},
    "trans": {
     "type": "slide",
     "dir": "from-bottom",
@@ -1613,7 +1531,7 @@
    "zoom": "in",
    "fx": {
     "punch": {
-     "text": "Karaoke time",
+     "text": "karaoke!",
      "emoji": "",
      "at": 0.3,
      "dur": 2.4
@@ -1666,14 +1584,14 @@
     "dur": 0.5
    },
    "props": {
-    "title": "Party mode",
+    "title": "the fun part",
     "beat": 0.9,
     "shots": [
      {
       "live": true,
       "name": "c30_0017.00_1",
       "start": 2.0,
-      "caption": "dance break",
+      "caption": "dancing",
       "x": 560,
       "y": 395,
       "w": 500,
@@ -1683,7 +1601,7 @@
       "live": true,
       "name": "c33_0067.00_1",
       "start": 1.0,
-      "caption": "sing it!",
+      "caption": "singing",
       "x": 1360,
       "y": 395,
       "w": 500,
@@ -1693,7 +1611,7 @@
       "live": true,
       "name": "c32_0008.00_1",
       "start": 0.5,
-      "caption": "mama's laugh",
+      "caption": "mama laughing",
       "x": 560,
       "y": 815,
       "w": 500,
@@ -1720,13 +1638,7 @@
    "vol": 0.7,
    "zoom": "in",
    "fx": {
-    "glow": true,
-    "punch": {
-     "text": "See you next time",
-     "emoji": "",
-     "at": 1.5,
-     "dur": 3.0
-    }
+    "glow": true
    },
    "trans": {
     "type": "fade",
@@ -1753,15 +1665,15 @@
     "items": [
      {
       "value": 17,
-      "label": "Years"
+      "label": "years old"
      },
      {
       "value": 33,
-      "label": "Videos filmed"
+      "label": "videos"
      },
      {
       "value": 41,
-      "label": "Minutes of memories"
+      "label": "minutes of footage"
      }
     ]
    }
@@ -1777,27 +1689,27 @@
    "props": {
     "items": [
      {
-      "label": "Quiz showdown",
+      "label": "Kahoot",
       "emoji": "",
       "db": -10.0
      },
      {
-      "label": "Table greetings",
+      "label": "Saying hi to every table",
       "emoji": "",
       "db": -12.6
      },
      {
-      "label": "Sing-along",
+      "label": "Karaoke",
       "emoji": "",
       "db": -13.0
      },
      {
-      "label": "Friends' wishes",
+      "label": "The wishes",
       "emoji": "",
       "db": -13.1
      },
      {
-      "label": "Candles out",
+      "label": "Blowing out the candles",
       "emoji": "",
       "db": -15.3
      }

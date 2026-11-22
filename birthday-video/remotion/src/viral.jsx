@@ -125,7 +125,7 @@ export const Countdown = ({at = 0, step = 30}) => {
 };
 
 // Animated bar chart of the night's loudest cheers (values in dB from the real audio).
-export const CheerMeter = ({items, title = 'Cheer-o-meter'}) => {
+export const CheerMeter = ({items, title = 'Who got the loudest cheer?'}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const min = Math.min(...items.map((i) => i.db)) - 6;
@@ -137,7 +137,7 @@ export const CheerMeter = ({items, title = 'Cheer-o-meter'}) => {
       <div style={{fontFamily: F.serif, fontStyle: 'italic', fontSize: 96, color: C.white,
         opacity: interpolate(frame, [0, 12], [0, 1], clamp)}}>{title}</div>
       <div style={{fontFamily: F.sans, fontSize: 28, letterSpacing: '0.35em', color: C.sky, margin: '10px 0 60px'}}>
-        LOUDEST MOMENTS OF THE NIGHT (MEASURED FROM THE VIDEO)
+        GOING BY HOW LOUD THE ROOM GOT IN THE VIDEOS
       </div>
       {items.map((it, i) => {
         const g = spring({frame: frame - 14 - i * 8, fps, config: {damping: 200}, durationInFrames: 40});
@@ -146,7 +146,7 @@ export const CheerMeter = ({items, title = 'Cheer-o-meter'}) => {
         const glow = win ? 0.6 + 0.4 * Math.sin(frame / 5) : 0;
         return (
           <div key={i} style={{display: 'flex', alignItems: 'center', marginBottom: 34}}>
-            <div style={{width: 430, fontFamily: F.sans, fontWeight: 500, fontSize: 40, color: C.white}}>
+            <div style={{width: 580, fontFamily: F.sans, fontWeight: 500, fontSize: 40, color: C.white, whiteSpace: 'nowrap'}}>
               {it.label}
             </div>
             <div style={{flex: 1, height: 70, background: 'rgba(255,255,255,0.06)', borderRadius: 35, overflow: 'hidden'}}>
@@ -204,7 +204,7 @@ export const PhotoWall = ({images}) => {
 const vid = (name) => staticFile(`shots/${name}.mp4`);
 
 // Cold-open teaser: rapid best-moment cuts with white flash frames, then a title line.
-export const Teaser = ({clips, line = 'One unforgettable night'}) => {
+export const Teaser = ({clips, line = 'Jesslyn turns 17'}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   let t = 0;
@@ -243,7 +243,7 @@ export const Teaser = ({clips, line = 'One unforgettable night'}) => {
 };
 
 // Animated "by the numbers" card.
-export const Stats = ({items, title = 'The night in numbers'}) => {
+export const Stats = ({items, title = 'Jesslyn\'s 17th'}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   return (
