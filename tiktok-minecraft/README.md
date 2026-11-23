@@ -25,7 +25,8 @@ Two modes:
 ### Parkour (levels): help and sabotage cost the same
 | Price | Help ⬆️ | Sabotage ⬇️ |
 |---|---|---|
-| ~1 coin | Heart Me: up 1 level | Rose: 👊 punch (a wind charge knocks you sideways) |
+| ~1 coin | Heart Me: Speed + Jump Boost 10s | Rose: 👊 punch (a wind charge knocks you sideways) |
+| 30 coins | *(not picked yet)*: up 1 level | Doughnut: down 1 level |
 | ~100 coins | Confetti: up 3 levels | Hat and Mustache: down 3 levels |
 | ~1,000 coins | Watermelon: saves you from the countdown | Galaxy: back to Level 1 in 30s |
 | Top gifts | | Lion / Universe: back to Level 1 |

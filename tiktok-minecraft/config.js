@@ -70,7 +70,13 @@ export default {
     parkour: {
       // ~1 coin
       'Rose': [{ type: 'punch', count: 1 }],
-      'Heart Me': [{ type: 'levelUp', levels: 1 }],
+      'Heart Me': [
+        { type: 'effect', effect: 'speed', seconds: 10, level: 1 },
+        { type: 'effect', effect: 'jump_boost', seconds: 10, level: 1 },
+      ],
+      // 30 coins
+      'Doughnut': [{ type: 'levelDown', levels: 1 }],
+      // 'PUT 30-COIN GIFT HERE': [{ type: 'levelUp', levels: 1 }],
       // ~100 coins
       'Hat and Mustache': [{ type: 'levelDown', levels: 3 }],
       'Confetti': [{ type: 'levelUp', levels: 3 }],
