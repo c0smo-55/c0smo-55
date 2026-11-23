@@ -40,6 +40,7 @@ export default {
   //    { type: 'kit', kit: 'normal' }              (kits are below)
   //    { type: 'clearInventory' }
   //    { type: 'resetCountdown' }   reset in 30s unless someone sends the same gift
+  //    { type: 'save' }             stops a running reset countdown
   //    { type: 'reset' }            instant reset, no saving
   //    { type: 'effect', effect: 'speed', seconds: 15, level: 1 }
   //    { type: 'command', command: 'time set night' }   any Minecraft command
@@ -57,6 +58,7 @@ export default {
       'Confetti': [{ type: 'kit', kit: 'god', cooldownSeconds: 30 }],
       'Money Gun': [{ type: 'clearInventory' }],
       'Galaxy': [{ type: 'resetCountdown' }],
+      'Watermelon': [{ type: 'save' }],
       'Lion': [{ type: 'reset' }],
       'Universe': [{ type: 'reset' }],
     },
@@ -76,6 +78,7 @@ export default {
       ],
       'Money Gun': [{ type: 'reset' }],
       'Galaxy': [{ type: 'resetCountdown' }],
+      'Watermelon': [{ type: 'save' }],
       'Lion': [{ type: 'reset' }],
       'Universe': [{ type: 'reset' }],
     },

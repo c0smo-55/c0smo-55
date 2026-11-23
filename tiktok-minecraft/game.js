@@ -151,6 +151,10 @@ export class Game {
       case 'resetCountdown':
         for (let i = 0; i < count; i++) await this.toggleCountdown(source, who);
         break;
+      case 'save':
+        if (this.countdown) await this.saveRun(who);
+        else this.log(`   🛡️ ${source} is a save gift, but no reset countdown is running`);
+        break;
       case 'reset':
         await this.reset(who);
         break;
@@ -182,26 +186,37 @@ export class Game {
     await this.send(`execute at ${this.player} run summon ${mob} ~${x} ~ ~${z}${data}`);
   }
 
+  async saveRun(who) {
+    clearInterval(this.countdown.timer);
+    this.countdown = null;
+    await this.send(`bossbar remove ${BOSSBAR}`);
+    this.log(`   🛡️ ${who} SAVED the run!`);
+    await this.title('SAVED!', `${who} saved the run`, 'green');
+  }
+
+  // Gifts that can save you: the one that started the countdown + any 'save' gifts.
+  saveGiftNames(gift) {
+    const names = [gift];
+    for (const [name, actions] of Object.entries(this.config.gifts?.[this.mode] ?? {})) {
+      if (actions.some((a) => a.type === 'save') && !names.includes(name)) names.push(name);
+    }
+    return names.join(' or ');
+  }
+
   // First gift starts the countdown, the next matching gift saves you.
   async toggleCountdown(gift, who) {
-    if (this.countdown) {
-      clearInterval(this.countdown.timer);
-      this.countdown = null;
-      await this.send(`bossbar remove ${BOSSBAR}`);
-      this.log(`   🛡️ ${who} SAVED the run!`);
-      await this.title('SAVED!', `${who} saved the run`, 'green');
-      return;
-    }
+    if (this.countdown) return this.saveRun(who);
     const seconds = this.config.resetCountdownSeconds ?? 30;
-    this.log(`   ⚠️ ${who} started a ${seconds}s reset countdown (send another ${gift} to save)`);
-    const label = (s) => text(`⚠ RESET IN ${s}s — send a ${gift} to save! (${who})`, 'red');
+    const savers = this.saveGiftNames(gift);
+    this.log(`   ⚠️ ${who} started a ${seconds}s reset countdown (send a ${savers} to save)`);
+    const label = (s) => text(`⚠ RESET IN ${s}s — send a ${savers} to save! (${who})`, 'red');
     await this.send(`bossbar add ${BOSSBAR} ${label(seconds)}`);
     await this.send(`bossbar set ${BOSSBAR} name ${label(seconds)}`);
     await this.send(`bossbar set ${BOSSBAR} color red`);
     await this.send(`bossbar set ${BOSSBAR} max ${seconds}`);
     await this.send(`bossbar set ${BOSSBAR} value ${seconds}`);
     await this.send(`bossbar set ${BOSSBAR} players @a`);
-    await this.title('RESET INCOMING', `send a ${gift} to save!`, 'red');
+    await this.title('RESET INCOMING', `send a ${savers} to save!`, 'red');
 
     const state = { gift, secondsLeft: seconds, timer: null };
     state.timer = setInterval(async () => {

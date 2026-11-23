@@ -17,7 +17,8 @@ Two modes:
 | Heart Me | Normal kit (iron) | Speed + Jump Boost 15s |
 | Confetti | **God kit** (30s cooldown) | Darkness + Slowness |
 | Money Gun | Clear inventory | Back to start |
-| Galaxy | **30s reset countdown**: another Galaxy saves you | Same |
+| Galaxy | **30s reset countdown**: another Galaxy or a Watermelon saves you | Same |
+| Watermelon | Saves you from the countdown | Same |
 | Lion / Universe | **Instant reset** | Back to start |
 
 Plus:
