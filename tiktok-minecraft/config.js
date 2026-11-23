@@ -69,7 +69,7 @@ export default {
     // Levels are saved by typing "setlevel 1", "setlevel 2"... in the script window (see README).
     parkour: {
       // ~1 coin
-      'Rose': [{ type: 'levelDown', levels: 1 }],
+      'Rose': [{ type: 'punch', count: 1 }],
       'Heart Me': [{ type: 'levelUp', levels: 1 }],
       // ~100 coins
       'Hat and Mustache': [{ type: 'levelDown', levels: 3 }],

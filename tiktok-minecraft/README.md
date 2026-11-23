@@ -25,12 +25,12 @@ Two modes:
 ### Parkour (levels): help and sabotage cost the same
 | Price | Help ⬆️ | Sabotage ⬇️ |
 |---|---|---|
-| ~1 coin | Heart Me: up 1 level | Rose: down 1 level |
+| ~1 coin | Heart Me: up 1 level | Rose: 👊 punch (a wind charge knocks you sideways) |
 | ~100 coins | Confetti: up 3 levels | Hat and Mustache: down 3 levels |
 | ~1,000 coins | Watermelon: saves you from the countdown | Galaxy: back to Level 1 in 30s |
 | Top gifts | | Lion / Universe: back to Level 1 |
 
-Every 100 likes = 👊 a punch (a wind charge knocks you sideways).
+Every 100 likes is a free 👊 punch too.
 A bar at the top shows **LEVEL 7 / 20 · Best: 12**.
 
 Also in survival:
