@@ -1,0 +1,19 @@
+{
+  "name": "tiktok-minecraft",
+  "version": "1.0.0",
+  "description": "TikTok LIVE gifts, likes, follows and chat trigger chaos in Minecraft Java",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test-gifts": "node index.js --simulate",
+    "dry": "node index.js --dry"
+  },
+  "dependencies": {
+    "rcon-client": "^5.0.0",
+    "tiktok-live-connector": "^2.5.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
