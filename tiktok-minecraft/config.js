@@ -78,8 +78,8 @@ export default {
       'Doughnut': [{ type: 'levelDown', levels: 1 }],
       // 'PUT 30-COIN GIFT HERE': [{ type: 'levelUp', levels: 1 }],
       // ~100 coins
-      'Hat and Mustache': [{ type: 'levelDown', levels: 3 }],
-      'Confetti': [{ type: 'levelUp', levels: 3 }],
+      'Hat and Mustache': [{ type: 'levelDown', levels: 5 }],
+      'Confetti': [{ type: 'levelUp', levels: 5 }],
       // ~1,000 coins
       'Galaxy': [{ type: 'resetCountdown' }],   // back to Level 1 in 30s...
       'Watermelon': [{ type: 'save' }],         // ...unless someone sends a Watermelon
