@@ -149,7 +149,7 @@ export class Game {
         await this.title('INVENTORY CLEARED', `by ${who}`, 'red');
         break;
       case 'resetCountdown':
-        for (let i = 0; i < count; i++) await this.toggleCountdown(source, who);
+        await this.startCountdown(source, who);
         break;
       case 'save':
         if (this.countdown) await this.saveRun(who);
@@ -194,20 +194,23 @@ export class Game {
     await this.title('SAVED!', `${who} saved the run`, 'green');
   }
 
-  // Gifts that can save you: the one that started the countdown + any 'save' gifts.
-  saveGiftNames(gift) {
-    const names = [gift];
+  // Gifts that can save you: any gift with a 'save' action.
+  saveGiftNames() {
+    const names = [];
     for (const [name, actions] of Object.entries(this.config.gifts?.[this.mode] ?? {})) {
       if (actions.some((a) => a.type === 'save') && !names.includes(name)) names.push(name);
     }
     return names.join(' or ');
   }
 
-  // First gift starts the countdown, the next matching gift saves you.
-  async toggleCountdown(gift, who) {
-    if (this.countdown) return this.saveRun(who);
+  // Starts the reset countdown. Only a 'save' gift (e.g. Watermelon) can stop it.
+  async startCountdown(gift, who) {
+    if (this.countdown) {
+      this.log(`   ⚠️ ${gift} from ${who}, but a reset countdown is already running`);
+      return;
+    }
     const seconds = this.config.resetCountdownSeconds ?? 30;
-    const savers = this.saveGiftNames(gift);
+    const savers = this.saveGiftNames() || 'save gift';
     this.log(`   ⚠️ ${who} started a ${seconds}s reset countdown (send a ${savers} to save)`);
     const label = (s) => text(`⚠ RESET IN ${s}s — send a ${savers} to save! (${who})`, 'red');
     await this.send(`bossbar add ${BOSSBAR} ${label(seconds)}`);

@@ -39,7 +39,7 @@ export default {
   //    { type: 'mob', mob: 'zombie', count: 1, nbt: 'IsBaby:1b' }   (extra mob data)
   //    { type: 'kit', kit: 'normal' }              (kits are below)
   //    { type: 'clearInventory' }
-  //    { type: 'resetCountdown' }   reset in 30s unless someone sends the same gift
+  //    { type: 'resetCountdown' }   reset in 30s unless someone sends a 'save' gift
   //    { type: 'save' }             stops a running reset countdown
   //    { type: 'reset' }            instant reset, no saving
   //    { type: 'effect', effect: 'speed', seconds: 15, level: 1 }
