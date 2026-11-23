@@ -60,7 +60,7 @@ export default {
       'Confetti': [{ type: 'kit', kit: 'god', cooldownSeconds: 30 }],
       'Money Gun': [{ type: 'clearInventory' }],
       'Galaxy': [{ type: 'resetCountdown' }],
-      'Watermelon': [{ type: 'save' }],
+      'Watermelon Love': [{ type: 'save' }],
       'Lion': [{ type: 'reset' }],
       'Universe': [{ type: 'reset' }],
     },
@@ -76,14 +76,14 @@ export default {
       ],
       // 30 coins
       'Doughnut': [{ type: 'levelDown', levels: 1 }],
-      // 'PUT 30-COIN GIFT HERE': [{ type: 'levelUp', levels: 1 }],
+      'Capybara': [{ type: 'levelUp', levels: 1 }],
       // ~100 coins
       'Hat and Mustache': [{ type: 'levelDown', levels: 5 }],
       'Confetti': [{ type: 'levelUp', levels: 5 }],
       // ~1,000 coins
       'Galaxy': [{ type: 'resetCountdown' }],   // back to Level 1 in 30s...
-      'Watermelon': [{ type: 'save' }],         // ...unless someone sends a Watermelon
-      // 'PUT ~1K GIFT HERE': [{ type: 'levelUp', levels: 9999 }],   // straight to the top level
+      'Watermelon Love': [{ type: 'save' }],
+      'Dinosaur': [{ type: 'levelUp', levels: 9999 }],  // straight to the top level
       // Top gifts: straight back to Level 1
       'Lion': [{ type: 'reset' }],
       'Universe': [{ type: 'reset' }],
