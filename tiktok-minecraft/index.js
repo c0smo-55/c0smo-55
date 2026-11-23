@@ -34,43 +34,57 @@ async function getRcon() {
   return connecting;
 }
 
-// Commands go out one at a time, in order.
+// Commands go out one at a time, in order. Resolves to Minecraft's reply.
 let queue = Promise.resolve();
 function send(command) {
-  queue = queue.then(async () => {
-    if (DRY) { console.log('   > ' + command); return; }
+  const result = queue.then(async () => {
+    if (DRY) { console.log('   > ' + command); return null; }
     try {
       const r = await getRcon();
       const reply = await r.send(command);
       if (/unknown|incorrect|expected|invalid|no player/i.test(reply)) {
         console.log(`   ⚠️ Minecraft didn't like: ${command}\n      → ${reply}`);
       }
+      return reply;
     } catch (err) {
       rcon = null;
       console.log(`   ❌ Couldn't send to Minecraft (${err.message}). Is the server running with RCON on?`);
+      return null;
     }
   });
-  return queue;
+  queue = result;
+  return result;
 }
 
 const game = new Game(config, send);
+game.startLevelTracker();
 
-// ---------- Test mode: type gifts yourself ----------
+// ---------- Typing in this window ----------
+// Always available: setlevel / levels / level / mode / quit
+// In test mode you can also type fake gifts.
 
-function startSimulator() {
+const TESTING = SIMULATE || DRY;
+
+function startTerminal() {
   console.log(`
+⌨️  You can type here while it runs:
+  setlevel 5      save where you're standing as parkour Level 5
+  levels          list saved levels
+  level 3         teleport yourself to Level 3
+  resetbest       reset the "Best" record
+  mode parkour    switch mode (survival / parkour)
+  quit` + (TESTING ? `
+
 🧪 TEST MODE (${DRY ? 'printing commands only' : 'sending to Minecraft'}) — mode: ${config.mode}
-Type things like:
+Fake TikTok stuff:
   rose            1 Rose
   rose 20         a 20x Rose streak
   heart me        a Heart Me
-  galaxy          a Galaxy (type it again to "save")
+  galaxy          a Galaxy (then "watermelon" to save)
   likes 250       250 likes
   follow bob      bob follows
-  chat bob !zombie
-  mode parkour    switch mode (survival / parkour)
-  quit
-`);
+  chat bob !zombie` : '') + '\n');
+
   const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
   rl.on('line', async (line) => {
     const input = line.trim();
@@ -78,7 +92,12 @@ Type things like:
     const [first, ...rest] = input.split(/\s+/);
     const cmd = first.toLowerCase();
     if (cmd === 'quit' || cmd === 'exit') { game.stop(); process.exit(0); }
-    if (cmd === 'mode') return game.serial(() => { config.mode = rest[0]; console.log(`Mode is now ${config.mode}`); });
+    if (cmd === 'mode') return game.setMode(rest[0]);
+    if (cmd === 'setlevel') return game.saveLevelHere(Number(rest[0]));
+    if (cmd === 'levels') return game.listLevels();
+    if (cmd === 'resetbest') return game.resetBest();
+    if (cmd === 'level' && rest.length) return game.goToLevel(Number(rest[0]));
+    if (!TESTING) { console.log('Unknown command (fake gifts only work in test mode: npm run test-gifts)'); return; }
     if (cmd === 'likes') return game.onLikes({ liker: 'tester', likeCount: Number(rest[0]) || 100 });
     if (cmd === 'follow') return game.onFollow({ follower: rest[0] || 'tester' });
     if (cmd === 'chat') return game.onChat({ viewer: rest[0] || 'tester', comment: rest.slice(1).join(' ') });
@@ -143,5 +162,5 @@ if (!DRY) await getRcon().catch((err) => {
   console.log('   Start your server first and check the RCON settings (see README). Will keep trying when gifts come in.');
 });
 
-if (SIMULATE || DRY) startSimulator();
-else startTikTok();
+startTerminal();
+if (!TESTING) startTikTok();

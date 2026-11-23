@@ -8,20 +8,32 @@ Two modes:
 
 ## What each gift does (default)
 
-| Gift | Survival | Parkour |
-|---|---|---|
-| Rose | 1 zombie | Slowness 3s |
-| Finger Heart | 2 skeletons | Jump Boost 10s |
-| Doughnut | 1 creeper | Nausea 10s |
-| Hat and Mustache | 3 spiders | Levitation 2s |
-| Heart Me | Normal kit (iron) | Speed + Jump Boost 15s |
-| Confetti | **God kit** (30s cooldown) | Darkness + Slowness |
-| Money Gun | Clear inventory | Back to start |
-| Galaxy | **30s reset countdown**: only a Watermelon saves you | Same |
-| Watermelon | Saves you from the countdown | Same |
-| Lion / Universe | **Instant reset** | Back to start |
+### Survival (beat the game)
+| Gift | Effect |
+|---|---|
+| Rose | 1 zombie |
+| Finger Heart | 2 skeletons |
+| Doughnut | 1 creeper |
+| Hat and Mustache | 3 spiders |
+| Heart Me | Normal kit (iron) |
+| Confetti | **God kit** (30s cooldown) |
+| Money Gun | Clear inventory |
+| Galaxy | **30s reset countdown**: only a Watermelon saves you |
+| Watermelon | Saves you from the countdown |
+| Lion / Universe | **Instant reset** |
 
-Plus:
+### Parkour (levels): help and sabotage cost the same
+| Price | Help ⬆️ | Sabotage ⬇️ |
+|---|---|---|
+| ~1 coin | Heart Me: up 1 level | Rose: down 1 level |
+| ~100 coins | Confetti: up 3 levels | Hat and Mustache: down 3 levels |
+| ~1,000 coins | Watermelon: saves you from the countdown | Galaxy: back to Level 1 in 30s |
+| Top gifts | | Lion / Universe: back to Level 1 |
+
+Every 100 likes = 👊 a punch (a wind charge knocks you sideways).
+A bar at the top shows **LEVEL 7 / 20 · Best: 12**.
+
+Also in survival:
 - every **100 likes**: a random small effect (chickens, silverfish, a baby zombie, a fake creeper hiss)
 - every **follow**: a chicken named after the follower
 - chat commands **!zombie** and **!chicken** (each viewer once a minute)
@@ -101,7 +113,22 @@ likes 300
    ```
    It connects once you're live and retries automatically if TikTok drops.
 
-To switch modes, change `mode: 'survival'` to `mode: 'parkour'` in `config.js` and restart the script. For parkour, also set `parkourStart` to the coordinates of your course's start (press F3 in-game to see them).
+To switch modes, type `mode parkour` or `mode survival` in the script window, or change `mode:` in `config.js`.
+
+## Setting up parkour levels
+
+Do this once per course, with the server and the script running (`npm run test-gifts` is fine):
+
+1. In Minecraft, stand on the first block of Level 1.
+2. In the script window, type `setlevel 1`.
+3. Walk to the start of Level 2 and type `setlevel 2`, and so on for every level.
+
+They're saved in `levels.json`, so you only do it once. Other commands:
+- `levels`: list them
+- `level 5`: teleport yourself to Level 5
+- `resetbest`: reset the "Best" record
+
+The script checks where you are every second, so it always knows your level, even when you fall back down by yourself.
 
 ## Adding or changing gifts
 

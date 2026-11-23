@@ -16,7 +16,7 @@ export default {
   // Which game you're streaming right now: 'survival' (beat the game) or 'parkour'
   mode: 'survival',
 
-  // Parkour: where a "reset" sends you (press F3 in-game to see your coords)
+  // Parkour: where a "reset" sends you if you haven't saved any levels yet
   parkourStart: { x: 0, y: 64, z: 0 },
 
   // Max mobs from ONE gift (or one gift streak). 0 = unlimited.
@@ -42,7 +42,9 @@ export default {
   //    { type: 'resetCountdown' }   reset in 30s unless someone sends a 'save' gift
   //    { type: 'save' }             stops a running reset countdown
   //    { type: 'reset' }            instant reset, no saving
-  //    { type: 'effect', effect: 'speed', seconds: 15, level: 1 }
+  //    { type: 'effect', effect: 'speed', seconds: 15, level: 1 }   (level 1 = Speed I)
+  //    { type: 'levelUp', levels: 1 } / { type: 'levelDown', levels: 1 }   (parkour)
+  //    { type: 'punch', count: 1 }   wind charge knocks you sideways
   //    { type: 'command', command: 'time set night' }   any Minecraft command
   //
   //  Any action can have cooldownSeconds: 30 to stop it firing too often.
@@ -63,22 +65,19 @@ export default {
       'Universe': [{ type: 'reset' }],
     },
 
+    // Parkour: every sabotage gift has a help gift at the same price.
+    // Levels are saved by typing "setlevel 1", "setlevel 2"... in the script window (see README).
     parkour: {
-      'Rose': [{ type: 'effect', effect: 'slowness', seconds: 3, level: 1 }],
-      'Finger Heart': [{ type: 'effect', effect: 'jump_boost', seconds: 10, level: 1 }],
-      'Doughnut': [{ type: 'effect', effect: 'nausea', seconds: 10, level: 1 }],
-      'Hat and Mustache': [{ type: 'effect', effect: 'levitation', seconds: 2, level: 1 }],
-      'Heart Me': [
-        { type: 'effect', effect: 'speed', seconds: 15, level: 2 },
-        { type: 'effect', effect: 'jump_boost', seconds: 15, level: 2 },
-      ],
-      'Confetti': [
-        { type: 'effect', effect: 'darkness', seconds: 10, level: 1 },
-        { type: 'effect', effect: 'slowness', seconds: 10, level: 2 },
-      ],
-      'Money Gun': [{ type: 'reset' }],
-      'Galaxy': [{ type: 'resetCountdown' }],
-      'Watermelon': [{ type: 'save' }],
+      // ~1 coin
+      'Rose': [{ type: 'levelDown', levels: 1 }],
+      'Heart Me': [{ type: 'levelUp', levels: 1 }],
+      // ~100 coins
+      'Hat and Mustache': [{ type: 'levelDown', levels: 3 }],
+      'Confetti': [{ type: 'levelUp', levels: 3 }],
+      // ~1,000 coins
+      'Galaxy': [{ type: 'resetCountdown' }],   // back to Level 1 in 30s...
+      'Watermelon': [{ type: 'save' }],         // ...unless someone sends a Watermelon
+      // Top gifts: straight back to Level 1
       'Lion': [{ type: 'reset' }],
       'Universe': [{ type: 'reset' }],
     },
@@ -116,7 +115,7 @@ export default {
 
   // Every X likes, one random action from the list happens
   likes: {
-    every: 100,
+    every: 100,   // parkour: every 100 likes = a punch
     survival: [
       { type: 'mob', mob: 'chicken', count: 5 },
       { type: 'mob', mob: 'silverfish', count: 3 },
@@ -124,8 +123,7 @@ export default {
       { type: 'command', command: 'execute at {player} run playsound entity.creeper.primed hostile {player} ~ ~ ~ 1 1' },
     ],
     parkour: [
-      { type: 'effect', effect: 'slowness', seconds: 2, level: 1 },
-      { type: 'effect', effect: 'speed', seconds: 5, level: 1 },
+      { type: 'punch', count: 1 },
     ],
   },
 
