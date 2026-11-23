@@ -83,6 +83,7 @@ export default {
       // ~1,000 coins
       'Galaxy': [{ type: 'resetCountdown' }],   // back to Level 1 in 30s...
       'Watermelon': [{ type: 'save' }],         // ...unless someone sends a Watermelon
+      // 'PUT ~1K GIFT HERE': [{ type: 'levelUp', levels: 9999 }],   // straight to the top level
       // Top gifts: straight back to Level 1
       'Lion': [{ type: 'reset' }],
       'Universe': [{ type: 'reset' }],

@@ -29,6 +29,7 @@ Two modes:
 | 30 coins | *(not picked yet)*: up 1 level | Doughnut: down 1 level |
 | ~100 coins | Confetti: up 5 levels | Hat and Mustache: down 5 levels |
 | ~1,000 coins | Watermelon: saves you from the countdown | Galaxy: back to Level 1 in 30s |
+| ~1,000 coins | *(not picked yet)*: straight to the top level | |
 | Top gifts | | Lion / Universe: back to Level 1 |
 
 Every 100 likes is a free 👊 punch too.
